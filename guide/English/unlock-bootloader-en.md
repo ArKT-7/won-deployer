@@ -76,6 +76,6 @@
 
   
 #### Credits and Acknowledgements:
-This guide has been tested by: [@ArKT_7](https://t.me/ArKT_7), [@I914900HX](https://t.me/I914900HX), [@Samponnporlsak](https://t.me/Samponnporlsak)
+This guide has been tested by: [@ArKT-7](https://github.com/ArKT-7), [@ArKT_7](https://t.me/ArKT_7), [@I914900HX](https://t.me/I914900HX), [@Samponnporlsak](https://t.me/Samponnporlsak)
 
 Special thanks to [@hxruofficial](https://t.me/hxruofficial) for sharing the time trick to apply in HyperOS/miui-14. He specializes in Qualcomm flashing, EDL, and FDL. Check out his tools and services at [HXRU Tool](https://hxrutool.com/).
