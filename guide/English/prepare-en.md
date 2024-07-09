@@ -3,8 +3,6 @@
 
 # Running Windows on the Xiaomi Pad 5
 
-## Preparing [→](./install-en.md)
-
 ### Prerequisites
 - Brain
 
