@@ -1,0 +1,17 @@
+{
+    "files/orangefox.img": {
+        "hashes": {
+            "md5": "09af99239ce3549fae8045fd91fc099a"
+        }
+    },
+    "files/gpt_both0.bin": {
+        "hashes": {
+            "md5": "916afeafdf7cedaebfc8d58677645114"
+        }
+    },
+    "files/userdata.img": {
+        "hashes": {
+            "md5": "aabc57f9448cfa8d4fbe23105e2477e0"
+        }
+    }
+}
