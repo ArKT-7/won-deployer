@@ -20,5 +20,6 @@ This project is in an early stage, all the files here have been contributed by o
 
 ## Credits
 
-- [@maverickjb]([https://github.com/maverickjb](https://git.timoxa0.su/timoxa0/Guide-Linux-Nabu)) - linux on nabu deployer
+- [@timoxa0]([https://github.com/timoxa0](https://git.timoxa0.su/timoxa0/Guide-Linux-Nabu)) - linux on nabu deployer
+- [@timoxa0]([https://git.timoxa0.su/timoxa0](https://github.com/timoxa0/Guide-Linux-Nabu)) - linux on nabu deployer
 
