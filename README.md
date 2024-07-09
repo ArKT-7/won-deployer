@@ -20,7 +20,7 @@ This project is in an early stage, all the files here have been contributed by o
 
 ## Miscellaneous
 
-- [Project Status](guide/English/status-en.md)
+- [Bootloader unlocking guide](guide/English/unlock-bootloader-en.md)
 
 
 ## Credits
