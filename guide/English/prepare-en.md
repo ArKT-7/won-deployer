@@ -22,7 +22,7 @@ powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/mai
 ### [Next step: after installation done]
 
 
-#Open Powershell as Admin
+# Open Powershell as Admin
 
 # Type  won-deployer
 
