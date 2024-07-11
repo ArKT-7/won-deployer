@@ -27,5 +27,5 @@ powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/mai
 
 # then follow instructions
 
-<img align="right" src="../../assets/guide.gif" width="425" alt="Windows Running On A Xiaomi Pad 5">
+<img align="right" src="../../assets/guide.gif" width="425" alt="see">
 
