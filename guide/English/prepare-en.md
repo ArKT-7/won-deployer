@@ -19,6 +19,7 @@ powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/mai
 ```
 ### [Next step: after installation done]
 
+# Put Nabu in fastboot mode and connect
 
 # Open Powershell as Admin
 
