@@ -14,9 +14,9 @@ This project is in an early stage, all the files here have been contributed by o
 
 ## Get Started
 
-- [Tool_Installation](guide/English/prepare-en.md)
+- [Tool Installation/Use](guide/English/prepare-en.md)
 
-- [Official_guide](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5)
+- [Official Guide](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5)
 
 
 
