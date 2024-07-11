@@ -3,6 +3,7 @@
 
 # Running Windows on the Xiaomi Pad 5
 ## this program is still in beta early stage, this program will get updated with new features soon. please share any bug or need some extra feature to my Telegram below.
+- [@arkt-7](https://t.me/ArKT_7) - My Telegram ([here](https://telegram.me/ArKT_7))
 
 ## ⚠️ Warning
 We're not responsible for bricked devices, missing recovery partitions, dead xiaomi factoryline workers cowboys, dead microSD cards, dead pmics, dead ram, dead display ics, dead cpus, any xiaomi shenanigans, dead cats or dogs, nuclear wars or you getting fired because you forgot to boot back in to android for the alarm.
