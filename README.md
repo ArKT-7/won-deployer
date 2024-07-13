@@ -25,7 +25,7 @@ This project is in an early stage, all the files here have been contributed by o
 - [Bootloader unlocking guide](guide/English/unlock-bootloader-en.md)
 
 
-## Credits
+## Credits and Thankfull to
 
 - [@timoxa0](https://git.timoxa0.su/timoxa0) - linux on nabu deployer ([here](https://git.timoxa0.su/timoxa0/Guide-Linux-Nabu))
 - [@timoxa0](https://github.com/timoxa0) - linux on nabu deployer ([here](https://github.com/timoxa0/Guide-Linux-Nabu))
