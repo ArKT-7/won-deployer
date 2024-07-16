@@ -2,7 +2,7 @@
 
 
 # Running Windows on the Xiaomi Pad 5
-## this program is still in beta early stage, this program will get updated with new features soon. please share any bug or need some extra feature to my Telegram below.
+## This program is still in beta early stage and this program will get updated soon with new features. till now please share any bug or suggestions for any extra feature, to my Telegram below.
 - [@arkt-7](https://t.me/ArKT_7) - My Telegram ([here](https://telegram.me/ArKT_7))
 
 ## ⚠️ Warning
