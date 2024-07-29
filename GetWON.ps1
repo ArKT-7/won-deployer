@@ -10,8 +10,12 @@ Expand-Archive -Path $platformToolsZip -DestinationPath $adbDir -Force
 Remove-Item -Path $platformToolsZip -Force
 $platformToolsDir = Join-Path $adbDir "platform-tools"
 $wonDeployerDir = Join-Path $env:USERPROFILE ".arkt"
+$wonFilesDir = Join-Path $env:USERPROFILE "files"
 if (-not (Test-Path $wonDeployerDir -PathType Container)) {
     New-Item -Path $wonDeployerDir -ItemType Directory
+}
+if (-not (Test-Path $wonFilesDir -PathType Container)) {
+    New-Item -Path $wonFilesDir -ItemType Directory
 }
 
 $filesToDownload = @{
@@ -19,10 +23,24 @@ $filesToDownload = @{
     "win_img.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/win_img.exe"
     "libwim-15.dll" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/libwim-15.dll"
 }
+$requiredfilesdownload = @{
+    "Toolbox.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Toolbox.zip"
+	"sta.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/sta.zip"
+	"magisk.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/magisk.zip"
+    "orangefox.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/orangefox.img"
+	"gpt_both0.bin" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/gpt_both0.bin"
+	"userdata.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/userdata.img"
+}
 
 foreach ($file in $filesToDownload.Keys) {
     $destinationPath = Join-Path $wonDeployerDir $file
     $url = $filesToDownload[$file]
+    Invoke-WebRequest -Uri $url -OutFile $destinationPath
+}
+
+foreach ($file in $requiredfilesdownload.Keys) {
+    $destinationPath = Join-Path $wonFilesDir $file
+    $url = $requiredfilesdownload[$file]
     Invoke-WebRequest -Uri $url -OutFile $destinationPath
 }
 
