@@ -28,6 +28,7 @@ $requiredfilesdownload = @{
 	"sta.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/sta.zip"
 	"magisk.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/magisk.zip"
     "orangefox.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/orangefox.img"
+	"twrp.img" = "https://media.githubusercontent.com/media/ArKT-7/won-deployer/main/files/twrp.img"
 	"gpt_both0.bin" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/gpt_both0.bin"
 	"userdata.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/userdata.img"
 }
