@@ -5,7 +5,7 @@
 
 ### Prerequisites
 - Brain
-- adb driver insatlled
+- adb driver installed
 
 #### Get WoN Deployer
 ##### Windows:
