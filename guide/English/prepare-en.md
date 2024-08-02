@@ -43,6 +43,6 @@
 
 - Here’s a visual method for installing and verifying the correct installation of the deployer:
 
-<img align="left" src="../../assets/guide.gif" width="425" alt="Installation Guide">
+<img align="left" src="../../assets/tool-insatllation.gif" width="425" alt="Installation Guide">
 
 ---
