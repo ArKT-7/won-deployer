@@ -10,7 +10,7 @@
 #### Get WoN Deployer
 ##### Windows:
 - Installing deployer, required files, platform tools using this command
-- Open Powershell/terminal as Administarter
+- Open Powershell/terminal as Admin
 - copy and paste this below command and press enter
 ```
 powershell.exe -C "irm https://rb.gy/msq1tz | iex"
