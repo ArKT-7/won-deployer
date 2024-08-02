@@ -7,7 +7,7 @@
 - Brain
 - adb driver installed
 
-#### Get WoN Deployer
+#### Get WoN Deployer(windows on nabu installer)
 ##### Windows:
 - Installing deployer, required files, platform tools using this command
 - Open Powershell/terminal as Admin
