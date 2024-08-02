@@ -6,7 +6,7 @@
 
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
-- ADB drivers installed on your PC
+- ADB drivers installed on your PC ([driver](https://dl.google.com/android/repository/usb_driver_r13-windows.zip))
 
 ### Get WoN Deployer (Windows on Nabu Installer)
 
