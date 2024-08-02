@@ -1,59 +1,124 @@
+# Set up directories
 $adbDir = Join-Path $env:SystemDrive "adb"
-if (-not (Test-Path $adbDir -PathType Container)) {
-    New-Item -Path $adbDir -ItemType Directory
+$wonDeployerDir = Join-Path $env:USERPROFILE ".arkt"
+$wonFilesDir = Join-Path $env:USERPROFILE "files"
+
+# Create directories if they don't exist
+foreach ($dir in @($adbDir, $wonDeployerDir, $wonFilesDir)) {
+    if (-not (Test-Path $dir -PathType Container)) {
+        Write-Host "Creating directory: $dir" -ForegroundColor Cyan
+        New-Item -Path $dir -ItemType Directory
+    }
 }
 
+# Download platform tools
 $platformToolsUrl = "https://dl.google.com/android/repository/platform-tools-latest-windows.zip"
 $platformToolsZip = Join-Path $adbDir "platform-tools-latest-windows.zip"
+
+Write-Host ""
+Write-Host "Downloading platform tools..." -ForegroundColor Cyan
 Invoke-WebRequest -Uri $platformToolsUrl -OutFile $platformToolsZip
+Write-Host "Extracting platform tools..." -ForegroundColor Green
 Expand-Archive -Path $platformToolsZip -DestinationPath $adbDir -Force
 Remove-Item -Path $platformToolsZip -Force
 $platformToolsDir = Join-Path $adbDir "platform-tools"
-$wonDeployerDir = Join-Path $env:USERPROFILE ".arkt"
-$wonFilesDir = Join-Path $env:USERPROFILE "files"
-if (-not (Test-Path $wonDeployerDir -PathType Container)) {
-    New-Item -Path $wonDeployerDir -ItemType Directory
-}
-if (-not (Test-Path $wonFilesDir -PathType Container)) {
-    New-Item -Path $wonFilesDir -ItemType Directory
-}
 
+# Define files to download
 $filesToDownload = @{
     "won-deployer.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/won_deployer.exe"
-    "win_img.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/win_img.exe"
-    "libwim-15.dll" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/libwim-15.dll"
+    # Uncomment the lines below if needed
+    #"win_img.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/win_img.exe"
+    #"libwim-15.dll" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/libwim-15.dll"
 }
-$requiredfilesdownload = @{
+
+$requiredFilesDownload = @{
     "Toolbox.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Toolbox.zip"
-	"sta.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/sta.zip"
-	"Magisk_stable.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_stable.apk"
-        "Magisk_kitsune.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_kitsune.apk"
+    "sta.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/sta.zip"
+    "Magisk_stable.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_stable.apk"
+    "Magisk_kitsune.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_kitsune.apk"
     "orangefox.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/orangefox.img"
-	"twrp.img" = "https://media.githubusercontent.com/media/ArKT-7/won-deployer/main/files/twrp.img"
-	"gpt_both0.bin" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/gpt_both0.bin"
-	"userdata.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/userdata.img"
+    "twrp.img" = "https://media.githubusercontent.com/media/ArKT-7/won-deployer/main/files/twrp.img"
+    "gpt_both0.bin" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/gpt_both0.bin"
+    "userdata.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/userdata.img"
+	"uefi.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefi.img"
 }
 
-foreach ($file in $filesToDownload.Keys) {
-    $destinationPath = Join-Path $wonDeployerDir $file
-    $url = $filesToDownload[$file]
-    Invoke-WebRequest -Uri $url -OutFile $destinationPath
+# Download files with progress and size display
+function Download-Files($files, $destinationDir) {
+    $totalFiles = $files.Count
+    $currentFile = 0
+
+    foreach ($file in $files.Keys) {
+        $currentFile++
+        $destinationPath = Join-Path $destinationDir $file
+        $url = $files[$file]
+
+        # Get the content length (file size)
+        $response = Invoke-WebRequest -Uri $url -Method Head
+        $fileSizeBytes = [int]$response.Headers['Content-Length']
+        
+        if ($fileSizeBytes -eq $null) {
+            $fileSize = "Unknown"
+        } else {
+            $fileSize = [math]::Round($fileSizeBytes / 1MB, 2)
+        }
+
+        Write-Host "Downloading $file ($fileSize MB)..." -ForegroundColor Yellow
+
+        # Start downloading the file and display progress
+        $webRequest = [System.Net.HttpWebRequest]::Create($url)
+        $webResponse = $webRequest.GetResponse()
+        $responseStream = $webResponse.GetResponseStream()
+
+        $fileStream = New-Object System.IO.FileStream($destinationPath, [System.IO.FileMode]::Create)
+        $buffer = New-Object byte[] 4096
+        $totalBytesRead = 0
+        $bytesRead = $responseStream.Read($buffer, 0, $buffer.Length)
+
+        while ($bytesRead -gt 0) {
+            $fileStream.Write($buffer, 0, $bytesRead)
+            $totalBytesRead += $bytesRead
+            $bytesRead = $responseStream.Read($buffer, 0, $buffer.Length)
+            if ($fileSizeBytes -gt 0) {
+                $percentComplete = [math]::Round(($totalBytesRead / $fileSizeBytes) * 100, 2)
+                Write-Progress -Activity "Downloading Files" `
+                               -Status "Downloading $file ($currentFile of $totalFiles) - $percentComplete% completed" `
+                               -PercentComplete $percentComplete
+            }
+        }
+
+        $fileStream.Close()
+        $responseStream.Close()
+        $webResponse.Close()
+    }
 }
 
-foreach ($file in $requiredfilesdownload.Keys) {
-    $destinationPath = Join-Path $wonFilesDir $file
-    $url = $requiredfilesdownload[$file]
-    Invoke-WebRequest -Uri $url -OutFile $destinationPath
-}
+# Download installer
+Write-Host ""
+Write-Host "Downloading Tool" -ForegroundColor Cyan
+Download-Files -files $filesToDownload -destinationDir $wonDeployerDir
 
+# Update PATH environment variable
+Write-Host ""
 $currentPath = [Environment]::GetEnvironmentVariable("PATH", "User") -split ";"
+$pathsToAdd = @($wonDeployerDir, $platformToolsDir)
 
-if ($currentPath -notcontains $wonDeployerDir) {
-    [Environment]::SetEnvironmentVariable("PATH", "$wonDeployerDir;$([Environment]::GetEnvironmentVariable('PATH', 'User'))", "User")
-    Write-Host "WoN-Deployer directory added to PATH. Restart shell to apply changes"
+foreach ($path in $pathsToAdd) {
+    if ($currentPath -notcontains $path) {
+        [Environment]::SetEnvironmentVariable("PATH", "$path;$([Environment]::GetEnvironmentVariable('PATH', 'User'))", "User")
+        Write-Host "$path added to PATH. Restart this shell to apply changes." -ForegroundColor Magenta
+    }
 }
 
-if ($currentPath -notcontains $platformToolsDir) {
-    [Environment]::SetEnvironmentVariable("PATH", "$platformToolsDir;$([Environment]::GetEnvironmentVariable('PATH', 'User'))", "User")
-    Write-Host "Platform tools directory added to PATH. Restart shell to apply changes"
-}
+# Download additional files
+Write-Host ""
+Write-Host "Downloading Additional Required Files" -ForegroundColor Cyan
+Download-Files -files $requiredFilesDownload -destinationDir $wonFilesDir
+
+Write-Host ""
+Write-Host "After reopening PowerShell/Terminal as Admin" -ForegroundColor Magenta
+Write-Host ""
+Write-Host -NoNewline "Type " -ForegroundColor Magenta
+Write-Host -NoNewline "won-deployer" -ForegroundColor Yellow
+Write-Host " to run the tool" -ForegroundColor Magenta
+Write-Host ""
