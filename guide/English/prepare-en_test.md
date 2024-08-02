@@ -1,36 +1,48 @@
-<img align="right" src="../../assets/nabu.png" width="425" alt="Windows Running On A Xiaomi Pad 5">
+---
 
+<img align="right" src="../../assets/nabu.png" width="425" alt="Windows Running On A Xiaomi Pad 5">
 
 # Running Windows on the Xiaomi Pad 5
 
 ### Prerequisites
-- Brain
-- adb driver installed
+- A functioning brain (seriously, you'll need to think!)
+- ADB drivers installed on your PC
 
-#### Get WoN Deployer(windows on nabu installer)
-##### Windows:
-- Installing deployer, required files, platform tools using this command
-- Open Powershell/terminal as Admin
-- copy and paste this below command and press enter
-```
-powershell.exe -C "irm https://rb.gy/msq1tz | iex"
-```
-if not worked
+### Get WoN Deployer (Windows on Nabu Installer)
 
-```
-powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/main/GetWON.ps1 | iex"
-```
-### [Next step: after tool installation done]
+#### For Windows Users:
+1. **Install the Deployer, Required Files, and Platform Tools**
 
-# Put Nabu in fastboot mode and connect to your pc
+   Open PowerShell/Terminal as an Administrator and run the following command:
 
-# Open Powershell as Admin again 
+   ```shell
+   powershell.exe -C "irm https://rb.gy/msq1tz | iex"
+   ```
 
-# Type  won-deployer
+   If the above command doesn't work, try:
 
-# then follow instructions printed by won deployer
+   ```shell
+   powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/main/GetWON.ps1 | iex"
+   ```
 
-- Here's the visual method of installing and checking the deployer installed correctly
+### Next Steps: After Tool Installation
 
-<img align="left" src="../../assets/guide.gif" width="425" alt="see">
+1. **Put Your Xiaomi Pad 5 in Fastboot Mode**
 
+   - Connect the device to your PC.
+
+2. **Open PowerShell as Admin Again**
+
+3. **Run the WoN Deployer**
+
+   - Type `won-deployer` in the PowerShell and follow the on-screen instructions.
+
+---
+
+### Visual Guide
+
+- Here’s a visual method for installing and verifying the correct installation of the deployer:
+
+<img align="left" src="../../assets/guide.gif" width="425" alt="Installation Guide">
+
+---
