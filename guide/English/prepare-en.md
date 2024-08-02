@@ -30,7 +30,7 @@ powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/mai
 
 # then follow instructions printed by won deployer
 
-- Here's the visual method of installing and cheking the tool
+- Here's the visual method of installing and checking the deployer installed correctly
 
 <img align="left" src="../../assets/guide.gif" width="425" alt="see">
 
