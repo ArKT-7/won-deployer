@@ -36,6 +36,13 @@
    >[!NOTE]
    > If installed properly then it gives an output else error so do installation again
    > prefer seeing the visual guide down below
+### Partitioning your device
+> Replace **$** with the amount of storage you want Windows to have (do not add GB, just write the number)
+> 
+> If it asks you to run it once again, do so
+```sh
+adb shell partition $
+```
    
 ### [Next step: How to use](/guide/English/prepare-en_t2.md)
 
