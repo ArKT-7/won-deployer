@@ -26,14 +26,16 @@
    ```
 2. **Checking if insatlled properly**
 
-   Close the PowerShell/Terminal you have open earlier:
+   1. Close the PowerShell/Terminal you have open earlier:
 
-   Open PowerShell/Terminal as an Administrator again and run the following command:
+   2. Open PowerShell/Terminal as an Administrator again and run the following command:
 
    ```shell
    won-deployer -h
    ```
-   If installed properly then it gives an output else error so do installation again
+   >[!NOTE]
+   > If installed properly then it gives an output else error so do installation again
+   > prefer seeing the visual guide down below
    
 ### [Next step: How to use](/guide/English/prepare-en_t2.md)
 
