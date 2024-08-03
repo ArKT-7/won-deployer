@@ -15,6 +15,7 @@
    ```shell
    won-deployer
    ```
+- follow the instruction shown on the shell screen
 
 >[!NOTE]
 > If you faced any error please run the below command and share the screenshot to [@ArKT_7](https://telegram.me/ArKT_7) or to [Offcial Group](https://telegram.me/nabuwoa)
