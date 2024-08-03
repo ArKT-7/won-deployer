@@ -24,7 +24,7 @@
 
 ### re-run program with detailed log output
 
-   1. Close the PowerShell/Terminal you have open earlier:
+   1. Close the PowerShell/Terminal you have open earlier
 
    2. Open PowerShell/Terminal as an Administrator again and run the following command:
 
