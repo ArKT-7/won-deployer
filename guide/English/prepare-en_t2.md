@@ -26,7 +26,7 @@
    won-deployer --debug
    ```
 >[!NOTE]
-> If you faced any error please share screen shot showing the error after running the debug command to [@ArKT_7](https://telegram.me/ArKT_7)
+> If you faced any error please share screen shot showing the error after running the debug command to [@ArKT_7](https://telegram.me/ArKT_7) or to [Offcial Group](https://telegram.me/nabuwoa)
 
 
 ### [Previous step: How to install](/guide/English/prepare-en_t1.md)
