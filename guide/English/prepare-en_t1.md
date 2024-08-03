@@ -25,7 +25,7 @@
    powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/main/GetWON.ps1 | iex"
    ```
 
-**Checking if insatlled properly**
+**Checking if installed properly**
 
    1. Close the PowerShell/Terminal you have open earlier:
 
