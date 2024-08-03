@@ -4,6 +4,8 @@
 
 # Running Windows on the Xiaomi Pad 5
 
+## How to install
+
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
 - ADB drivers installed on your PC ([driver](https://dl.google.com/android/repository/usb_driver_r13-windows.zip))
@@ -39,7 +41,7 @@
 > - prefer seeing the visual guide down below 
 
 
-### [Next step: How to use](/guide/English/prepare-en_t2.md)
+### [Next step: How to run](/guide/English/prepare-en_t2.md)
 
 ### Visual Guide
 
