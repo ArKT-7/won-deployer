@@ -9,7 +9,7 @@
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
 - [ADB drivers installed on your PC](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
-- [Tool installed : How to install Tool](/guide/English/prepare-en_t1.md)
+- [Tool installed : How to install Tool](/guide/English/Installation.md)
 
 ---
 
