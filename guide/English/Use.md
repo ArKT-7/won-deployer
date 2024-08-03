@@ -33,7 +33,7 @@
    ```
 
 
-### [Previous step: How to install](/guide/English/prepare-en_t1.md)
+### [Previous step: How to install](/guide/English/Installation.md)
 
 ### Visual Guide
 
