@@ -10,7 +10,7 @@
 - [Tool installed : How to install Tool](/guide/English/prepare-en_t1.md)
 
 
-#### Open PowerShell/Terminal as an Administrator and run the following command:
+### Open PowerShell/Terminal as an Administrator and run the following command:
 
    ```shell
    won-deployer
