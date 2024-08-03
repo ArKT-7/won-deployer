@@ -6,8 +6,8 @@
 
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
-- ADB drivers installed on your PC ([driver](https://dl.google.com/android/repository/usb_driver_r13-windows.zip))
-- won-deployer tool installed [Previous step: How to install](/guide/English/prepare-en_t1.md)
+- ([ADB drivers installed on your PC](https://dl.google.com/android/repository/usb_driver_r13-windows.zip))
+- [Tool installed : How to install Tool](/guide/English/prepare-en_t1.md)
 
 
 #### Open PowerShell/Terminal as an Administrator and run the following command:
