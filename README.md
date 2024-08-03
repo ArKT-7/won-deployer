@@ -14,7 +14,7 @@ This project is in an early stage, all the files here have been contributed by o
 
 ## Get Started
 
-- [How to Install/run](guide/English/prepare-en.md)
+- [Installation/run](guide/English/prepare-en.md)
 - [How to Install](guide/English/Installation.md)
 - [How to Run](guide/English/Use.md)
   
