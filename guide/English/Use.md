@@ -11,13 +11,19 @@
 - [ADB drivers installed on your PC](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
 - [Tool installed : How to install Tool](/guide/English/prepare-en_t1.md)
 
+---
 
-### Open PowerShell/Terminal as an Administrator and run the following command:
+1. **Put Your Xiaomi Pad 5 in Fastboot Mode**
 
-   ```shell
-   won-deployer
-   ```
-- follow the instruction shown on the shell screen
+   - Connect the device to your PC.
+
+2. **Open PowerShell/terminal as Administrator**
+
+3. **Run the WoN Deployer**
+
+   - Type `won-deployer` in the PowerShell and follow the on-screen instructions.
+
+---
 
 >[!NOTE]
 > If you faced any error please run the below command and share the screenshot to [@ArKT_7](https://telegram.me/ArKT_7) or to [Offcial Group](https://telegram.me/nabuwoa)
@@ -31,7 +37,7 @@
    ```shell
    won-deployer --debug
    ```
-
+---
 
 ### [Previous step: How to install](/guide/English/Installation.md)
 
