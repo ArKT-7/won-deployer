@@ -35,6 +35,6 @@
 
 ### Visual Guide
 
-- Here’s a visual method for installing and verifying the correct installation of the deployer:
+- Here’s a visual method for running the tool and installing windows on nabu:
 
-<img align="left" src="../../assets/tool-insatllation.gif" width="720" alt="Installation Guide">
+Coming soon....
