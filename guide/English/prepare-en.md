@@ -37,6 +37,7 @@
 
    - Type `won-deployer` in the PowerShell and follow the on-screen instructions.
 
+### [How to run](/guide/English/Use.md)
 ---
 
 ### Visual Guide
