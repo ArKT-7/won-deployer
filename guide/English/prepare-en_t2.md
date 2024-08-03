@@ -16,7 +16,10 @@
    won-deployer
    ```
 
-#### If face any error then re-run program with detailed log output
+>[!NOTE]
+> If you faced any error please run the below command and share the screenshot to [@ArKT_7](https://telegram.me/ArKT_7) or to [Offcial Group](https://telegram.me/nabuwoa)
+
+#### re-run program with detailed log output
 
    1. Close the PowerShell/Terminal you have open earlier:
 
@@ -25,8 +28,6 @@
    ```shell
    won-deployer --debug
    ```
->[!NOTE]
-> If you faced any error please share screen shot showing the error after running the debug command to [@ArKT_7](https://telegram.me/ArKT_7) or to [Offcial Group](https://telegram.me/nabuwoa)
 
 
 ### [Previous step: How to install](/guide/English/prepare-en_t1.md)
