@@ -35,8 +35,8 @@
    won-deployer -h
    ```
 >[!NOTE]
-> If you installed properly then it gives an output else error so do installation again
-> prefer seeing the visual guide down below 
+> - If you installed properly then it gives an output else error so do installation again
+> - prefer seeing the visual guide down below 
 
 
 ### [Next step: How to use](/guide/English/prepare-en_t2.md)
