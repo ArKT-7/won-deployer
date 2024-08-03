@@ -41,7 +41,7 @@
 > - prefer seeing the visual guide down below 
 
 
-### [Next step: How to run](/guide/English/prepare-en_t2.md)
+### [Next step: How to run](/guide/English/Use.md)
 
 ### Visual Guide
 
