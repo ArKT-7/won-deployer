@@ -25,20 +25,6 @@
    powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/main/GetWON.ps1 | iex"
    ```
 
-### Next Steps: After Tool Installation
-
-1. **Put Your Xiaomi Pad 5 in Fastboot Mode**
-
-   - Connect the device to your PC.
-
-2. **Open PowerShell as Admin Again**
-
-3. **Run the WoN Deployer**
-
-   - Type `won-deployer` in the PowerShell and follow the on-screen instructions.
-
----
-
 ### Visual Guide
 
 - Here’s a visual method for installing and verifying the correct installation of the deployer:
