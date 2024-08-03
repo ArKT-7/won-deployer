@@ -22,6 +22,9 @@
 3. **Run the WoN Deployer**
 
    - Type `won-deployer` in the PowerShell and follow the on-screen instructions.
+    ```shell
+   won-deployer
+   ```
 
 ---
 
