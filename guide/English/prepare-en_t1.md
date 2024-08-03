@@ -11,7 +11,7 @@
 ### Get WoN Deployer (Windows on Nabu Installer)
 
 #### For Windows Users:
-1. **Install the Deployer, Required Files, and Platform Tools**
+**Install the Deployer, Required Files, and Platform Tools**
 
    Open PowerShell/Terminal as an Administrator and run the following command:
 
@@ -24,7 +24,8 @@
    ```shell
    powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/main/GetWON.ps1 | iex"
    ```
-2. **Checking if insatlled properly**
+
+**Checking if insatlled properly**
 
    1. Close the PowerShell/Terminal you have open earlier:
 
@@ -33,12 +34,11 @@
    ```shell
    won-deployer -h
    ```
->[!INFO]
-> If installed properly then it gives an output else error so do installation again
-> prefer seeing the visual guide down below
+
+- If installed properly then it gives an output else error so do installation again
+- prefer seeing the visual guide down below
 
 
-   
 ### [Next step: How to use](/guide/English/prepare-en_t2.md)
 
 ### Visual Guide
