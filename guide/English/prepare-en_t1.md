@@ -11,7 +11,7 @@
 ### Get WoN Deployer (Windows on Nabu Installer)
 
 #### For Windows Users:
-**Instalaation of the Deployer, Platform Tools and Required Files**
+**Installation of the Deployer, Platform Tools and Required Files**
 
    Open PowerShell/Terminal as an Administrator and run the following command:
 
