@@ -24,6 +24,7 @@
    ```shell
    powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/main/GetWON.ps1 | iex"
    ```
+### [install](/guide/English/Installation.md)
 
 ### Next Steps: After Tool Installation
 
