@@ -34,7 +34,9 @@
    ```shell
    won-deployer -h
    ```
-
+>[!NOTE]
+>
+> Waiting period in Mi unlock Tool May be different so wait till.
 - If installed properly then it gives an output else error so do installation again
 - prefer seeing the visual guide down below
 
