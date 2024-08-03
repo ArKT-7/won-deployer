@@ -7,37 +7,29 @@
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
 - ADB drivers installed on your PC ([driver](https://dl.google.com/android/repository/usb_driver_r13-windows.zip))
+- won-deployer tool installed [Previous step: How to install](/guide/English/prepare-en_t1.md)
 
-### Get WoN Deployer (Windows on Nabu Installer)
 
-#### For Windows Users:
-1. **Install the Deployer, Required Files, and Platform Tools**
-
-   Open PowerShell/Terminal as an Administrator and run the following command:
+#### Open PowerShell/Terminal as an Administrator and run the following command:
 
    ```shell
-   powershell.exe -C "irm https://rb.gy/msq1tz | iex"
+   won-deployer
    ```
 
-   If the above command doesn't work, try:
+**If face any error then re-run program with detailed log output**
+
+   1. Close the PowerShell/Terminal you have open earlier:
+
+   2. Open PowerShell/Terminal as an Administrator again and run the following command:
 
    ```shell
-   powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/main/GetWON.ps1 | iex"
+   won-deployer --debug
    ```
+>[!NOTE]
+> - If you faced any error please share screen shot showing the error after running the debug command 
 
-### Next Steps: After Tool Installation
 
-1. **Put Your Xiaomi Pad 5 in Fastboot Mode**
-
-   - Connect the device to your PC.
-
-2. **Open PowerShell as Admin Again**
-
-3. **Run the WoN Deployer**
-
-   - Type `won-deployer` in the PowerShell and follow the on-screen instructions.
-
----
+### [Previous step: How to install](/guide/English/prepare-en_t1.md)
 
 ### Visual Guide
 
