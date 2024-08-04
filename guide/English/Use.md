@@ -29,7 +29,7 @@
     ```shell
    won-deployer
    ```
-3. **Enter Windows ESD or WIM file path and select edition**
+3. **Enter [```Windows Wim```](https://drive.google.com/file/d/1zQgsYW5SBZh4ScErLhCTAujjo2loBieV/view?usp=sharing) or ESD file path and select edition**
 
    - Copy as path your Windows ESD/WIM file and Paste path here.
   `Enter the path of Windows ESD (Copy as path)::`
