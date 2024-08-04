@@ -32,6 +32,9 @@
 
    - `Paste path here` in the PowerShell when asked for path.
   `Enter the path of Windows ESD (Copy as path)::`
+   - `Enter index no.` Enter no. of which edition Windows you Want to Install.
+  `Please enter the index number of the edition you want to use:`
+
 
 4. **Enter Nabu-driver.zip file path**
 
