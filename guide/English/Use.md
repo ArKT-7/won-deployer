@@ -28,11 +28,11 @@
     ```shell
    won-deployer
    ```
-3. **Enter windows ESD or WIM file path**
+3. **Enter windows ESD or WIM file path and select edition**
 
-   - `Paste path here` in the PowerShell when asked for path.
+   - copy as path your windows esd/wim file and Paste path here.
   `Enter the path of Windows ESD (Copy as path)::`
-   - `Enter index no.` Enter no. of which edition Windows you Want to Install.
+   -Enter Index no. of which edition Windows you Want to Install.
   `Please enter the index number of the edition you want to use:`
 
 
