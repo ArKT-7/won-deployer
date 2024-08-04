@@ -6,8 +6,6 @@
 
 ## How to run
 
-${\color{Magenta}[y/n] \space \color{cyan}(n): }$
-<code style="color : name_color">text</code>
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
 - [```ADB drivers installed on your PC```](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
@@ -37,7 +35,7 @@ ${\color{Magenta}[y/n] \space \color{cyan}(n): }$
   `Enter the path of Windows ESD (Copy as path)::`
    - Enter Index no. of which edition of Windows you want to Install.
   `Please enter the index number of the edition you want to use:`
-
+${\color{Magenta}[y/n] \space \color{cyan}(n): }$
 
 4. **Enter [```nabu-driver.zip```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/tag/Drivers) file path**
 
