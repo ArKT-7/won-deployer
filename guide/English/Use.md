@@ -38,7 +38,7 @@
 
 4. **Enter Nabu-driver.zip file path**
 
-   - `Paste path here` in the PowerShell when asked for path.
+   - copy as path your nabu-driver.zip file and Paste path here.
   `Enter the path of the driver ZIP file (Copy as path)::`
 
 5. **Follow on-screen Instruction**
