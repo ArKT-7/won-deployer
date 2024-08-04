@@ -7,6 +7,7 @@
 ## How to run
 
 ${\color{Magenta}[y/n] \space \color{cyan}(n): }$
+<code style="color : name_color">text</code>
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
 - [```ADB drivers installed on your PC```](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
