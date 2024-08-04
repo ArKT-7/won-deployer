@@ -3,7 +3,7 @@
 <img align="right" src="../../assets/nabu.png" width="425" alt="Windows Running On A Xiaomi Pad 5">
 
 # Running Windows on the Xiaomi Pad 5
-
+## <span style="color: green;">How to run</span>
 ## How to run
 
 ### Prerequisites
