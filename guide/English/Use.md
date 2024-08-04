@@ -1,4 +1,6 @@
 ---
+<span style="color: red;">This text is red.</span>
+<span style="color: blue;">This text is blue.</span>
 
 <img align="right" src="../../assets/nabu.png" width="425" alt="Windows Running On A Xiaomi Pad 5">
 
