@@ -26,8 +26,8 @@ $platformToolsDir = Join-Path $adbDir "platform-tools"
 # Define files to download
 $filesToDownload = @{
     "won-deployer.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/won_deployer.exe"
-    #"win_img.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/win_img.exe"
-    #"libwim-15.dll" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/libwim-15.dll"
+    "wimlib-imagex.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/wimlib-imagex.exe"
+    "libwim-15.dll" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/libwim-15.dll"
 }
 
 $requiredFilesDownload = @{
