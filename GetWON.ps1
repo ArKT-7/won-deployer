@@ -121,3 +121,8 @@ Write-Host -NoNewline "Type " -ForegroundColor Magenta
 Write-Host -NoNewline "won-deployer" -ForegroundColor Yellow
 Write-Host " to run the tool" -ForegroundColor Magenta
 Write-Host ""
+# Exclude won-deployer.exe from Microsoft Defender
+$wonDeployerPath = Join-Path $wonDeployerDir "won-deployer.exe"
+#Write-Host ""
+# Write-Host "Adding won-deployer.exe to Defender exclusion list just in case if defender detect it wrong by mistake..." -ForegroundColor Cyan
+Add-MpPreference -ExclusionPath $wonDeployerPath
