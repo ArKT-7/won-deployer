@@ -10,6 +10,9 @@
 - A functioning brain (seriously, you'll need to think!)
 - [ADB drivers installed on your PC](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
 - [Tool installed : How to install Tool](/guide/English/Installation.md)
+- [```ARM Windows ESD```](https://worproject.com/esd) (Select - Version:  ```11``` Build:  ```22631.2861``` Architecture:  ```ARM64``` Edition:  ```CLIENT``` Language:  ```select your language```)
+    
+- [```Drivers```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/tag/Drivers)
 
 ---
 
