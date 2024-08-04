@@ -6,7 +6,7 @@
 
 ## How to run
 
-$${\color{Magenta}[r/c] \space \color{cyan}(c): }$$
+${\color{Magenta}[y/n] \space \color{cyan}(n): }$
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
 - [```ADB drivers installed on your PC```](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
