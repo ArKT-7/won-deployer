@@ -17,12 +17,6 @@
 - [```Drivers```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/tag/Drivers)
 ---
 
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-
 1. **Put Your Xiaomi Pad 5 in Fastboot Mode**
 
    - Connect the device to your PC.
