@@ -33,6 +33,11 @@
    - `Paste path here` in the PowerShell when asked for path.
   `Enter the path of Windows ESD (Copy as path)::`
 
+4. **Enter Nabu-driver.zip file path**
+
+   - `Paste path here` in the PowerShell when asked for path.
+  `Enter the path of the driver ZIP file (Copy as path)::`
+
 ---
 
 >[!NOTE]
