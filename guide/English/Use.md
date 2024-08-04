@@ -41,6 +41,10 @@
    - `Paste path here` in the PowerShell when asked for path.
   `Enter the path of the driver ZIP file (Copy as path)::`
 
+5. **Follow on-screen Instruction**
+
+   - `Good Luck`.
+
 ---
 
 >[!NOTE]
