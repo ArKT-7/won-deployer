@@ -31,9 +31,7 @@
 3. **Enter windows ESD or WIM file path**
 
    - `Paste path here` in the PowerShell when asked for path.
-    ```shell
-   Enter the path of Windows ESD (Copy as path)::
-   ```
+  `Enter the path of Windows ESD (Copy as path)::`
 
 ---
 
