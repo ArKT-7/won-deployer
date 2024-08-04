@@ -32,7 +32,7 @@
 
    - copy as path your windows esd/wim file and Paste path here.
   `Enter the path of Windows ESD (Copy as path)::`
-   -Enter Index no. of which edition Windows you Want to Install.
+   - Enter Index no. of which edition Windows you Want to Install.
   `Please enter the index number of the edition you want to use:`
 
 
