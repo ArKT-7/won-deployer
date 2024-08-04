@@ -1,5 +1,6 @@
 ---
-
+<font color="green"> Some green text </font>
+<span style="color: green"> Some green text </span>
 <img align="right" src="../../assets/nabu.png" width="425" alt="Windows Running On A Xiaomi Pad 5">
 
 # Running Windows on the Xiaomi Pad 5
