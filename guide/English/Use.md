@@ -6,7 +6,7 @@
 
 ## How to run
 
-$${\color{Magenta}[r/c] \space \color{lightblue}To \space \color{orange}Stackoverflow}$$
+$${\color{Magenta}[r/c] \space \color{cyan}(c): }$$
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
 - [```ADB drivers installed on your PC```](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
