@@ -33,6 +33,8 @@
 
    - Copy as path your Windows ESD/WIM file and Paste path here.
   `Enter the path of Windows ESD (Copy as path)::`
+>[!INFO]
+> For Windows 10, press and hold  `shift ` +  `mouse right click ` for option copy as path
    - Enter Index no. of which edition of Windows you want to Install.
   `Please enter the index number of the edition you want to use:`
 <!-- ${\color{Magenta}[y/n] \space \color{cyan}(n): }$ -->
