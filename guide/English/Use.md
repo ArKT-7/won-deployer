@@ -1,12 +1,11 @@
 ---
-<font color="green"> Some green text </font>
-<span style="color: green"> Some green text </span>
+
 <img align="right" src="../../assets/nabu.png" width="425" alt="Windows Running On A Xiaomi Pad 5">
 
 # Running Windows on the Xiaomi Pad 5
 
 ## How to run
-
+<font color="green"> Some green text </font>
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
 - [```ADB drivers installed on your PC```](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
