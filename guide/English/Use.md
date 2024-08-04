@@ -5,7 +5,7 @@
 # Running Windows on the Xiaomi Pad 5
 
 ## How to run
-<span style="color: magenta;">[r/</span><span style="color: blue;">c]</span>
+
 
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
