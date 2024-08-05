@@ -110,19 +110,21 @@ foreach ($path in $pathsToAdd) {
 }
 
 # Download additional files
-Write-Host ""
-Write-Host "Downloading Additional Required Files" -ForegroundColor Cyan
-Download-Files -files $requiredFilesDownload -destinationDir $wonFilesDir
+#Write-Host ""
+#Write-Host "Downloading Additional Required Files" -ForegroundColor Cyan
+#Download-Files -files $requiredFilesDownload -destinationDir $wonFilesDir
 
 Write-Host ""
-Write-Host "After reopening PowerShell/Terminal as Admin" -ForegroundColor Magenta
+Write-Host "Please close this PowerShell/Terminal" -ForegroundColor Magenta
+Write-Host ""
+Write-Host "After reopening PowerShell/Terminal as Admin" -ForegroundColor Yellow
 Write-Host ""
 Write-Host -NoNewline "Type " -ForegroundColor Magenta
 Write-Host -NoNewline "won-deployer" -ForegroundColor Yellow
 Write-Host " to run the tool" -ForegroundColor Magenta
 Write-Host ""
 # Exclude won-deployer.exe from Microsoft Defender
-$wonDeployerPath = Join-Path $wonDeployerDir "won-deployer.exe"
+#$wonDeployerPath = Join-Path $wonDeployerDir "won-deployer.exe"
 #Write-Host ""
 # Write-Host "Adding won-deployer.exe to Defender exclusion list just in case if defender detect it wrong by mistake..." -ForegroundColor Cyan
-Add-MpPreference -ExclusionPath $wonDeployerPath
+Add-MpPreference -ExclusionPath $wonDeployerDir
