@@ -33,7 +33,7 @@
 3. **Enter [```Windows Wim```](https://drive.google.com/file/d/1zQgsYW5SBZh4ScErLhCTAujjo2loBieV/view?usp=sharing) or ESD file path and select edition**
 
    - Copy as path your Windows ESD/WIM file and Paste path here.
-  `Enter the path of Windows ESD (Copy as path)::`
+  `Enter the path of Windows ESD (Copy as path) ::`
 
    - Enter Index no. of which edition of Windows you want to Install.
   `Please enter the index number of the edition you want to use:`
@@ -42,7 +42,7 @@
 4. **Enter [```nabu-driver.zip```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/tag/Drivers) file path**
 
    - copy as path your nabu-driver.zip file and Paste path here.
-  `Enter the path of the driver ZIP file (Copy as path)::`
+  `Enter the path of the driver ZIP file (Copy as path) ::`
 
 5. **Follow on-screen Instruction**
 
