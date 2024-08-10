@@ -36,7 +36,7 @@
   `Enter the path of Windows ESD (Copy as path) ::`
 
    - Enter Index no. of which edition of Windows you want to Install.
-  `Please enter the index number of the edition you want to use:`
+  `Please enter the index number of the edition you want to use :`
 <!-- ${\color{Magenta}[y/n] \space \color{cyan}(n): }$ -->
 
 4. **Enter [```nabu-driver.zip```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/tag/Drivers) file path**
