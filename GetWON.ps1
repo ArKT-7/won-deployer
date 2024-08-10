@@ -33,12 +33,12 @@ $filesToDownload = @{
 $requiredFilesDownload = @{
     "Toolbox.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Toolbox.zip"
     "sta.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/sta.zip"
-    "Magisk_stable.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_stable.apk"
-    "Magisk_kitsune.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_kitsune.apk"
-    "orangefox.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/orangefox.img"
-    "twrp.img" = "https://media.githubusercontent.com/media/ArKT-7/won-deployer/main/files/twrp.img"
-    "gpt_both0.bin" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/gpt_both0.bin"
-    "userdata.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/userdata.img"
+    #"Magisk_stable.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_stable.apk"
+    #"Magisk_kitsune.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_kitsune.apk"
+    #"orangefox.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/orangefox.img"
+    #"twrp.img" = "https://media.githubusercontent.com/media/ArKT-7/won-deployer/main/files/twrp.img"
+    #"gpt_both0.bin" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/gpt_both0.bin"
+    #"userdata.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/userdata.img"
 	"uefi.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefi.img"
 }
 
@@ -110,9 +110,9 @@ foreach ($path in $pathsToAdd) {
 }
 
 # Download additional files
-#Write-Host ""
-#Write-Host "Downloading Additional Required Files" -ForegroundColor Cyan
-#Download-Files -files $requiredFilesDownload -destinationDir $wonFilesDir
+Write-Host ""
+Write-Host "Downloading minimal Additional Required Files" -ForegroundColor Cyan
+Download-Files -files $requiredFilesDownload -destinationDir $wonFilesDir
 
 Write-Host ""
 Write-Host ""
