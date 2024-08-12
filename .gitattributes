@@ -1,0 +1,3 @@
+files/dotnet_arm64.exe filter=lfs diff=lfs merge=lfs -text
+files/dotnet_x64.exe filter=lfs diff=lfs merge=lfs -text
+files/dotnet_x86.exe filter=lfs diff=lfs merge=lfs -text
