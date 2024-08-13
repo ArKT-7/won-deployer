@@ -1,7 +1,7 @@
 # Set up directories
 $adbDir = Join-Path $env:SystemDrive "adb"
 $wonDeployerDir = Join-Path $env:USERPROFILE ".arkt"
-$wonFilesDir = Join-Path $env:USERPROFILE "files"
+$wonFilesDir = Join-Path $wonDeployerDir "files"
 
 # Create directories if they don't exist
 foreach ($dir in @($adbDir, $wonDeployerDir, $wonFilesDir)) {
