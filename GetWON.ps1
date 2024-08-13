@@ -12,18 +12,13 @@ foreach ($dir in @($adbDir, $wonDeployerDir, $wonFilesDir)) {
 }
 
 # Download platform tools
-$platformToolsUrl = "https://dl.google.com/android/repository/platform-tools-latest-windows.zip"
-$platformToolsZip = Join-Path $adbDir "platform-tools-latest-windows.zip"
+$platformToolsZip = Join-Path $adbDir "platform-tools.zip"
 
-Write-Host ""
-Write-Host "Downloading platform tools..." -ForegroundColor Cyan
-Invoke-WebRequest -Uri $platformToolsUrl -OutFile $platformToolsZip
-Write-Host "Extracting platform tools..." -ForegroundColor Green
-Expand-Archive -Path $platformToolsZip -DestinationPath $adbDir -Force
-Remove-Item -Path $platformToolsZip -Force
-$platformToolsDir = Join-Path $adbDir "platform-tools"
+$platformTools = @{
+     "platform-tools.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/platform-tools.zip"
+}
 
-# Define files to download
+# Define the file to download for testing
 $filesToDownload = @{
     "won-deployer.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/won_deployer.exe"
     "wimlib-imagex.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/wimlib-imagex.exe"
@@ -42,6 +37,51 @@ $requiredFilesDownload = @{
 	"uefi.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefi.img"
 }
 
+# Modern progress bar function
+function Show-Progress {
+    param (
+        [Parameter(Mandatory)]
+        [Single]$TotalValue,
+        
+        [Parameter(Mandatory)]
+        [Single]$CurrentValue,
+        
+        [Parameter(Mandatory)]
+        [string]$ProgressText,
+        
+        [Parameter()]
+        [string]$ValueSuffix,
+        
+        [Parameter()]
+        [int]$BarSize = 40,
+
+        [Parameter()]
+        [switch]$Complete
+    )
+    
+    $percent = $CurrentValue / $TotalValue
+    $percentComplete = $percent * 100
+    if ($ValueSuffix) {
+        $ValueSuffix = " $ValueSuffix"
+    }
+    if ($psISE) {
+        Write-Progress "$ProgressText $CurrentValue$ValueSuffix of $TotalValue$ValueSuffix" -id 0 -percentComplete $percentComplete            
+    }
+    else {
+        $curBarSize = $BarSize * $percent
+        $progbar = ""
+        $progbar = $progbar.PadRight($curBarSize,[char]9608)
+        $progbar = $progbar.PadRight($BarSize,[char]9617)
+        
+        if (!$Complete.IsPresent) {
+            Write-Host -NoNewLine "`r$ProgressText $progbar [ $($CurrentValue.ToString("#.###").PadLeft($TotalValue.ToString("#.###").Length))$ValueSuffix / $($TotalValue.ToString("#.###"))$ValueSuffix ] $($percentComplete.ToString("##0.00").PadLeft(6)) % complete"
+        }
+        else {
+            Write-Host -NoNewLine "`r$ProgressText $progbar [ $($TotalValue.ToString("#.###").PadLeft($TotalValue.ToString("#.###").Length))$ValueSuffix / $($TotalValue.ToString("#.###"))$ValueSuffix ] $($percentComplete.ToString("##0.00").PadLeft(6)) % complete"                    
+        }                
+    }   
+}
+
 # Download files with progress and size display
 function Download-Files($files, $destinationDir) {
     $totalFiles = $files.Count
@@ -52,52 +92,87 @@ function Download-Files($files, $destinationDir) {
         $destinationPath = Join-Path $destinationDir $file
         $url = $files[$file]
 
-        # Get the content length (file size)
-        $response = Invoke-WebRequest -Uri $url -Method Head
-        $fileSizeBytes = [int]$response.Headers['Content-Length']
-        
-        if ($fileSizeBytes -eq $null) {
-            $fileSize = "Unknown"
-        } else {
-            $fileSize = [math]::Round($fileSizeBytes / 1MB, 2)
-        }
+        try {
+            $storeEAP = $ErrorActionPreference
+            $ErrorActionPreference = 'Stop'
 
-        Write-Host "Downloading $file ($fileSize MB)..." -ForegroundColor Yellow
+            $response = Invoke-WebRequest -Uri $url -Method Head
+            [long]$fileSizeBytes = [int]$response.Headers['Content-Length']
+            $fileSizeMB = $fileSizeBytes / 1MB
 
-        # Start downloading the file and display progress
-        $webRequest = [System.Net.HttpWebRequest]::Create($url)
-        $webResponse = $webRequest.GetResponse()
-        $responseStream = $webResponse.GetResponseStream()
-
-        $fileStream = New-Object System.IO.FileStream($destinationPath, [System.IO.FileMode]::Create)
-        $buffer = New-Object byte[] 4096
-        $totalBytesRead = 0
-        $bytesRead = $responseStream.Read($buffer, 0, $buffer.Length)
-
-        while ($bytesRead -gt 0) {
-            $fileStream.Write($buffer, 0, $bytesRead)
-            $totalBytesRead += $bytesRead
-            $bytesRead = $responseStream.Read($buffer, 0, $buffer.Length)
-            if ($fileSizeBytes -gt 0) {
-                $percentComplete = [math]::Round(($totalBytesRead / $fileSizeBytes) * 100, 2)
-                Write-Progress -Activity "Downloading Files" `
-                               -Status "Downloading $file ($currentFile of $totalFiles) - $percentComplete% completed" `
-                               -PercentComplete $percentComplete
+            if ($fileSizeBytes -eq $null) {
+                $fileSize = "Unknown"
+            } else {
+                $fileSize = [math]::Round($fileSizeBytes / 1MB, 2)
             }
-        }
+			
+           Write-Host "" 
+          #Write-Host "Downloading $file ($fileSize MB)..." -ForegroundColor Yellow
+		   Write-Host "" 
 
-        $fileStream.Close()
-        $responseStream.Close()
-        $webResponse.Close()
+            # Start downloading the file and display progress
+            $request = [System.Net.HttpWebRequest]::Create($url)
+            $webResponse = $request.GetResponse()
+            $responseStream = $webResponse.GetResponseStream()
+
+            $fileStream = New-Object System.IO.FileStream($destinationPath, [System.IO.FileMode]::Create)
+            $buffer = New-Object byte[] 4096
+            [long]$totalBytesRead = 0
+            [long]$bytesRead = 0
+
+            $finalBarCount = 0
+
+            do {
+                $bytesRead = $responseStream.Read($buffer, 0, $buffer.Length)
+                $fileStream.Write($buffer, 0, $bytesRead)
+                $totalBytesRead += $bytesRead
+                $totalMB = $totalBytesRead / 1MB
+                
+                if ($fileSizeBytes -gt 0) {
+                    Show-Progress -TotalValue $fileSizeMB -CurrentValue $totalMB -ProgressText "Downloading $file" -ValueSuffix "MB"
+                }
+                
+                if ($totalBytesRead -eq $fileSizeBytes -and $bytesRead -eq 0 -and $finalBarCount -eq 0) {
+                    Show-Progress -TotalValue $fileSizeMB -CurrentValue $totalMB -ProgressText "Downloading $file" -ValueSuffix "MB" -Complete
+                    $finalBarCount++
+                }
+            } while ($bytesRead -gt 0)
+
+            $fileStream.Close()
+            $responseStream.Close()
+            $webResponse.Close()
+            $ErrorActionPreference = $storeEAP
+            [GC]::Collect()
+        }
+        catch {
+            $ExeptionMsg = $_.Exception.Message
+            Write-Host "Download breaks with error : $ExeptionMsg"
+        }
     }
 }
 
+
+Write-Host ""
+Write-Host "Downloading platform tools..." -ForegroundColor Cyan
+Download-Files -files $platformTools -destinationDir $adbDir
+Write-Host ""
+Write-Host ""
+Write-Host "Extracting platform tools..." -ForegroundColor Green
+Expand-Archive -Path $platformToolsZip -DestinationPath $adbDir -Force
+Remove-Item -Path $platformToolsZip -Force
+$platformToolsDir = Join-Path $adbDir "platform-tools"
+Write-Host ""
+
+
 # Download installer
+Write-Host ""
 Write-Host ""
 Write-Host "Downloading Tool" -ForegroundColor Cyan
 Download-Files -files $filesToDownload -destinationDir $wonDeployerDir
 
 # Update PATH environment variable
+Write-Host ""
+Write-Host ""
 Write-Host ""
 $currentPath = [Environment]::GetEnvironmentVariable("PATH", "User") -split ";"
 $pathsToAdd = @($wonDeployerDir, $platformToolsDir)
@@ -109,16 +184,23 @@ foreach ($path in $pathsToAdd) {
     }
 }
 
+
 # Download additional files
 Write-Host ""
-Write-Host "Downloading minimal Additional Required Files" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "Downloading Additional Required Files" -ForegroundColor Cyan
 Download-Files -files $requiredFilesDownload -destinationDir $wonFilesDir
+
+Write-Host ""
+Write-Host ""
+Write-Host "Download complete." -ForegroundColor Green
+
 
 Write-Host ""
 Write-Host ""
 Write-Host "Please close this PowerShell/Terminal" -ForegroundColor Magenta
 Write-Host ""
-Write-Host "After reopening PowerShell/Terminal as Admin" -ForegroundColor Yellow
+Write-Host "After re-opening PowerShell/Terminal as Admin" -ForegroundColor Yellow
 Write-Host ""
 Write-Host -NoNewline "Type " -ForegroundColor Magenta
 Write-Host -NoNewline "won-deployer" -ForegroundColor Yellow
