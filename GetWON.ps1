@@ -7,7 +7,14 @@ $wonFilesDir = Join-Path $wonDeployerDir "files"
 foreach ($dir in @($adbDir, $wonDeployerDir, $wonFilesDir)) {
     if (-not (Test-Path $dir -PathType Container)) {
         Write-Host "Creating directory: $dir" -ForegroundColor Cyan
-        New-Item -Path $dir -ItemType Directory
+        
+        try {
+            # Attempt to create the directory
+			$null = New-Item -Path $dir -ItemType Directory -ErrorAction SilentlyContinue
+        } catch {
+            # Display the error message if directory creation fails
+            Write-Host "Error creating directory: $dir`n$($_.Exception.Message)" -ForegroundColor Red
+        }
     }
 }
 
@@ -187,7 +194,6 @@ foreach ($path in $pathsToAdd) {
 
 # Download additional files
 Write-Host ""
-Write-Host ""
 Write-Host "Downloading Additional Required Files" -ForegroundColor Cyan
 Download-Files -files $requiredFilesDownload -destinationDir $wonFilesDir
 
@@ -210,3 +216,4 @@ Write-Host " to run the tool" -ForegroundColor Magenta
 #Write-Host ""
 # Write-Host "Adding won-deployer.exe to Defender exclusion list just in case if defender detect it wrong by mistake..." -ForegroundColor Cyan
 Add-MpPreference -ExclusionPath $wonDeployerDir
+Write-Host ""
