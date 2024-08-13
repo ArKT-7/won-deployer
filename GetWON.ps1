@@ -25,13 +25,14 @@ $platformTools = @{
      "platform-tools.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/platform-tools.zip"
 }
 
-# Define the file to download for testing
+# Define the file to download
 $filesToDownload = @{
     "won-deployer.exe" = "https://pub-b90d2836b1d44c13ba332b578d80b42b.r2.dev/won_deployer.exe"
     "wimlib-imagex.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/wimlib-imagex.exe"
     "libwim-15.dll" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/libwim-15.dll"
 }
 
+# Define the additional file to download
 $requiredFilesDownload = @{
     "Toolbox.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Toolbox.zip"
     "sta.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/sta.zip"
