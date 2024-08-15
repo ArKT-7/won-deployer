@@ -25,9 +25,9 @@
 
 ### Notes:
 > [!NOTE]
-> First-time Installation: you can only Use MIUI or HyperOS for inatlling windows using WoN-deployer, later on you can flash any custom ROM after Windows Installation.
+> First-time Installation: you have to use only MIUI or HyperOS to install Windows with WoN-deployer. After that, you can flash any custom ROM.
 > 
-> Reinstallation (with repartitioning): same as First-time Installation
+> Reinstallation (with repartitioning): Same as first-time installation.
 > 
 > Reinstallation (without repartitioning): You can use any ROM.
 > 
