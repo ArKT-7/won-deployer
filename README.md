@@ -17,9 +17,6 @@
 ## Get Started
 
 - [Installation/run new](guide/English/won-deployer-install-en.md)
-- [Installation/run](guide/English/prepare-en.md)
-- [How to Install](guide/English/Installation.md)
-- [How to Run](guide/English/Use.md)
   
 - [Official Guide](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5)
 
