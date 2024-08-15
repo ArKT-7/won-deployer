@@ -1,5 +1,4 @@
-<img align="right" src="./assets/Won-nabu-bg.png" width="300" alt="Windows Running On A Xiaomi Pad 5">
-
+<a <img align="right" src="./assets/Won-nabu-bg.png" width="300" alt="Windows Running On A Xiaomi Pad 5"></a>
 
 # Running Windows on the Xiaomi Pad 5
 ## Try out my new tool for automatically installing Windows on Nabu—it's currently in beta. I’d love your feedback on any issues or ideas for new features. Share your thoughts with me via the Telegram link below."
