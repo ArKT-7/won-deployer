@@ -2,7 +2,7 @@
 
 
 # Running Windows on the Xiaomi Pad 5
-## This program is in beta stage for installing windows automatically on Nabu. please share any bug or suggestions for any extra feature, to my Telegram below.
+## Try out my new tool for automatically installing Windows on Nabu—it's currently in beta. I’d love your feedback on any issues or ideas for new features. Share your thoughts with me via the Telegram link below."
 [![Telegram](https://img.shields.io/badge/Chat-Telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://telegram.me/ArKT_7)
 [![Telegram](https://img.shields.io/badge/Chat-Telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/ArKT_7)
 
