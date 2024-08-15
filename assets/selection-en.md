@@ -15,6 +15,11 @@
 
 <table>
   <tr>
+    <td align="center">- Easy and quick</td>
+    <td align="center">- Easy and quick</td>
+    <td align="center">- Harder and longer</td>
+  </tr>
+  <tr>
     <td align="center">
       <a href="nopc-en.md">
         <img src="https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/blob/main/guide/WinInstaller.png" width="280">
