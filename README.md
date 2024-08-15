@@ -2,7 +2,7 @@
 
 
 # Running Windows on the Xiaomi Pad 5
-## This program is in dev stage and this program will get updated soon with new features. till now please share any bug or suggestions for any extra feature, to my Telegram below.
+## This program is in beta stage for installing windows automatically on Nabu. please share any bug or suggestions for any extra feature, to my Telegram below.
 - [@arkt_7](https://t.me/ArKT_7) - My Telegram ([here](https://telegram.me/ArKT_7))
 
 ## ⚠️ Warning
@@ -14,6 +14,7 @@ This project is in an early stage, all the files here have been contributed by o
 
 ## Get Started
 
+- [Installation/run new](guide/English/won-deployer-install-en.md)
 - [Installation/run](guide/English/prepare-en.md)
 - [How to Install](guide/English/Installation.md)
 - [How to Run](guide/English/Use.md)
