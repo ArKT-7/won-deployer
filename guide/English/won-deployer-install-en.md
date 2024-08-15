@@ -113,7 +113,7 @@ won-deployer
    won-deployer --debug
    ```
 
-## 3. Dualboot setup - for booting android to windows
+## 3. Dualboot setup
 
 ### Prerequisites
 
