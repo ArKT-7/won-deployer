@@ -120,9 +120,9 @@ won-deployer
 - [```WoA Helper app```](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA)
 
 ### Setup - Android
-- After completing inintial setup on android, restart once so `magisk` can auto install
-- Download and install the **WOA Helper** app, then open it and grant it root access.
-- Download the **UEFI image** and place it inside the folder named `UEFI` in your internal storage.
+- After completing inintial setup on android, restart once so `**magisk**` can auto install
+- Download and install the `**WOA Helper**` app, then open it and grant it root access.
+- Download the `**UEFI image**` and place it inside the folder named `UEFI` in your internal storage.
 - Open the WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
 
 ### Setup - Windows
