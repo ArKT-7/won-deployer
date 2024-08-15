@@ -33,6 +33,8 @@
 > 
 > If you need any help, please contact us in [Telegram chat](https://t.me/nabuwoa)
 
+> [!NOTE]
+> It’s recommended to flash stock MIUI or HyperOS for the First time install.
 
 > [!Warning]
 > All your data will be erased! Back up now if needed.
