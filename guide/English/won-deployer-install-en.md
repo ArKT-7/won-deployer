@@ -141,7 +141,7 @@ won-deployer
 
 ### Visual Guide
 
-- Here’s a visual method for installing and verifying the correct installation of the deployer:
+- Here’s a visual method for installing and verifying the correct installation of Won-Deployer:
 
 <img align="left" src="../../assets/tool-insatllation1.gif" width="720" alt="Installation Guide">
 
