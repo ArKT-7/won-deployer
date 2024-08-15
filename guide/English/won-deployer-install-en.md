@@ -66,8 +66,8 @@ won-deployer -h
 > If you installed WoN Deployer properly, it will give you information about the app. If an error appears, restart the installation.
 
 
-
-## How to insatll/re-install windows on Nabu 
+<img align="right" src="../../assets/Won-nabu-bg.png" width="200" alt="Windows Running On A Xiaomi Pad 5">
+# How to insatll/re-install windows on Nabu 
 
 ### Reboot to fastboot mode 
 - Boot your NABU into **fastboot** mode by holding down the **`volume down`** + **`power`** buttons, or by running `adb reboot bootloader` while booted into Android.
@@ -79,7 +79,7 @@ won-deployer -h
 ```shell
 won-deployer
 ```
-<img align="right" src="../../assets/Won-nabu-bg.png" width="200" alt="Windows Running On A Xiaomi Pad 5">
+
 ### Selecting the Windows image
 - **Enter Windows ESD or WIM file path and select edition**
 > For Windows 10, press and hold  `shift ` + `right mouse button` to copy the path of the Windows image.
