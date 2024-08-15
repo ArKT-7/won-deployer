@@ -103,9 +103,9 @@ won-deployer
 > If you faced any error please run the below command and share the screenshot to [@ArKT_7](https://telegram.me/ArKT_7) or ask for help in the [Offcial Telegram Group](https://telegram.me/nabuwoa)
 ### re-run program with detailed log output (in case of error only)
 
-   1. Close the Terminal/PowerShell you have open earlier
+   1. Close the `Terminal/PowerShell` you have open earlier
 
-   2. Open Terminal/PowerShell as an Administrator again and run the following command:
+   2. Open `Terminal/PowerShell` as an Administrator again and run the following command:
 
    ```shell
    won-deployer --debug
