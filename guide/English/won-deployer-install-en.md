@@ -95,7 +95,7 @@ won-deployer
 - Copy the path of your nabu-drivers.zip file and paste it here.
 **`Enter the path of the driver ZIP file (Copy as path) ::`**
 
-### Follow the on-screen Instruction**
+### Next, Follow the on-screen Instruction
 
    - **`Good Luck`**.
 
