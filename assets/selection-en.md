@@ -10,7 +10,6 @@
 > [!Warning]
 > All your data will be erased! Back up now if needed.
 
----
 ## There are three methods to install Windows:
 
 | **Install Windows without a PC (wininstaller)**                                                                       | **Install Windows using automated scripts (WoN-deployer)**                                                 | **Install Windows Manually yourself**                                                                          |
