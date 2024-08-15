@@ -143,7 +143,7 @@ won-deployer
 
 - Here’s a visual method for installing and verifying the correct installation of Won-Deployer:
 
-<img align="left" src="../../assets/tool-insatllation1.gif" width="720" alt="Installation Guide">
+<img align="left" src="https://github.com/ArKT-7/won-deployer/blob/main/assets/tool-insatllation1.gif" width="720" alt="Installation Guide">
 
 
 
