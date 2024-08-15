@@ -83,7 +83,7 @@ won-deployer
 
 ### Selecting the Windows image
 - **Enter Windows ESD or WIM file path and select edition**
-> For Windows 10, press and hold  `shift ` + `right mouse button` to copy the path of the Windows image.
+> For Windows 10, press and hold  `shift ` + `right mouse button` to show 'copy as path' option.
 - Copy the path of your Windows ESD/WIM file and paste it here.
 **`Enter the path of Windows ESD (Copy as path) ::`**
 - Enter the index number of which edition of Windows you want to Install.
