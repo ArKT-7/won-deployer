@@ -55,9 +55,9 @@ powershell.exe -C "irm https://raw.githubusercontent.com/arkt-7/won-deployer/mai
 
 **Checking if WoN Deployer was installed properly**
 
-   1. Close the **`PowerShell/Terminal`** you have opened earlier
+   1. Close the **`Terminal/PowerShell`** you have opened earlier
 
-   2. Open **`PowerShell/Terminal`** as an Administrator again and run the following command:
+   2. Open **`Terminal/PowerShell`** as an Administrator again and run the following command:
 
 ```shell
 won-deployer -h
@@ -70,7 +70,7 @@ won-deployer -h
 - Boot your NABU into **fastboot** mode by holding down the **`volume down`** + **`power`** buttons, or by running `adb reboot bootloader` while booted into Android.
 
 ### Run the WoN Deployer
-- Open **`PowerShell`** or **`terminal`** as an Administrator.
+- Open **`Terminal`** or **`PowerShell`** as an Administrator.
 - Type **`won-deployer`** in the window and follow the on-screen instructions.
   
 ```shell
@@ -99,9 +99,9 @@ won-deployer
 > If you faced any error please run the below command and share the screenshot to [@ArKT_7](https://telegram.me/ArKT_7) or ask for help in the [Offcial Telegram Group](https://telegram.me/nabuwoa)
 ### re-run program with detailed log output
 
-   1. Close the PowerShell/Terminal you have open earlier
+   1. Close the Terminal/PowerShell you have open earlier
 
-   2. Open PowerShell/Terminal as an Administrator again and run the following command:
+   2. Open Terminal/PowerShell as an Administrator again and run the following command:
 
    ```shell
    won-deployer --debug
