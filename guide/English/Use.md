@@ -3,9 +3,9 @@
 <img align="right" src="../../assets/Won-bg.png" width="425" alt="Windows Running On A Xiaomi Pad 5">
 
 # Running Windows on the Xiaomi Pad 5
----
+
 ## How to run
----
+
 ### Prerequisites
 - A functioning brain (seriously, you'll need to think!)
 - [```ADB drivers installed on your PC```](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
