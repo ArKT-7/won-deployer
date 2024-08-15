@@ -25,9 +25,7 @@
 
 ### Notes:
 > [!NOTE]
-> First-time Installation: only Use MIUI or HyperOS.
-> 
-> After Initial Installation: You can switch to any custom ROM.
+> First-time Installation: you have to only Use MIUI or HyperOS, after Initial Installation you can switch to any custom ROM.
 > 
 > Reinstallation (without repartitioning): You can use any ROM.
 > 
