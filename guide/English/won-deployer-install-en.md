@@ -1,6 +1,6 @@
 # Running Windows on the Xiaomi Pad 5
 
-<p align="center"><a href="README.md"><img src="https://raw.githubusercontent.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/main/nabu.png" width="425"></a></p>
+<p align="left"><a href="README.md"><img src="https://raw.githubusercontent.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/main/nabu.png" width="425"></a></p>
 
 ## Installation using WoN-deployer
 
