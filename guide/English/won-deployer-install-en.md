@@ -70,7 +70,7 @@ won-deployer -h
 
 ## 2. How to install/re-install windows on Nabu 
 
-| <a href="won-deployer-install-en.md"><img src="https://github.com/ArKT-7/won-deployer/blob/main/assets/Won-nabu-bg.png" width="280"></a> |
+<a href="won-deployer-install-en.md"><img src="https://github.com/ArKT-7/won-deployer/blob/main/assets/Won-nabu-bg.png" width="280"></a>
 
 ### Reboot to fastboot mode 
 - Boot your NABU into **fastboot** mode by holding down the **`volume down`** + **`power`** buttons, or by running `adb reboot bootloader` while booted into Android.
