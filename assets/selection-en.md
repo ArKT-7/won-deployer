@@ -15,28 +15,25 @@
 
 <table>
   <tr>
-    <td align="center">- Easy and quick</td>
-    <td align="center">- Easy and quick</td>
-    <td align="center">- Harder and longer</td>
+    <td align="center">- Install Windows without a PC (wininstaller)</td>
+    <td align="center">- Install Windows using automated scripts (WoN-deployer)</td>
+    <td align="center">- Install Windows Manually yourself</td>
   </tr>
   <tr>
     <td align="center">
       <a href="nopc-en.md">
         <img src="https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/blob/main/guide/WinInstaller.png" width="280">
       </a>
-      <p>Install Windows without a PC (wininstaller)</p>
     </td>
     <td align="center">
       <a href="won-deployer-install-en.md">
         <img src="https://github.com/ArKT-7/won-deployer/blob/main/assets/Won-nabu-bg.png" width="320">
       </a>
-      <p>Install Windows using automated scripts (WoN-deployer)</p>
     </td>
     <td align="center">
       <a href="1-partition-en.md">
         <img src="https://github.com/WOA-Project/SurfaceDuo-Guides/assets/3755345/9791796b-406b-4f0d-8aad-20fff18741da" width="280">
       </a>
-      <p>Install Windows Manually yourself</p>
     </td>
   </tr>
   <tr>
