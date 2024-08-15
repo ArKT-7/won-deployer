@@ -79,7 +79,7 @@ won-deployer -h
 ```shell
 won-deployer
 ```
-
+<img align="right" src="../../assets/Won-nabu-bg.png" width="200" alt="Windows Running On A Xiaomi Pad 5">
 ### Selecting the Windows image
 - **Enter Windows ESD or WIM file path and select edition**
 > For Windows 10, press and hold  `shift ` + `right mouse button` to copy the path of the Windows image.
