@@ -15,7 +15,18 @@
 
 | **Coming Soon: Install Windows without a PC (wininstaller)**                                                                       | **Install Windows using automated scripts (WoN-deployer)**                                                 | **Install Windows Manually yourself**                                                                          |
 |----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| <a href="nopc-en.md"><img src="https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/blob/main/guide/WinInstaller.png" width="280"></a> | <a href="won-deployer-install-en.md"><img src="https://github.com/ArKT-7/won-deployer/blob/main/assets/Won-nabu-bg.png" width="260"></a> | <a href="1-partition-en.md"><img src="Link" width="280"></a> |
+| <div style="display: flex; justify-content: center; align-items: center;">
+  <a href="nopc-en.md">
+    <img src="https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/blob/main/guide/WinInstaller.png" width="280">
+  </a>
+  <a href="won-deployer-install-en.md">
+    <img src="https://github.com/ArKT-7/won-deployer/blob/main/assets/Won-nabu-bg.png" width="260">
+  </a>
+  <a href="1-partition-en.md">
+    <img src="Link" width="280">
+  </a>
+</div>
+ |
 | - Easy and quick                         | - Easy and quick                         | - Harder and longer                      |
 | - No PC needed                           | - Requires a PC                         | - Requires a PC                          |
 | - - Highly customizable in regards to OS version, language, edition and storage allocation | - Highly customizable in regards to OS version, language, edition and storage allocation | - Highly customizable in regards to OS version, language, edition and storage allocation |
