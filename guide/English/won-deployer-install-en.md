@@ -137,6 +137,7 @@ won-deployer
 #### Booting to Windows
 - Press **QUICKBOOT TO WINDOWS** inside the app, or use the newly created toggle in your quick settings panel
 
+## Finished!
 
 ### Visual Guide
 
@@ -145,5 +146,4 @@ won-deployer
 <img align="left" src="../../assets/tool-insatllation1.gif" width="720" alt="Installation Guide">
 
 
-## Finished!
 
