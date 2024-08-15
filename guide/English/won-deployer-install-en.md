@@ -65,6 +65,7 @@ won-deployer -h
 > [!NOTE]
 > If you installed WoN Deployer properly, it will give you information about the app. If an error appears, restart the installation.
 
+### How to insatll windows on Nabu 
 ### Reboot to fastboot mode 
 - Boot your NABU into **fastboot** mode by holding down the **`volume down`** + **`power`** buttons, or by running `adb reboot bootloader` while booted into Android.
 
