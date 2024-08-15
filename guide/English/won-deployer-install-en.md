@@ -132,7 +132,7 @@ won-deployer
 > If this is your first time booting Windows and you wish to skip the Microsoft Account login, press the **I don't have internet** button in the WiFi page, then when prompted, press the **Continue with limited setup** button.
 
 #### Booting to Android
-- Run the new shortcut on your desktop (you can also pin it to your start menu / taskbar for ease of access)
+- Run the new shortcut named `Android` on your desktop (you can also pin it to your start menu / taskbar for ease of access)
 
 #### Booting to Windows
 - Press **QUICKBOOT TO WINDOWS** inside the app, or use the newly created toggle in your quick settings panel
