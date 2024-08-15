@@ -15,6 +15,14 @@
 
 - ```Unlocked bootloader``` (If your bootloader is locked and you don't know how to unlock it use [this](unlock-bootloader-en.md) guide)
 
+---
+**Prefered Use**
+- [```LATEST WINDOWS FILE DIRECT LINK```](https://drive.google.com/file/d/1zQgsYW5SBZh4ScErLhCTAujjo2loBieV/view?usp=sharing) (Version:  ```11``` Build:  ```22631.3958``` Architecture:  ```ARM64``` Edition:  ```HOME and PRO``` Language:  ```en-us```)
+- [```Drivers```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/Drivers/nabu-drivers.zip)
+> [!NOTE]
+> It’s recommended to flash stock MIUI or HyperOS for the First time install.
+---
+
 ### Notes:
 > [!NOTE]
 > **First-time Installation :** you have to use only MIUI or HyperOS to install Windows using WoN-deployer. After that, you can flash any custom ROM.
@@ -130,3 +138,4 @@ won-deployer
 - Press **QUICKBOOT TO WINDOWS** inside the app, or use the newly created toggle in your quick settings panel
   
 ## Finished!
+
