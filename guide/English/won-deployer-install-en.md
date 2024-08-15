@@ -67,6 +67,7 @@ won-deployer -h
 
 
 <img align="right" src="../../assets/Won-nabu-bg.png" width="200" alt="Windows Running On A Xiaomi Pad 5">
+
 # How to insatll/re-install windows on Nabu 
 
 ### Reboot to fastboot mode 
