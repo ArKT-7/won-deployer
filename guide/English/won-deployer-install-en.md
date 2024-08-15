@@ -68,7 +68,7 @@ won-deployer -h
 > If you installed WoN Deployer properly, it will give you information about the app. If an error appears, restart the installation.
 
 
-<img align="right" src="../../assets/Won-nabu-bg.png" width="300" alt="Windows Running On A Xiaomi Pad 5">
+<img align="right" src="https://github.com/ArKT-7/won-deployer/blob/main/assets/Won-nabu-bg.png" width="300" alt="Windows Running On A Xiaomi Pad 5">
 
 ## 2. How to install/re-install windows on Nabu 
 
