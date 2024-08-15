@@ -68,7 +68,7 @@ won-deployer -h
 
 <img align="right" src="../../assets/Won-nabu-bg.png" width="300" alt="Windows Running On A Xiaomi Pad 5">
 
-## 2. How to insatll/re-install windows on Nabu 
+## 2. How to install/re-install windows on Nabu 
 
 ### Reboot to fastboot mode 
 - Boot your NABU into **fastboot** mode by holding down the **`volume down`** + **`power`** buttons, or by running `adb reboot bootloader` while booted into Android.
