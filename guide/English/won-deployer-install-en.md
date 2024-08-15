@@ -1,4 +1,4 @@
-<img align="right" src="https://raw.githubusercontent.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/main/nabu.png" width="425" alt="Windows Running On A Xiaomi Pad 5">
+<img align="right" src="../../assets/nabu.png"  width="425" alt="Windows Running On A Xiaomi Pad 5">
 
 # Running Windows on the Xiaomi Pad 5
 
@@ -65,6 +65,7 @@ won-deployer -h
 > [!NOTE]
 > If you installed WoN Deployer properly, it will give you information about the app. If an error appears, restart the installation.
 
+<img align="right" src="../../assets/Won-nabu-bg.png" width="425" alt="Windows Running On A Xiaomi Pad 5">
 ## How to insatll/re-install windows on Nabu 
 ### Reboot to fastboot mode 
 - Boot your NABU into **fastboot** mode by holding down the **`volume down`** + **`power`** buttons, or by running `adb reboot bootloader` while booted into Android.
