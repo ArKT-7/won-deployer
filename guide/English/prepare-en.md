@@ -110,7 +110,7 @@ won-deployer
 - [```UEFI image```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/UEFI/uefi-v3.img)
   
 ### Setup - Android
-- Download and install the `magisk` app.
+- Download and install the `Magisk` app.
 - Download and install the `WOA Helper` app, then open it and grant it root access.
 - Download the `UEFI image` and place it inside the folder named `UEFI` in your internal storage.
 - Open the WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
