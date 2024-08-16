@@ -23,16 +23,6 @@
 > It’s recommended to flash stock MIUI or HyperOS for the First time install.
 ---
 
-### Notes:
-> [!NOTE]
-> **First-time Installation :** you have to use only MIUI or HyperOS to install Windows using WoN-deployer. After that, you can flash any custom ROM.
-> 
-> **Reinstallation (with repartitioning) :** Same as first-time installation - need to have on MIUI or HyperOS.
-> 
-> **Reinstallation (without repartitioning) :** You can use any ROM.
-> 
-> If you need any help, please contact us in [Telegram chat](https://t.me/nabuwoa)
-
 > [!NOTE]
 > It’s recommended to flash stock MIUI or HyperOS for the First time install.
 
