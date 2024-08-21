@@ -2,7 +2,7 @@
     "magisk": {
         "version": "0495468d",
         "versionCode": "27006",
-        "link": "https://github.com/topjohnwu/Magisk/releases/download/canary-27006/app-release.apk",
+        "link": "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/app-debug.apk",
         "note": "https://github.com/topjohnwu/Magisk/releases/download/canary-27006/notes.md"
     }
 }
