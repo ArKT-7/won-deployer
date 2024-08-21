@@ -1,4 +1,8 @@
 {
-    "latest_version": "1.4.8"
+    "magisk": {
+        "version": "0495468d",
+        "versionCode": "27006",
+        "link": "https://github.com/topjohnwu/Magisk/releases/download/canary-27006/app-release.apk",
+        "note": "https://github.com/topjohnwu/Magisk/releases/download/canary-27006/notes.md"
+    }
 }
-
