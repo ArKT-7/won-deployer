@@ -117,8 +117,6 @@ won-deployer
 <details>
 <summary><b><strong>If you faced any issue with the above method, then you can do dualboot setup from here:</strong></b></summary>
 
- ## 3. Dualboot setup manually
-
 ### Prerequisites
 - [```Magisk app```](https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_canary.apk)
 
@@ -126,7 +124,7 @@ won-deployer
 
 - [```UEFI image```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/UEFI/uefi-v3.img)
   
-### Setup - Android
+### Setup - Android Manually
 - Download and install the `Magisk` app.
 - Download and install the `WOA Helper` app, then open it and grant it root access.
 - Download the `UEFI image` and place it inside the folder named `UEFI` in your internal storage.
