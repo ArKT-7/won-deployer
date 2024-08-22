@@ -107,9 +107,9 @@ won-deployer
   
 ### Setup - Android 
 - After completeing android setup restart your nabu once.
-- Open `magisk` dummy app which is pre-insatlled.
+- Open `Magisk` dummy app which is pre-insatlled.
 - Click ok and then install the new `Won deployer setup` app.
-- now close `magisk` dummy app and make sure to clear it from ram/recents.
+- now close `Magisk` dummy app and make sure to clear it from ram/recents.
 - Open new `Won deployer setup` app and insatll both apps from there and UEFI image.
 - now close everything and open `WOA Helper` app, then grant it root access.
 - Open the WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
