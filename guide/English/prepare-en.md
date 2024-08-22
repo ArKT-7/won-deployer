@@ -108,11 +108,16 @@ won-deployer
 ### Setup - Android 
 - After completeing android setup restart your nabu once
 - Open `WON_SETUP` app which is pre-insatlled 
-- Click ok and then insatll the new `Won deployer setup` app
+- Click ok and then install the new `Won deployer setup` app
 - now close `WON_SETUP` and make sure to clear it from ram/recents apps
 - Open new `Won deployer setup` app and insatll both apps and UEFI image
 - now close everything and open `WOA Helper` app, then grant it root access.
 - Open the WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
+
+> [!IMPORTANT]
+> If you faced any issue with this method then you can do setup dualboot manually from here [Dualboot](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/blob/main/guide/English/4-dualboot-en.md)
+
+
 
 ### Setup - Windows
 > [!Tip]
