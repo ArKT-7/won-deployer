@@ -106,11 +106,11 @@ won-deployer
 - ```Internet connection (it is required as it will download files!)```
   
 ### Setup - Android 
-- After completeing android setup restart your nabu once
-- Open `WON_SETUP` app which is pre-insatlled 
-- Click ok and then install the new `Won deployer setup` app
-- now close `WON_SETUP` and make sure to clear it from ram/recents apps
-- Open new `Won deployer setup` app and insatll both apps and UEFI image
+- After completeing android setup restart your nabu once.
+- Open `magisk` dummy app which is pre-insatlled.
+- Click ok and then install the new `Won deployer setup` app.
+- now close `magisk` dummy app and make sure to clear it from ram/recents.
+- Open new `Won deployer setup` app and insatll both apps from there and UEFI image.
 - now close everything and open `WOA Helper` app, then grant it root access.
 - Open the WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
 
