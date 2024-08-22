@@ -103,7 +103,7 @@ won-deployer
 ## 3. Dualboot setup
 
 ### Prerequisites
-- ```Internet connected(it is required as it downlaod files!)```
+- ```Internet connection (it is required as it will download files!)```
   
 ### Setup - Android 
 - After completeing android setup restart your nabu once
