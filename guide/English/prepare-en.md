@@ -115,11 +115,22 @@ won-deployer
 - Open the WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
 
 <details>
-<summary><b><strong>If you faced any issue with this method then you can do setup dualboot manually from here:</strong></b></summary>
+<summary><b><strong>If you faced any issue with the above method, then you can do dualboot setup from here:</strong></b></summary>
 
- **```3. Bind Mi Account:```**
-   - Go to Settings > Additional settings > Developer options > Mi Unlock status.
-   - Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."
+ ## 3. Dualboot setup manually
+
+### Prerequisites
+- [```Magisk app```](https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_canary.apk)
+
+- [```WoA Helper app```](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA)
+
+- [```UEFI image```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/UEFI/uefi-v3.img)
+  
+### Setup - Android
+- Download and install the `Magisk` app.
+- Download and install the `WOA Helper` app, then open it and grant it root access.
+- Download the `UEFI image` and place it inside the folder named `UEFI` in your internal storage.
+- Open the WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
 
   </summary>
 </details>
