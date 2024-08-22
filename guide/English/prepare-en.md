@@ -114,8 +114,15 @@ won-deployer
 - now close everything and open `WOA Helper` app, then grant it root access.
 - Open the WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
 
-> [!IMPORTANT]
-> If you faced any issue with this method then you can do setup dualboot manually from here [Dualboot](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/blob/main/guide/English/4-dualboot-en.md)
+<details>
+<summary><b><strong>If you faced any issue with this method then you can do setup dualboot manually from here:</strong></b></summary>
+
+ **```3. Bind Mi Account:```**
+   - Go to Settings > Additional settings > Developer options > Mi Unlock status.
+   - Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."
+
+  </summary>
+</details>
 
 
 
