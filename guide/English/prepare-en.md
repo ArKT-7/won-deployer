@@ -103,16 +103,15 @@ won-deployer
 ## 3. Dualboot setup
 
 ### Prerequisites
-- [```Magisk app```](https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_stable.apk)
-
-- [```WoA Helper app```](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA)
-
-- [```UEFI image```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/UEFI/uefi-v3.img)
+- ```Internet connected(it is required as it downlaod files!)```
   
-### Setup - Android
-- Download and install the `Magisk` app.
-- Download and install the `WOA Helper` app, then open it and grant it root access.
-- Download the `UEFI image` and place it inside the folder named `UEFI` in your internal storage.
+### Setup - Android 
+- After completeing android setup restart your nabu once
+- Open `WON_SETUP` app which is pre-insatlled 
+- Click ok and then insatll the new `Won deployer setup` app
+- now close `WON_SETUP` and make sure to clear it from ram/recents apps
+- Open new `Won deployer setup` app and insatll both apps and UEFI image
+- now close everything and open `WOA Helper` app, then grant it root access.
 - Open the WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
 
 ### Setup - Windows
