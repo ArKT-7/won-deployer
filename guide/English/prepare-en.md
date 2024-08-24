@@ -17,7 +17,7 @@
 
 ---
 **Prefered Use**
-- [```LATEST WINDOWS FILE DIRECT LINK```](https://drive.google.com/file/d/1zQgsYW5SBZh4ScErLhCTAujjo2loBieV/view?usp=sharing) (Version:  ```11``` Build:  ```22631.3958``` Architecture:  ```ARM64``` Edition:  ```HOME and PRO``` Language:  ```en-us```)
+- [```LATEST WINDOWS FILE DIRECT LINK```](https://drive.google.com/file/d/1iRYG9T9ZRBC0kNL4lzZzoVb-14C7AvMs/view?usp=sharing) (Version:  ```11``` Build:  ```22631.4108``` Architecture:  ```ARM64``` Edition:  ```HOME and PRO``` Language:  ```en-us```)
 - [```Drivers```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/Drivers/nabu-drivers.zip)
 > [!NOTE]
 > It’s better to flash stock MIUI or HyperOS for the First time install.
