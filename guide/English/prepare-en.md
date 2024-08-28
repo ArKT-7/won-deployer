@@ -24,7 +24,7 @@
 > All your data will be erased! Back up now if needed.
 >
 > **PLEASE DON'T USE ANY VIDEO GUIDES ON YOUTUBE OR ANY OTHER PLATFORM!**
-
+---
 ### 1. Get WoN Deployer (Windows on Nabu Installer)
 - Open **`Terminal/PowerShell`** as an Administrator and run the following command:
 
@@ -51,7 +51,7 @@ won-deployer -h
 > [!NOTE]
 > If you installed WoN Deployer properly, it will give you information about the app. If an error appears, restart the installation.
 
-
+---
 ## 2. How to install/re-install windows on Nabu 
 
 <a href="prepare-en.md"><img src="https://github.com/ArKT-7/won-deployer/blob/main/assets/Won-nabu-bg.png" width="300"></a>
@@ -96,7 +96,7 @@ won-deployer
    ```shell
    won-deployer --debug
    ```
-
+---
 ## 3. Dualboot setup
 
 ### Prerequisites
@@ -143,7 +143,7 @@ won-deployer
 - Press **QUICKBOOT TO WINDOWS** inside the app, or use the newly created toggle in your quick settings panel
 
 ## Finished!
-
+---
 ### Visual Guide
 
 - Here’s a visual method for installing and verifying the correct installation of Won-Deployer:
