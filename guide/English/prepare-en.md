@@ -16,9 +16,6 @@
 - ```Unlocked bootloader``` (If your bootloader is locked and you don't know how to unlock it use [this](unlock-bootloader-en.md) guide)
 
 ---
-**Prefered Use**
-- [```LATEST WINDOWS FILE DIRECT LINK```](https://drive.google.com/file/d/1ZYXUUeq-DaLcxZxy8Q4SbNIQHwVUiCmj/view) (Version:  ```11``` Build:  ```22631.4108``` Architecture:  ```ARM64``` Edition:  ```HOME and PRO``` Language:  ```en-us```)
-- [```Drivers```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/Drivers/nabu-drivers.zip)
 > [!NOTE]
 > It’s better to flash stock MIUI or HyperOS for the First time install.
 ---
