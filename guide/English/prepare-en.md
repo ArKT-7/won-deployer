@@ -18,6 +18,8 @@
 ---
 > [!NOTE]
 > It’s better to flash stock MIUI or HyperOS for the First time install.
+>
+> If you are Re-Installing windows, then make sure you first boot to android then after boot to fastboot and then only continue installation
 ---
 
 > [!Warning]
