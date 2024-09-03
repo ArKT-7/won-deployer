@@ -117,7 +117,7 @@ won-deployer
 <summary><b><strong>If you faced any issue with the above method, then you can do dualboot setup from here:</strong></b></summary>
 
 ### Prerequisites
-- [```Magisk app```](https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_canary.apk)
+- [```Magisk app```](https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_stable.apk)
 
 - [```WoA Helper app```](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA)
 
