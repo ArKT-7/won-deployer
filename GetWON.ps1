@@ -169,7 +169,7 @@ Write-Host ""
 Write-Host "Extracting platform tools..." -ForegroundColor Green
 Expand-Archive -Path $platformToolsZip -DestinationPath $adbDir -Force
 Remove-Item -Path $platformToolsZip -Force
-$platformToolsDir = Join-Path $adbDir "platform-tools"
+$platformToolsDir = Join-Path $adbDir "platform-tools\"
 Write-Host ""
 
 
