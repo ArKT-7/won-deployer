@@ -2,7 +2,7 @@
 $adbDir = Join-Path $env:SystemDrive "adb"
 $wonDeployerDir = Join-Path $env:USERPROFILE ".arkt"
 $wonFilesDir = Join-Path $wonDeployerDir "files"
-$dismbinDir = Join-Path $wonDeployerDir "dism-bin"
+$dismbinDir = Join-Path $wonDeployerDir "dismbin"
 
 # Create directories if they don't exist
 foreach ($dir in @($adbDir, $wonDeployerDir, $wonFilesDir)) {
@@ -21,14 +21,14 @@ foreach ($dir in @($adbDir, $wonDeployerDir, $wonFilesDir)) {
 
 # Download platform tools
 $platformToolsZip = Join-Path $adbDir "platform-tools.zip"
-$dismbinZip = Join-Path $wonDeployerDir "dism-bin.zip"
+$dismbinZip = Join-Path $wonDeployerDir "dismbin.zip"
 
 $platformTools = @{
      "platform-tools.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/platform-tools.zip"
 }
 
-$dism-bin = @{
-     "dism-bin.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/dism-bin.zip"
+$dismbin = @{
+     "dismbin.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/dism-bin.zip"
 }
 
 # Define the file to download
@@ -180,7 +180,7 @@ Write-Host ""
 
 Write-Host ""
 Write-Host "Downloading dism-en..." -ForegroundColor Cyan
-Download-Files -files $dism-bin -destinationDir $wonDeployerDir
+Download-Files -files $dismbin -destinationDir $wonDeployerDir
 Write-Host ""
 Write-Host ""
 Write-Host "Extracting dism-en..." -ForegroundColor Green
