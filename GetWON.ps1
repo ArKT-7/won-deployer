@@ -186,7 +186,7 @@ Write-Host ""
 Write-Host "Extracting dism-en..." -ForegroundColor Green
 Expand-Archive -Path $dismbinZip -DestinationPath $dismbinDir -Force
 Remove-Item -Path $dismbinZip -Force
-$dismbinDir1 = Join-Path $wonDeployerDir "dismbin"
+$dismbinDir1 = Join-Path $wonDeployerDir "dismbin\"
 Write-Host ""
 
 
