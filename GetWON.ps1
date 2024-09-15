@@ -186,6 +186,7 @@ Write-Host ""
 Write-Host "Extracting dism-en..." -ForegroundColor Green
 Expand-Archive -Path $dismbinZip -DestinationPath $dismbinDir -Force
 Remove-Item -Path $dismbinZip -Force
+$dismbinDir1 = Join-Path $wonDeployerDir "dismbin"
 Write-Host ""
 
 
@@ -200,7 +201,7 @@ Write-Host ""
 Write-Host ""
 Write-Host ""
 $currentPath = [Environment]::GetEnvironmentVariable("PATH", "User") -split ";"
-$pathsToAdd = @($wonDeployerDir, $platformToolsDir, $dismbinDir)
+$pathsToAdd = @($wonDeployerDir, $platformToolsDir, $dismbinDir1)
 
 foreach ($path in $pathsToAdd) {
     if ($currentPath -notcontains $path) {
