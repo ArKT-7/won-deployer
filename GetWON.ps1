@@ -2,6 +2,7 @@
 $adbDir = Join-Path $env:SystemDrive "adb"
 $wonDeployerDir = Join-Path $env:USERPROFILE ".arkt"
 $wonFilesDir = Join-Path $wonDeployerDir "files"
+$dism-binDir = Join-Path $wonDeployerDir "dism-bin"
 
 # Create directories if they don't exist
 foreach ($dir in @($adbDir, $wonDeployerDir, $wonFilesDir)) {
@@ -20,9 +21,14 @@ foreach ($dir in @($adbDir, $wonDeployerDir, $wonFilesDir)) {
 
 # Download platform tools
 $platformToolsZip = Join-Path $adbDir "platform-tools.zip"
+$dism-binZip = Join-Path $wonDeployerDir "dism-bin.zip"
 
 $platformTools = @{
      "platform-tools.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/platform-tools.zip"
+}
+
+$dism-bin = @{
+     "dism-bin.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/dism-bin.zip"
 }
 
 # Define the file to download
@@ -172,6 +178,16 @@ Remove-Item -Path $platformToolsZip -Force
 $platformToolsDir = Join-Path $adbDir "platform-tools\"
 Write-Host ""
 
+Write-Host ""
+Write-Host "Downloading dism-en..." -ForegroundColor Cyan
+Download-Files -files $dism-bin -destinationDir $wonDeployerDir
+Write-Host ""
+Write-Host ""
+Write-Host "Extracting dism-en..." -ForegroundColor Green
+Expand-Archive -Path $dism-binZip -DestinationPath $dism-binDir -Force
+Remove-Item -Path $dism-binZip -Force
+Write-Host ""
+
 
 # Download installer
 Write-Host ""
@@ -184,7 +200,7 @@ Write-Host ""
 Write-Host ""
 Write-Host ""
 $currentPath = [Environment]::GetEnvironmentVariable("PATH", "User") -split ";"
-$pathsToAdd = @($wonDeployerDir, $platformToolsDir)
+$pathsToAdd = @($wonDeployerDir, $platformToolsDir, $dism-binDir)
 
 foreach ($path in $pathsToAdd) {
     if ($currentPath -notcontains $path) {
