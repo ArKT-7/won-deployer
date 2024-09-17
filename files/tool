@@ -2,13 +2,16 @@
 
 #!/bin/sh
 
-# Check if the script is running as root
-if [ "$(id -u)" -ne 0 ]; then
-    echo "Please run this script with root permissions (su)."
-    echo "type - su"
-    echo "then grant root if asked then the command"
-    exit 1
-fi
+# Define URLs and target paths
+URL_BUSYBOX="https://raw.githubusercontent.com/arkt-7/won-deployer/main/assets/busybox"
+URL_MKFS_FAT="https://raw.githubusercontent.com/arkt-7/won-deployer/main/assets/mkfs.fat"
+URL_MKFS_NTFS="https://raw.githubusercontent.com/arkt-7/won-deployer/main/assets/mkfs.ntfs"
+URL_MOUNT_NTFS="https://raw.githubusercontent.com/arkt-7/won-deployer/main/assets/mount.ntfs"
+
+TARGET_BUSYBOX="/data/local/tmp/busybox"
+TARGET_MKFS_FAT="/data/local/tmp/mkfs.fat"
+TARGET_MKFS_NTFS="/data/local/tmp/mkfs.ntfs"
+TARGET_MOUNT_NTFS="/data/local/tmp/mount.ntfs"
 
 # Check the device codename using getprop
 DEVICE_CODENAME=$(getprop ro.product.device)
@@ -16,7 +19,7 @@ DEVICE_CODENAME=$(getprop ro.product.device)
 if [ "$DEVICE_CODENAME" = "nabu" ]; then
     echo ""
     echo "WinInstaller for Xiaomi Pad 5 (nabu)"
-	echo "By ArKT, Telegram - '@ArKT_7', Github - 'ArKT-7'"
+    echo "By ArKT, Telegram - '@ArKT_7', Github - 'ArKT-7'"
     echo "Based on Kumar_Jy wininstaller"
 else
     echo ""
@@ -25,19 +28,29 @@ else
     exit 1
 fi
 
-# Function to copy BusyBox and other utilities to /data/local/tmp
-copy_and_set_permissions() {
-    local src_file=$1
+# Function to download and set permissions
+download_and_set_permissions() {
+    local url=$1
     local dest_file=$2
-    cp "$src_file" "$dest_file"
+    echo "Downloading $url to $dest_file..."
+    curl -L -o "$dest_file" "$url"
+    
+    if [ $? -ne 0 ]; then
+        echo "Failed to download $url. Exiting."
+        exit 1
+    fi
+
+    echo "Setting permissions for $dest_file..."
     chmod 777 "$dest_file"
 }
 
-# Copy BusyBox and other utilities to /data/local/tmp and set permissions
-copy_and_set_permissions /sdcard/bin/busybox /data/local/tmp/busybox
-copy_and_set_permissions /sdcard/bin/mkfs.fat /data/local/tmp/mkfs.fat
-copy_and_set_permissions /sdcard/bin/mkfs.ntfs /data/local/tmp/mkfs.ntfs
-copy_and_set_permissions /sdcard/bin/mount.ntfs /data/local/tmp/mount.ntfs
+# Download and set permissions for binaries
+download_and_set_permissions "$URL_BUSYBOX" "$TARGET_BUSYBOX"
+download_and_set_permissions "$URL_MKFS_FAT" "$TARGET_MKFS_FAT"
+download_and_set_permissions "$URL_MKFS_NTFS" "$TARGET_MKFS_NTFS"
+download_and_set_permissions "$URL_MOUNT_NTFS" "$TARGET_MOUNT_NTFS"
+
+echo "All binaries have been downloaded and permissions set."
 
 # Function to convert bytes to gigabytes and megabytes
 bytes_to_gb() {
