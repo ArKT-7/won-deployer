@@ -1,0 +1,299 @@
+#!/bin/sh
+
+# Check the device codename using getprop
+DEVICE_CODENAME=$(getprop ro.product.device)
+
+if [ "$DEVICE_CODENAME" = "nabu" ]; then
+    echo ""
+    echo "WinInstaller for Xiaomi Pad 5 (nabu)"
+	echo "By ArKT, Telegram - '@ArKT_7', Github - 'ArKT-7'"
+    echo "Based on Kumar_Jy wininstaller"
+else
+    echo ""
+    echo "This device is not supported yet. Please contact the developer on Telegram @ArKT_7"
+    echo ""
+    exit 1
+fi
+
+# Function to copy BusyBox and other utilities to /data/local/tmp
+copy_and_set_permissions() {
+    local src_file=$1
+    local dest_file=$2
+    cp "$src_file" "$dest_file"
+    chmod 777 "$dest_file"
+}
+
+# Copy BusyBox and other utilities to /data/local/tmp and set permissions
+copy_and_set_permissions /sdcard/bin/busybox /data/local/tmp/busybox
+copy_and_set_permissions /sdcard/bin/mkfs.fat /data/local/tmp/mkfs.fat
+copy_and_set_permissions /sdcard/bin/mkfs.ntfs /data/local/tmp/mkfs.ntfs
+copy_and_set_permissions /sdcard/bin/mount.ntfs /data/local/tmp/mount.ntfs
+
+# Function to convert bytes to gigabytes and megabytes
+bytes_to_gb() {
+    echo "scale=2; $1 / (1024 * 1024 * 1024)" | bc
+}
+
+bytes_to_mb() {
+    echo "scale=2; $1 / (1024 * 1024)" | bc
+}
+
+# Function to check if a partition exists
+partition_exists() {
+    [ -e "$1" ]
+}
+
+# Define partition paths
+part_win="/dev/block/by-name/win"
+part_esp="/dev/block/by-name/esp"
+part_userdata="/dev/block/by-name/userdata"
+
+# Check if partitions exist
+if ! partition_exists "$part_win"; then
+    echo "Windows Partition does not exist."
+    echo "Please do partitioning in modded recovery and re-run the script."
+    exit 1
+fi
+
+if ! partition_exists "$part_esp"; then
+    echo "ESP Partition does not exist."
+    echo "Please do re-partitioning in modded recovery and re-run the script."
+    exit 1
+fi
+
+# Get sizes in bytes
+size_win=$(/data/local/tmp/busybox blockdev --getsize64 "$part_win")
+size_esp=$(/data/local/tmp/busybox blockdev --getsize64 "$part_esp")
+size_userdata=$(/data/local/tmp/busybox blockdev --getsize64 "$part_userdata")
+
+# Convert sizes
+size_win_gb=$(bytes_to_gb $size_win)
+size_esp_mb=$(bytes_to_mb $size_esp)
+size_userdata_gb=$(bytes_to_gb $size_userdata)
+
+# Print sizes
+echo ""
+echo "Size of Windows Partition: $size_win_gb GB"
+echo "Size of ESP Partition: $size_esp_mb MB"
+echo "Size of Android partition: $size_userdata_gb GB"
+echo ""
+
+# Check partition sizes
+if [ $(echo "$size_esp_mb < 350" | bc) -eq 1 ]; then
+    echo "ESP partition is less than 350 MB."
+    echo "Please do re-partitioning in the modified recovery and re-run the script."
+    exit 1
+fi
+
+if [ $(echo "$size_win_gb < 20" | bc) -eq 1 ]; then
+    echo "Windows partition is less than 20 GB."
+    echo "Please do re-partitioning in the modified recovery and re-run the script."
+    exit 1
+fi
+
+# Continue with other operations if checks pass
+echo "Partition sizes are sufficient. Proceeding with the rest of the script..."
+echo ""
+
+# Define directories
+MAIN_DIR="/sdcard/"
+DIR_UNZIP="/sdcard/nabu/"
+DIR_BACK="/sdcard/backups/"
+DIR_UEFI="/sdcard/UEFI/"
+
+# Function to check and create directories
+check_and_create_dir() {
+    local dir=$1
+    if [ -d "$dir" ]; then
+        echo "Directory $dir exists. Removing it."
+        /data/local/tmp/busybox rm -rf "$dir"
+    fi
+    echo "Creating directory: $dir"
+    /data/local/tmp/busybox mkdir -p "$dir"
+}
+
+# Check and create directories
+check_and_create_dir "$DIR_UNZIP"
+check_and_create_dir "$DIR_BACK"
+check_and_create_dir "$DIR_UEFI"
+echo ""
+
+# Backup current partitions
+echo "Backing up Important partitions..."
+echo ""
+echo "Backing up boot.img..."
+dd if=/dev/block/platform/soc/1d84000.ufshc/by-name/boot$(getprop ro.boot.slot_suffix) of=/sdcard/backups/boot.img
+echo "Backing up dtbo.img..."
+dd if=/dev/block/platform/soc/1d84000.ufshc/by-name/dtbo$(getprop ro.boot.slot_suffix) of=/sdcard/backups/dtbo.img
+for part in fsc fsg modemst1 modemst2; do
+  echo "Backing up $part.img..."
+  dd if=/dev/block/by-name/$part of=/sdcard/backups/$part.img
+done
+
+# List and select ZIP files
+echo ""
+echo "Searching for ZIP files..."
+zip_files=($( /data/local/tmp/busybox find "$MAIN_DIR" -type f -name "*.zip" ))
+
+if [ ${#zip_files[@]} -eq 0 ]; then
+    echo "No ZIP files found. Please download and place a ZIP file in the directory."
+    exit 1
+fi
+
+echo "Available ZIP files:"
+count=1
+for file in "${zip_files[@]}"; do
+    echo "$count. $(basename "$file")"
+    files[$count]=$file
+    count=$((count + 1))
+done
+
+echo ""
+echo "Enter the serial number of the ZIP file to select:"
+read selection
+
+# Validate ZIP file selection
+if [ -z "${files[$selection]}" ]; then
+    echo "Invalid selection. Exiting."
+    exit 1
+fi
+
+SELECTED_ZIP_FILE="${files[$selection]}"
+
+# Unzip the selected file
+echo ""
+echo "Unzipping selected file..."
+/data/local/tmp/busybox unzip "$SELECTED_ZIP_FILE" -d "$DIR_UNZIP"
+
+# List and select Windows files
+echo ""
+echo "Searching for Windows files..."
+echo ""
+esd_files=($( /data/local/tmp/busybox find "$MAIN_DIR" -type f -name "*.esd" ))
+
+# Check if no ESD files were found
+if [ ${#esd_files[@]} -eq 0 ]; then
+    echo "No Windows files found. Please download and place an ESD file in the directory."
+    exit 1
+fi
+
+# If only one ESD file is found, automatically select it
+if [ ${#esd_files[@]} -eq 1 ]; then
+    SELECTED_ESD_FILE="${esd_files[0]}"
+    echo "ESD file found: $(basename "$SELECTED_ESD_FILE")"
+    echo "Automatically selecting this file."
+else
+    # If more than one ESD file is found, prompt user for selection
+    echo "Available Windows files:"
+    count=1
+    for file in "${esd_files[@]}"; do
+        echo "$count. $(basename "$file")"
+        files[$count]=$file
+        count=$((count + 1))
+    done
+
+    echo ""
+    echo "Enter the serial number of the Windows file to select:"
+    read selection
+
+    # Validate Windows file selection
+    if [ -z "${files[$selection]}" ]; then
+        echo "Invalid selection. Exiting."
+        exit 1
+    fi
+
+    SELECTED_ESD_FILE="${files[$selection]}"
+fi
+echo ""
+echo "Selected Windows file: $(basename "$SELECTED_ESD_FILE")"
+
+# Check for specific files
+EXPECTED_FILES=("Driver.zip" "uefi.img" "install.bat" "pe")
+
+for file in "${EXPECTED_FILES[@]}"; do
+    if [ ! -f "$DIR_UNZIP/$file" ]; then
+        echo "Required file $file not found. Please re-run the script and select the correct ZIP."
+        /data/local/tmp/busybox rm -rf "$DIR_UNZIP"
+        exit 1
+    fi
+done
+
+# Unmount and format partitions
+echo ""
+echo "Unmounting and formatting partitions..."
+/data/local/tmp/busybox umount /dev/block/by-name/{esp,win}
+data/local/tmp/mkfs.fat -F32 -s1 /dev/block/by-name/esp -n ESPNABU
+/data/local/tmp/mkfs.ntfs -f /dev/block/by-name/win -L WINNABU
+
+# Mount partitions
+echo ""
+echo "Mounting partitions..."
+/data/local/tmp/busybox mkdir -p /mnt/{win,esp}
+/data/local/tmp/mount.ntfs /dev/block/by-name/win /mnt/win
+/data/local/tmp/busybox mount /dev/block/by-name/esp /mnt/esp
+
+copy_with_progress() {
+    local src_file=$1
+    local dest_file=$2
+
+    total_size=$(stat -c%s "$src_file")
+    /data/local/tmp/busybox cp "$src_file" "$dest_file" &
+
+    cp_pid=$!
+
+    while kill -0 "$cp_pid" 2>/dev/null; do
+        copied_size=$(stat -c%s "$dest_file" 2>/dev/null || echo 0)
+        percentage=$(echo "scale=2; ($copied_size / $total_size) * 100" | bc)
+
+        # Output progress on the same line
+        printf "\rCopying %s: Progress: %.2f%%" "$(basename "$src_file")" "$percentage"
+
+        sleep 1
+    done
+
+    # Ensure the final line ends with a newline
+    echo ""
+}
+
+
+# Copy files
+echo ""
+echo "Copying files..."
+/data/local/tmp/busybox mkdir -p /mnt/win/installer/Driver
+copy_with_progress /sdcard/nabu/uefi.img /sdcard/UEFI/uefi.img
+copy_with_progress /sdcard/nabu/install.bat /mnt/win/installer/install.bat
+copy_with_progress /sdcard/nabu/winactivator.bat /mnt/win/installer/winactivator.bat
+copy_with_progress /sdcard/backups/boot.img /mnt/win/boot.img
+copy_with_progress "$SELECTED_ESD_FILE" /mnt/win/installer/install.esd
+copy_with_progress /sdcard/nabu/Driver.zip /mnt/win/installer/Driver.zip
+
+# Unzip Driver.zip
+echo ""
+echo "Unzipping Driver.zip..."
+/data/local/tmp/busybox unzip /mnt/win/installer/Driver.zip -d /mnt/win/installer/Driver
+
+# Write images to the device
+echo ""
+echo "Writing winpe image to the device..."
+/data/local/tmp/busybox dd if=/sdcard/nabu/pe of=/dev/block/by-name/esp
+/data/local/tmp/busybox dd if=/sdcard/nabu/uefi.img of=/dev/block/by-name/boot$(getprop ro.boot.slot_suffix)
+
+# Clean up
+echo ""
+echo "Cleaning up..."
+/data/local/tmp/busybox rm -rf "$DIR_UNZIP"
+
+echo "*************************************************";
+echo "*              Flashing Completed               *";
+echo "*                                               *";
+echo "*             rebooting in 5 sec and            *";
+echo "*                                               *";
+echo "*     Installation will start automaticly       *";
+echo "*                                               *";
+echo "*  If Installation Failed, Don't Flash it again *";
+echo "*                                               *";
+echo "*         ask for help on Telegram Chat         *";
+echo "*                                               *";
+echo "*************************************************";
+sleep 5
+reboot
