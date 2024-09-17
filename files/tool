@@ -140,10 +140,10 @@ DIR_UEFI="/sdcard/UEFI/"
 check_and_create_dir() {
     local dir=$1
     if [ -d "$dir" ]; then
-        echo "Directory $dir exists. Removing it."
+        # echo "Directory $dir exists. Removing it."
         /data/local/tmp/busybox rm -rf "$dir"
     fi
-    echo "Creating directory: $dir"
+    # echo "Creating directory: $dir"
     /data/local/tmp/busybox mkdir -p "$dir"
 }
 
