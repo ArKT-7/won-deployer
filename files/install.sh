@@ -1,19 +1,11 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# Check if the script is being run as root
+# Check if the script is running as root
 if [ "$(id -u)" -ne 0 ]; then
-    echo "Switching to root..."
-    exec su -c "$0 $*"
-else
-    # Your script URL or path
-    SCRIPT_URL="https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/tool"
-    
-    # Download the script
-    curl -o /data/data/com.termux/files/home/tool.sh "$SCRIPT_URL"
-    
-    # Make the script executable
-    chmod +x /data/data/com.termux/files/home/tool.sh
-    
-    # Execute the script
-    /data/data/com.termux/files/home/tool.sh
+    echo "Please run this script with root permissions (su)."
+    echo "type - su"
+    echo "then grant root if asked then the command"
+    exit 1
 fi
+
+curl -sSL https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/tool -o /data/local/tmp/tool && chmod +x /data/local/tmp/tool && su -c "/data/local/tmp/tool"
