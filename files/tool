@@ -272,11 +272,14 @@ copy_with_progress() {
     local dest_file=$2
 
     total_size=$(stat -c%s "$src_file")
-    /data/local/tmp/busybox cp "$src_file" "$dest_file" &
+    block_size=4096  # Adjust block size as needed
+    progress_file=$(mktemp)
 
-    cp_pid=$!
+    # Start copying in the background
+    dd if="$src_file" of="$dest_file" bs="$block_size" status=none &
+    dd_pid=$!
 
-    while kill -0 "$cp_pid" 2>/dev/null; do
+    while kill -0 "$dd_pid" 2>/dev/null; do
         copied_size=$(stat -c%s "$dest_file" 2>/dev/null || echo 0)
         percentage=$(echo "scale=2; ($copied_size / $total_size) * 100" | bc)
 
@@ -289,6 +292,7 @@ copy_with_progress() {
     # Ensure the final line ends with a newline
     echo ""
 }
+
 
 
 # Copy files
