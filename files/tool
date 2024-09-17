@@ -1,5 +1,7 @@
 #!/bin/sh
 
+su
+echo "root"
 # Check the device codename using getprop
 DEVICE_CODENAME=$(getprop ro.product.device)
 
