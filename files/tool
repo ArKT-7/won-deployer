@@ -63,6 +63,10 @@ else
     echo ""
     exit 1
 fi
+
+svc usb setFunctions mtp
+
+sleep 2
 # Function to convert bytes to gigabytes and megabytes
 bytes_to_gb() {
     echo "scale=2; $1 / (1024 * 1024 * 1024)" | bc
