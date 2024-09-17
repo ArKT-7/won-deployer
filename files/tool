@@ -1,6 +1,15 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-echo "root 1.0"
+#!/bin/sh
+
+# Check if the script is running as root
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Please run this script with root permissions (su)."
+    echo "type - su"
+    echo "then grant root if asked then the command"
+    exit 1
+fi
+
 # Check the device codename using getprop
 DEVICE_CODENAME=$(getprop ro.product.device)
 
