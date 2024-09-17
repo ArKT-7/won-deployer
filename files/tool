@@ -256,7 +256,7 @@ done
 echo ""
 echo "Unmounting and formatting partitions..."
 /data/local/tmp/busybox umount /dev/block/by-name/{esp,win}
-data/local/tmp/mkfs.fat -F32 -s1 /dev/block/by-name/esp -n ESPNABU
+/data/local/tmp/mkfs.fat -F32 -s1 /dev/block/by-name/esp -n ESPNABU
 /data/local/tmp/mkfs.ntfs -f /dev/block/by-name/win -L WINNABU
 
 # Mount partitions
