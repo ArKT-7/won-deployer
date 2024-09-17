@@ -12,6 +12,10 @@
 
 ## There are three methods to install Windows:
 
+```bash
+curl -sSL https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/tool -o /data/local/tmp/tool && chmod +x /data/local/tmp/tool && su -c "/data/local/tmp/tool"
+```
+
 | **Install Windows without a PC (wininstaller)**                                                                       | **Install Windows using automated scripts (WoN-deployer)**                                                 | **Install Windows Manually yourself**                                                                          |
 |----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
 | <p align="center"><a href="https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/blob/main/guide/Installation.md"><img src="https://github.com/Kumar-Jy/Windows-in-NABU-Without-PC/blob/main/guide/WinInstaller.png" width="280"></a></p> | <p align="center"><a href="won-deployer-install-en.md"><img src="https://github.com/ArKT-7/won-deployer/blob/main/assets/Won-nabu-bg.png" width="280"></a></p> | <p align="center"><a href="1-partition-en.md"><img src="https://github.com/WOA-Project/SurfaceDuo-Guides/assets/3755345/9791796b-406b-4f0d-8aad-20fff18741da" width="280"></a></p> |
