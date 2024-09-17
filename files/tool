@@ -300,12 +300,12 @@ copy_with_progress /sdcard/nabu/install.bat /mnt/win/installer/install.bat
 copy_with_progress /sdcard/nabu/winactivator.bat /mnt/win/installer/winactivator.bat
 copy_with_progress /sdcard/backups/boot.img /mnt/win/boot.img
 copy_with_progress "$SELECTED_ESD_FILE" /mnt/win/installer/install.esd
-copy_with_progress /sdcard/nabu/Driver.zip /mnt/win/installer/Driver.zip
+# copy_with_progress /sdcard/nabu/Driver.zip /mnt/win/installer/Driver.zip
 
 # Unzip Driver.zip
 echo ""
 echo "Unzipping Driver.zip..."
-/data/local/tmp/busybox unzip /mnt/win/installer/Driver.zip -d /mnt/win/installer/Driver
+/data/local/tmp/busybox unzip /sdcard/nabu/Driver.zip -d /mnt/win/installer/Driver
 
 # Write images to the device
 echo ""
