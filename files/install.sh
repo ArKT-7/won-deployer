@@ -1,5 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+echo -e "\033[32mREMOVE OLD win installer...\033[0m"
+rm "$PREFIX/bin/wininstall"
+
+
 echo -e "\033[32mupdate/install win installer...\033[0m"
 curl -s "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/tool" -o "$PREFIX/bin/wininstall" && chmod +x "$PREFIX/bin/wininstall"
 
