@@ -51,7 +51,18 @@ download_and_set_permissions "$URL_MKFS_NTFS" "$TARGET_MKFS_NTFS"
 download_and_set_permissions "$URL_MOUNT_NTFS" "$TARGET_MOUNT_NTFS"
 
 echo "All binaries have been downloaded and permissions set."
-
+echo  ""
+if [ "$DEVICE_CODENAME" = "nabu" ]; then
+    echo ""
+    echo "WinInstaller for Xiaomi Pad 5 (nabu)"
+    echo "By ArKT, Telegram - '@ArKT_7', Github - 'ArKT-7'"
+    echo "Based on Kumar_Jy wininstaller"
+else
+    echo ""
+    echo "This device is not supported yet. Please contact the developer on Telegram @ArKT_7"
+    echo ""
+    exit 1
+fi
 # Function to convert bytes to gigabytes and megabytes
 bytes_to_gb() {
     echo "scale=2; $1 / (1024 * 1024 * 1024)" | bc
