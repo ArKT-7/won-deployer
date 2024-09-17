@@ -200,6 +200,17 @@ echo ""
 echo "Unzipping selected file..."
 /data/local/tmp/busybox unzip "$SELECTED_ZIP_FILE" -d "$DIR_UNZIP"
 
+# Check for specific files
+EXPECTED_FILES=("Driver.zip" "uefi.img" "install.bat" "pe")
+
+for file in "${EXPECTED_FILES[@]}"; do
+    if [ ! -f "$DIR_UNZIP/$file" ]; then
+        echo "Required file $file not found. Please re-run the script and select the correct ZIP."
+        /data/local/tmp/busybox rm -rf "$DIR_UNZIP"
+        exit 1
+    fi
+done
+
 # List and select Windows files
 echo ""
 echo "Searching for Windows files..."
@@ -241,17 +252,6 @@ else
 fi
 echo ""
 echo "Selected Windows file: $(basename "$SELECTED_ESD_FILE")"
-
-# Check for specific files
-EXPECTED_FILES=("Driver.zip" "uefi.img" "install.bat" "pe")
-
-for file in "${EXPECTED_FILES[@]}"; do
-    if [ ! -f "$DIR_UNZIP/$file" ]; then
-        echo "Required file $file not found. Please re-run the script and select the correct ZIP."
-        /data/local/tmp/busybox rm -rf "$DIR_UNZIP"
-        exit 1
-    fi
-done
 
 # Unmount and format partitions
 echo ""
