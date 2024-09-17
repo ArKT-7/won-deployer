@@ -1,7 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-su
-echo "root"
+echo "root 1.0"
 # Check the device codename using getprop
 DEVICE_CODENAME=$(getprop ro.product.device)
 
