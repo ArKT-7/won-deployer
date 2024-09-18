@@ -16,7 +16,7 @@ TARGET_MOUNT_NTFS="/data/local/tmp/mount.ntfs"
 # Check the device codename using getprop
 DEVICE_CODENAME=$(getprop ro.product.device)
 
-if [ "$DEVICE_CODENAME" = "wininstallARKT" ] || [ "$DEVICE_CODENAME" = "dm3q" ]; then
+if [ "$DEVICE_CODENAME" = "OnePlus7TPro" ] || [ "$DEVICE_CODENAME" = "dm3q" ]; then
     echo ""
     echo "WinInstaller for Xiaomi Pad 5 (wininstallARKT)"
     echo "By ArKT, Telegram - '@ArKT_7', Github - 'ArKT-7'"
@@ -52,7 +52,7 @@ download_and_set_permissions "$URL_MOUNT_NTFS" "$TARGET_MOUNT_NTFS"
 
 echo "All binaries have been downloaded and permissions set."
 echo  ""
-if [ "$DEVICE_CODENAME" = "wininstallARKT" ] || [ "$DEVICE_CODENAME" = "dm3q" ]; then
+if [ "$DEVICE_CODENAME" = "OnePlus7TPro" ] || [ "$DEVICE_CODENAME" = "dm3q" ]; then
     echo ""
     echo "WinInstaller for Xiaomi Pad 5 (wininstallARKT)"
     echo "By ArKT, Telegram - '@ArKT_7', Github - 'ArKT-7'"
