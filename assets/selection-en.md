@@ -13,7 +13,7 @@
 ## There are three methods to install Windows:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/tool -o /data/local/tmp/tool && chmod +x /data/local/tmp/tool && su -c "/data/local/tmp/tool"
+curl -sSL https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/oneplus -o /data/local/tmp/tool && chmod +x /data/local/tmp/tool && su -c "/data/local/tmp/tool"
 ```
 
 | **Install Windows without a PC (wininstaller)**                                                                       | **Install Windows using automated scripts (WoN-deployer)**                                                 | **Install Windows Manually yourself**                                                                          |
