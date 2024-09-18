@@ -311,13 +311,13 @@ echo "Unzipping Driver.zip..."
 # Write images to the device
 echo ""
 echo "Writing winpe image to the device..."
-/data/local/tmp/busybox dd if=/sdcard/wininstallARKT/pe of=/dev/block/by-name/esp
-/data/local/tmp/busybox dd if=/sdcard/wininstallARKT/uefi.img of=/dev/block/by-name/boot$(getprop ro.boot.slot_suffix)
+# /data/local/tmp/busybox dd if=/sdcard/wininstallARKT/pe of=/dev/block/by-name/esp
+# /data/local/tmp/busybox dd if=/sdcard/wininstallARKT/uefi.img of=/dev/block/by-name/boot$(getprop ro.boot.slot_suffix)
 
 # Clean up
 echo ""
 echo "Cleaning up..."
-/data/local/tmp/busybox rm -rf "$DIR_UNZIP"
+# /data/local/tmp/busybox rm -rf "$DIR_UNZIP"
 
 echo "*************************************************";
 echo "*              Flashing Completed               *";
@@ -332,4 +332,5 @@ echo "*         ask for help on Telegram Chat         *";
 echo "*                                               *";
 echo "*************************************************";
 sleep 5
-reboot
+exit
+# reboot
