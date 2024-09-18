@@ -156,7 +156,11 @@ echo ""
 # Backup current partitions
 echo "Backing up Important partitions..."
 echo ""
-for part in boot dtbo fsc fsg modemst1 modemst2; do
+echo "Backing up boot.img..."
+dd if=/dev/block/platform/soc/1d84000.ufshc/by-name/boot$(getprop ro.boot.slot_suffix) of=/sdcard/backups/boot.img
+echo "Backing up dtbo.img..."
+dd if=/dev/block/platform/soc/1d84000.ufshc/by-name/dtbo$(getprop ro.boot.slot_suffix) of=/sdcard/backups/dtbo.img
+for part in fsc fsg modemst1 modemst2; do
   echo "Backing up $part.img..."
   dd if=/dev/block/by-name/$part of=/sdcard/backups/$part.img
 done
