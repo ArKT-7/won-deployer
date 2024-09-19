@@ -258,13 +258,13 @@ echo ""
 echo "Unmounting and formatting partitions..."
 /data/local/tmp/busybox umount /dev/block/by-name/{esp,win}
 /data/local/tmp/mkfs.fat -F32 -s1 /dev/block/by-name/esp -n ESPONEPLUS
-/data/local/tmp/mkfs.ntfs -f /dev/block/by-name/win -L WINONEPLUS
+# /data/local/tmp/mkfs.ntfs -f /dev/block/by-name/win -L WINONEPLUS
 
 # Mount partitions
 echo ""
 echo "Mounting partitions..."
 /data/local/tmp/busybox mkdir -p /mnt/{win,esp}
-/data/local/tmp/mount.ntfs /dev/block/by-name/win /mnt/win
+/data/local/tmp/busybox mount -t ntfs /dev/block/by-name/win /mnt/win
 /data/local/tmp/busybox mount /dev/block/by-name/esp /mnt/esp
 
  copy_with_progress() {
