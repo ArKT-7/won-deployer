@@ -1,7 +1,7 @@
 <p align="center"><a href="README.md"><img src="https://github.com/ArKT-7/won-deployer/blob/main/assets/Won-nabu-bg.png" width="280"></a></p>
 
 # Running Windows on the Xiaomi Pad 5
-## Try out my new tool for automatically installing Windows on Nabu—it's currently in beta. I’d love your feedback on any issues or ideas for new features. Share your thoughts with me via the Telegram link below."
+## Try out my new tool for automatically installing/Re-installing Windows, Rooting/Re-rooting For Xiaomi Pad 5 (Nabu) —  I’d love your feedback on any issues or ideas for new features. Share your thoughts with me via the Telegram link below."
 [![Telegram](https://img.shields.io/badge/Chat-Telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://telegram.me/ArKT_7)
 [![Telegram](https://img.shields.io/badge/Chat-Telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/ArKT_7)
 
