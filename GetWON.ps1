@@ -11,7 +11,7 @@ foreach ($dir in @($adbDir, $wonDeployerDir, $wonFilesDir)) {
         
         try {
             # Attempt to create the directory
-            $null = New-Item -Path $dir -ItemType Directory -ErrorAction SilentlyContinue
+			$null = New-Item -Path $dir -ItemType Directory -ErrorAction SilentlyContinue
         } catch {
             # Display the error message if directory creation fails
             Write-Host "Error creating directory: $dir`n$($_.Exception.Message)" -ForegroundColor Red
@@ -24,11 +24,11 @@ $platformToolsZip = Join-Path $adbDir "platform-tools.zip"
 $dismbinZip = Join-Path $wonDeployerDir "dismbin.zip"
 
 $platformTools = @{
-    "platform-tools.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/platform-tools.zip"
+     "platform-tools.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/platform-tools.zip"
 }
 
 $dismbin = @{
-    "dismbin.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/dism-bin.zip"
+     "dismbin.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/dism-bin.zip"
 }
 
 # Define the file to download
@@ -49,7 +49,7 @@ $requiredFilesDownload = @{
     "twrp.img" = "https://media.githubusercontent.com/media/ArKT-7/won-deployer/main/files/twrp.img"
     "gpt_both0.bin" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/gpt_both0.bin"
     "userdata.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/userdata.img"
-    "uefi.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefi.img"
+	"uefi.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefi.img"
 }
 
 # Modern progress bar function
@@ -120,10 +120,10 @@ function Download-Files($files, $destinationDir) {
             } else {
                 $fileSize = [math]::Round($fileSizeBytes / 1MB, 2)
             }
-            
-            Write-Host "" 
-            # Write-Host "Downloading $file ($fileSize MB)..." -ForegroundColor Yellow
-            Write-Host "" 
+			
+           Write-Host "" 
+          #Write-Host "Downloading $file ($fileSize MB)..." -ForegroundColor Yellow
+		   Write-Host "" 
 
             # Start downloading the file and display progress
             $request = [System.Net.HttpWebRequest]::Create($url)
@@ -166,6 +166,7 @@ function Download-Files($files, $destinationDir) {
     }
 }
 
+
 Write-Host ""
 Write-Host "Downloading platform tools..." -ForegroundColor Cyan
 Download-Files -files $platformTools -destinationDir $adbDir
@@ -188,6 +189,7 @@ Remove-Item -Path $dismbinZip -Force
 $dismbinDir1 = Join-Path $wonDeployerDir "dismbin\"
 Write-Host ""
 
+
 # Download installer
 Write-Host ""
 Write-Host ""
@@ -208,6 +210,7 @@ foreach ($path in $pathsToAdd) {
     }
 }
 
+
 # Download additional files
 Write-Host ""
 Write-Host "Downloading Additional Required Files" -ForegroundColor Cyan
@@ -216,6 +219,7 @@ Download-Files -files $requiredFilesDownload -destinationDir $wonFilesDir
 Write-Host ""
 Write-Host ""
 Write-Host "Download complete." -ForegroundColor Green
+
 
 Write-Host ""
 Write-Host ""
@@ -226,7 +230,6 @@ Write-Host ""
 Write-Host -NoNewline "Type " -ForegroundColor Magenta
 Write-Host -NoNewline "won-deployer" -ForegroundColor Yellow
 Write-Host " to run the tool" -ForegroundColor Magenta
-
 # Exclude won-deployer.exe from Microsoft Defender
 #$wonDeployerPath = Join-Path $wonDeployerDir "won-deployer.exe"
 #Write-Host ""
