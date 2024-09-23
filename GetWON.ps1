@@ -1,314 +1,235 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flash .img files by ArKt</title>
-    <script src="dist/fastboot.mjs" type="module"></script>
-    <script src="download.js" type="module"></script>
-    <style>
-        .progress-container {
-            width: 100%;
-            height: 20px;
-            background-color: #f3f3f3;
-            border-radius: 5px;
-            overflow: hidden;
-            display: none; /* Initially hidden */
+# Set up directories
+$adbDir = Join-Path $env:SystemDrive "adb"
+$wonDeployerDir = Join-Path $env:USERPROFILE ".arkt"
+$wonFilesDir = Join-Path $wonDeployerDir "files"
+$dismbinDir = Join-Path $wonDeployerDir "dismbin"
+
+# Create directories if they don't exist
+foreach ($dir in @($adbDir, $wonDeployerDir, $wonFilesDir)) {
+    if (-not (Test-Path $dir -PathType Container)) {
+        Write-Host "Creating directory: $dir" -ForegroundColor Cyan
+        
+        try {
+            # Attempt to create the directory
+            $null = New-Item -Path $dir -ItemType Directory -ErrorAction SilentlyContinue
+        } catch {
+            # Display the error message if directory creation fails
+            Write-Host "Error creating directory: $dir`n$($_.Exception.Message)" -ForegroundColor Red
         }
-        .progress-bar {
-            height: 100%;
-            width: 0%;
-            background-color: #4caf50;
-            transition: width 0.5s;
-        }
-    </style>
-</head>
-<body>
-    <div>
-        <p>Status: <span class="status-field">Not connected in Fastboot</span></p>
-        <button class="connect-button">Connect device Fastboot</button>
-    </div>
+    }
+}
+
+# Download platform tools
+$platformToolsZip = Join-Path $adbDir "platform-tools.zip"
+$dismbinZip = Join-Path $wonDeployerDir "dismbin.zip"
+
+$platformTools = @{
+    "platform-tools.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/platform-tools.zip"
+}
+
+$dismbin = @{
+    "dismbin.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/dism-bin.zip"
+}
+
+# Define the file to download
+$filesToDownload = @{
+    "won-deployer.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/won_deployer.exe"
+    "wimlib-imagex.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/wimlib-imagex.exe"
+    "libwim-15.dll" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/libwim-15.dll"
+}
+
+# Define the additional file to download
+$requiredFilesDownload = @{
+    "Toolbox.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Toolbox.zip"
+    "sta.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/sta.zip"
+    #"Magisk_canary.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_canary.apk"
+    "Magisk_stable.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_stable.apk"
+    #"Magisk_kitsune.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_kitsune.apk"
+    "orangefox.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/orangefox.img"
+    "twrp.img" = "https://media.githubusercontent.com/media/ArKT-7/won-deployer/main/files/twrp.img"
+    "gpt_both0.bin" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/gpt_both0.bin"
+    "userdata.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/userdata.img"
+    "uefi.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefi.img"
+}
+
+# Modern progress bar function
+function Show-Progress {
+    param (
+        [Parameter(Mandatory)]
+        [Single]$TotalValue,
+        
+        [Parameter(Mandatory)]
+        [Single]$CurrentValue,
+        
+        [Parameter(Mandatory)]
+        [string]$ProgressText,
+        
+        [Parameter()]
+        [string]$ValueSuffix,
+        
+        [Parameter()]
+        [int]$BarSize = 40,
+
+        [Parameter()]
+        [switch]$Complete
+    )
     
-    <hr />
+    $percent = $CurrentValue / $TotalValue
+    $percentComplete = $percent * 100
+    if ($ValueSuffix) {
+        $ValueSuffix = " $ValueSuffix"
+    }
+    if ($psISE) {
+        Write-Progress "$ProgressText $CurrentValue$ValueSuffix of $TotalValue$ValueSuffix" -id 0 -percentComplete $percentComplete            
+    }
+    else {
+        $curBarSize = $BarSize * $percent
+        $progbar = ""
+        $progbar = $progbar.PadRight($curBarSize,[char]9608)
+        $progbar = $progbar.PadRight($BarSize,[char]9617)
+        
+        if (!$Complete.IsPresent) {
+            Write-Host -NoNewLine "`r$ProgressText $progbar [ $($CurrentValue.ToString("#.###").PadLeft($TotalValue.ToString("#.###").Length))$ValueSuffix / $($TotalValue.ToString("#.###"))$ValueSuffix ] $($percentComplete.ToString("##0.00").PadLeft(6)) % complete"
+        }
+        else {
+            Write-Host -NoNewLine "`r$ProgressText $progbar [ $($TotalValue.ToString("#.###").PadLeft($TotalValue.ToString("#.###").Length))$ValueSuffix / $($TotalValue.ToString("#.###"))$ValueSuffix ] $($percentComplete.ToString("##0.00").PadLeft(6)) % complete"                    
+        }                
+    }   
+}
 
-    <div>
-        <form class="command-form">
-            <label for="command">Command without fastboot:</label>
-            <input type="text" name="command" class="command-input" />
-            <input type="submit" value="Send" />
-        </form>
-        <button class="reboot-button">Reboot Device</button>
-        <button class="reboot-bootloader-button">Reboot to Bootloader</button>
-        <button class="reboot-recovery-button">Reboot to Recovery</button>
-        <button class="reboot-fastbootd-button">Reboot to FastbootD</button>
-        <p>Result:</p>
-        <pre class="result-field"></pre>
-    </div>
+# Download files with progress and size display
+function Download-Files($files, $destinationDir) {
+    $totalFiles = $files.Count
+    $currentFile = 0
 
-    <hr />
+    foreach ($file in $files.Keys) {
+        $currentFile++
+        $destinationPath = Join-Path $destinationDir $file
+        $url = $files[$file]
 
-    <div>
-        <form class="boot-form">
-            <label for="boot-file">Boot image:</label>
-            <input type="file" name="boot-file" class="boot-file" />
-            <select name="boot-type" class="boot-type">
-                <option value="">Select Boot Type</option>
-                <option value="twrp-nabu">Twrp Recovery Nabu</option>
-                <option value="win-uefi-nabu">Windows UEFI Boot Nabu</option>
-                <option value="twrp-mod-nabu">Twrp Modded Recovery Nabu</option>
-                <option value="orangefox-mod-nabu">OrangeFox Modded Recovery Nabu</option>
-            </select>
-            <input type="submit" value="Boot" />
-        </form>
-    </div>
+        try {
+            $storeEAP = $ErrorActionPreference
+            $ErrorActionPreference = 'Stop'
 
-    <hr />
+            $response = Invoke-WebRequest -Uri $url -Method Head
+            [long]$fileSizeBytes = [int]$response.Headers['Content-Length']
+            $fileSizeMB = $fileSizeBytes / 1MB
 
-    <div>
-        <form class="flash-form">
-            <label for="flash-file">Flash image:</label>
-            <input type="file" name="flash-file" class="flash-file" />
-            <br />
-            <label for="flash-partition">Partition:</label>
-            <input type="text" name="flash-partition" class="flash-partition" />
-            <input type="submit" value="Flash" />
-        </form>
-        <button class="flash-boot-button">Flash Boot</button>
-        <button class="flash-boot-a-button">Flash Boot A</button>
-        <button class="flash-boot-b-button">Flash Boot B</button>
-    </div>
-
-    <hr />
-
-    <div>
-        <p>Status: <span class="factory-status-field"></span></p>
-        <div class="progress-container">
-            <div class="progress-bar"></div>
-        </div>
-        <button class="reconnect-button" style="display: none;"><h3>Reconnect device</h3></button>
-        <br />
-        <form class="factory-form">
-            <label for="factory-file">Flash custom factory images zip:</label>
-            <br />
-            <input type="file" name="factory-file" class="factory-file" />
-            <br />
-            <input type="submit" value="Flash selected zip" />
-        </form>
-        <br />
-    </div>
-
-    <script type="module">
-        import * as fastboot from "./dist/fastboot.mjs";
-        import { BlobStore } from "./download.js";
-
-        let device = new fastboot.FastbootDevice();
-        window.device = device;
-        let blobStore = new BlobStore();
-
-        fastboot.setDebugLevel(2);
-
-        async function connectDevice() {
-            let statusField = document.querySelector(".status-field");
-            statusField.textContent = "Connecting...";
-
-            try {
-                await device.connect();
-            } catch (error) {
-                statusField.textContent = `Failed to connect to device: ${error.message}`;
-                return;
+            if ($fileSizeBytes -eq $null) {
+                $fileSize = "Unknown"
+            } else {
+                $fileSize = [math]::Round($fileSizeBytes / 1MB, 2)
             }
-
-            let product = await device.getVariable("product");
-            let slot = await device.getVariable("current-slot");
-            let serial = await device.getVariable("serialno");
             
-            let deviceName = "";
-            if (product === "nabu") {
-                deviceName = "Device name - Xiaomi Pad 5";
-            } else if (product === "dm3q") {
-                deviceName = "Device name - Samsung S23 Ultra";
-            }
+            Write-Host "" 
+            # Write-Host "Downloading $file ($fileSize MB)..." -ForegroundColor Yellow
+            Write-Host "" 
 
-            let status = `Connected to - ${product} <br /> Current slot - ${slot} <br /> (serial: ${serial})`;
-            if (deviceName) {
-                status += `<br />${deviceName}`;
-            }
+            # Start downloading the file and display progress
+            $request = [System.Net.HttpWebRequest]::Create($url)
+            $webResponse = $request.GetResponse()
+            $responseStream = $webResponse.GetResponseStream()
 
-            statusField.innerHTML = status;
-        }
+            $fileStream = New-Object System.IO.FileStream($destinationPath, [System.IO.FileMode]::Create)
+            $buffer = New-Object byte[] 4096
+            [long]$totalBytesRead = 0
+            [long]$bytesRead = 0
 
-        async function sendFormCommand(event) {
-            event.preventDefault();
-            let inputField = document.querySelector(".command-input");
-            let command = inputField.value;
-            let result = (await device.runCommand(command)).text;
-            document.querySelector(".result-field").textContent = result;
-            inputField.value = "";
-        }
+            $finalBarCount = 0
 
-        async function rebootDevice() {
-            let command = "reboot";
-            let result = (await device.runCommand(command)).text;
-            document.querySelector(".result-field").textContent = result;
-        }
-
-        async function rebootToBootloader() {
-            let command = "reboot-bootloader";
-            let result = (await device.runCommand(command)).text;
-            document.querySelector(".result-field").textContent = result;
-        }
-
-        async function rebootToRecovery() {
-            let command = "reboot-recovery";
-            let result = (await device.runCommand(command)).text;
-            document.querySelector(".result-field").textContent = result;
-        }
-
-        async function rebootToFastbootD() {
-            let command = "reboot-fastboot";
-            let result = (await device.runCommand(command)).text;
-            document.querySelector(".result-field").textContent = result;
-        }
-
-        async function bootFormFile(event) {
-            event.preventDefault();
-            let fileField = document.querySelector(".boot-file");
-            let bootTypeSelect = document.querySelector(".boot-type");
-            let selectedBootType = bootTypeSelect.value;
-
-            let file;
-            if (fileField.files.length > 0) {
-                file = fileField.files[0];
-            } else {
-                file = await downloadBootImage(getImagePath(selectedBootType));
-            }
-
-            if (!file) {
-                alert("Please select a file or choose a boot type!");
-                return;
-            }
-
-            await device.bootBlob(file);
-            fileField.value = "";
-            bootTypeSelect.selectedIndex = 0; // Reset selection
-        }
-
-        // Function to determine image path based on selected type
-        function getImagePath(selectedBootType) {
-            switch (selectedBootType) {
-                case "twrp-nabu":
-                    return "https://media.githubusercontent.com/media/ArKT-7/nabu/main/bin/twrp-nabu.img";
-                case "win-uefi-nabu":
-                    return "https://media.githubusercontent.com/media/ArKT-7/nabu/main/bin/uefi-nabu.img";
-                case "twrp-mod-nabu":
-                    return "https://media.githubusercontent.com/media/ArKT-7/nabu/main/bin/twrp-modded-nabu.img";
-                case "orangefox-mod-nabu":
-                    return "https://media.githubusercontent.com/media/ArKT-7/nabu/main/bin/orangefox-modded-nabu.img";
-                default:
-                    return null;
-            }
-        }
-
-        // Function to download the boot image with progress
-        async function downloadBootImage(imagePath) {
-            const progressBarContainer = document.querySelector('.progress-container');
-            const progressBar = document.querySelector('.progress-bar');
-            progressBarContainer.style.display = 'block'; // Show the progress bar
-
-            try {
-                const response = await fetch(imagePath);
-                if (!response.ok) throw new Error("Failed to download boot image");
-
-                const contentLength = response.headers.get('Content-Length');
-                const total = parseInt(contentLength, 10);
-                let loaded = 0;
-
-                const reader = response.body.getReader();
-                const chunks = [];
-
-                while (true) {
-                    const { done, value } = await reader.read();
-                    if (done) break;
-                    chunks.push(value);
-                    loaded += value.length;
-                    progressBar.style.width = `${(loaded / total) * 100}%`; // Update progress
+            do {
+                $bytesRead = $responseStream.Read($buffer, 0, $buffer.Length)
+                $fileStream.Write($buffer, 0, $bytesRead)
+                $totalBytesRead += $bytesRead
+                $totalMB = $totalBytesRead / 1MB
+                
+                if ($fileSizeBytes -gt 0) {
+                    Show-Progress -TotalValue $fileSizeMB -CurrentValue $totalMB -ProgressText "Downloading $file" -ValueSuffix "MB"
                 }
+                
+                if ($totalBytesRead -eq $fileSizeBytes -and $bytesRead -eq 0 -and $finalBarCount -eq 0) {
+                    Show-Progress -TotalValue $fileSizeMB -CurrentValue $totalMB -ProgressText "Downloading $file" -ValueSuffix "MB" -Complete
+                    $finalBarCount++
+                }
+            } while ($bytesRead -gt 0)
 
-                const blob = new Blob(chunks);
-                const file = new File([blob], imagePath.split("/").pop(), { type: "image/img" });
-                progressBarContainer.style.display = 'none'; // Hide the progress bar
-                return file; // Return the downloaded file
-            } catch (error) {
-                progress
-                console.error("Error downloading boot image:", error);
-                alert("Error downloading boot image. Please try again.");
-                progressBarContainer.style.display = 'none'; // Hide the progress bar
-                return null; // Return null in case of an error
-            }
+            $fileStream.Close()
+            $responseStream.Close()
+            $webResponse.Close()
+            $ErrorActionPreference = $storeEAP
+            [GC]::Collect()
         }
-
-        async function flashImage(event) {
-            event.preventDefault();
-            let fileField = document.querySelector(".flash-file");
-            let partitionField = document.querySelector(".flash-partition");
-
-            let file;
-            if (fileField.files.length > 0) {
-                file = fileField.files[0];
-            } else {
-                alert("Please select a flash image file!");
-                return;
-            }
-
-            let partition = partitionField.value;
-            if (!partition) {
-                alert("Please specify a partition to flash!");
-                return;
-            }
-
-            await device.flashBlob(file, partition);
-            fileField.value = "";
-            partitionField.value = "";
+        catch {
+            $ExeptionMsg = $_.Exception.Message
+            Write-Host "Download breaks with error : $ExeptionMsg"
         }
+    }
+}
 
-        async function flashSelectedZip(event) {
-            event.preventDefault();
-            let fileField = document.querySelector(".factory-file");
+Write-Host ""
+Write-Host "Downloading platform tools..." -ForegroundColor Cyan
+Download-Files -files $platformTools -destinationDir $adbDir
+Write-Host ""
+Write-Host ""
+Write-Host "Extracting platform tools..." -ForegroundColor Green
+Expand-Archive -Path $platformToolsZip -DestinationPath $adbDir -Force
+Remove-Item -Path $platformToolsZip -Force
+$platformToolsDir = Join-Path $adbDir "platform-tools\"
+Write-Host ""
 
-            let file;
-            if (fileField.files.length > 0) {
-                file = fileField.files[0];
-            } else {
-                alert("Please select a factory zip file!");
-                return;
-            }
+Write-Host ""
+Write-Host "Downloading dism-en..." -ForegroundColor Cyan
+Download-Files -files $dismbin -destinationDir $wonDeployerDir
+Write-Host ""
+Write-Host ""
+Write-Host "Extracting dism-en..." -ForegroundColor Green
+Expand-Archive -Path $dismbinZip -DestinationPath $dismbinDir -Force
+Remove-Item -Path $dismbinZip -Force
+$dismbinDir1 = Join-Path $wonDeployerDir "dismbin\"
+Write-Host ""
 
-            const progressBarContainer = document.querySelector('.progress-container');
-            const progressBar = document.querySelector('.progress-bar');
-            progressBarContainer.style.display = 'block'; // Show the progress bar
+# Download installer
+Write-Host ""
+Write-Host ""
+Write-Host "Downloading Tool" -ForegroundColor Cyan
+Download-Files -files $filesToDownload -destinationDir $wonDeployerDir
 
-            try {
-                await device.flashFactoryZip(file);
-                alert("Flash completed successfully!");
-            } catch (error) {
-                console.error("Error flashing factory zip:", error);
-                alert("Error flashing factory zip. Please try again.");
-            } finally {
-                progressBarContainer.style.display = 'none'; // Hide the progress bar
-            }
+# Update PATH environment variable
+Write-Host ""
+Write-Host ""
+Write-Host ""
+$currentPath = [Environment]::GetEnvironmentVariable("PATH", "User") -split ";"
+$pathsToAdd = @($wonDeployerDir, $platformToolsDir, $dismbinDir1)
 
-            fileField.value = "";
-        }
+foreach ($path in $pathsToAdd) {
+    if ($currentPath -notcontains $path) {
+        [Environment]::SetEnvironmentVariable("PATH", "$path;$([Environment]::GetEnvironmentVariable('PATH', 'User'))", "User")
+        Write-Host "$path added to PATH. Restart this shell to apply changes." -ForegroundColor Magenta
+    }
+}
 
-        document.querySelector(".connect-button").addEventListener("click", connectDevice);
-        document.querySelector(".command-form").addEventListener("submit", sendFormCommand);
-        document.querySelector(".reboot-button").addEventListener("click", rebootDevice);
-        document.querySelector(".reboot-bootloader-button").addEventListener("click", rebootToBootloader);
-        document.querySelector(".reboot-recovery-button").addEventListener("click", rebootToRecovery);
-        document.querySelector(".reboot-fastbootd-button").addEventListener("click", rebootToFastbootD);
-        document.querySelector(".boot-form").addEventListener("submit", bootFormFile);
-        document.querySelector(".flash-form").addEventListener("submit", flashImage);
-        document.querySelector(".factory-form").addEventListener("submit", flashSelectedZip);
-    </script>
-</body>
-</html>
+# Download additional files
+Write-Host ""
+Write-Host "Downloading Additional Required Files" -ForegroundColor Cyan
+Download-Files -files $requiredFilesDownload -destinationDir $wonFilesDir
+
+Write-Host ""
+Write-Host ""
+Write-Host "Download complete." -ForegroundColor Green
+
+Write-Host ""
+Write-Host ""
+Write-Host "Please close this PowerShell/Terminal" -ForegroundColor Magenta
+Write-Host ""
+Write-Host "After re-opening PowerShell/Terminal as Admin" -ForegroundColor Yellow
+Write-Host ""
+Write-Host -NoNewline "Type " -ForegroundColor Magenta
+Write-Host -NoNewline "won-deployer" -ForegroundColor Yellow
+Write-Host " to run the tool" -ForegroundColor Magenta
+
+# Exclude won-deployer.exe from Microsoft Defender
+#$wonDeployerPath = Join-Path $wonDeployerDir "won-deployer.exe"
+#Write-Host ""
+# Write-Host "Adding won-deployer.exe to Defender exclusion list just in case if defender detect it wrong by mistake..." -ForegroundColor Cyan
+Add-MpPreference -ExclusionPath $wonDeployerDir
+Write-Host ""
