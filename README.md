@@ -29,9 +29,9 @@
 
 If you find my projects helpful, consider supporting my work! Your contributions will help me keep developing and sharing useful resources.
 
-<div style="display: flex; gap: 20px;">
+<div style="display: flex;">
   <a href="https://www.buymeacoffee.com/ArKT" target="_blank">
-    <img src="https://github.com/ArKT-7/WIN-ARM-DOWNLOADER/blob/main/assets/buymecoffee.png" alt="Buy Me A Coffee" style="height: 60px !important; width: 217px !important;">
+    <img src="https://github.com/ArKT-7/WIN-ARM-DOWNLOADER/blob/main/assets/buymecoffee.png" alt="Buy Me A Coffee" style="height: 60px !important; width: 217px !important; margin-right: 20px;">
   </a>
   
   <a href="https://www.paypal.me/arkt7" target="_blank">
