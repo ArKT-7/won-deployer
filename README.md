@@ -25,6 +25,16 @@
 
 - [Bootloader unlocking guide](guide/English/unlock-bootloader-en.md)
 
+## Support My Work
+
+If you find my projects helpful, consider supporting my work! Your contributions will help me keep developing and sharing useful resources.
+
+<a href="https://www.buymeacoffee.com/ArKT" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important; width: 217px !important;">
+</a>
+<a href="https://www.paypal.me/arkt7" target="_blank">
+  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate with PayPal" style="height: 60px !important; width: 217px !important;">
+</a>
 
 ## Credits and Thankfull to
 
