@@ -33,8 +33,8 @@ If you find my projects helpful, consider supporting my work! Your contributions
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important; width: 217px !important;">
 </a>
 <a href="https://www.paypal.me/arkt7" target="_blank">
-  <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" style="height: 60px !important; width: 217px !important;">
-</a>
+  <img src="https://github.com/ArKT-7/WIN-ARM-DOWNLOADER/blob/main/assets/Paypal.png" alt="Donate with PayPal" style="height: 60px !important; width: 217px !important;">
+</a>        
 
 
 ## Credits and Thankfull to
