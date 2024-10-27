@@ -9,7 +9,7 @@
   
 - [```ADB drivers installed on your PC```](https://dl.google.com/android/repository/usb_driver_r13-windows.zip)
   
-- [```ARM Windows ESD```](https://arkt-7.github.io/woawin/) (Select - Build:  ```22631.4112 - latest``` or ```22631.2861``` Language:  ```select your language```)
+- [```ARM Windows ESD```](https://arkt-7.github.io/woawin/) (Select - Build:  ```select build``` Language:  ```select your language```)
     
 - [```Drivers```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/tag/Drivers)
 
