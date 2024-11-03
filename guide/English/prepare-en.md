@@ -110,7 +110,9 @@ won-deployer
 - Click ok and then install the new `Won deployer setup` app. (retry once if fails)
 - now close `Magisk` dummy app and make sure to clear it from ram/recents.
 - Open new `Won deployer setup` app and install both apps from there and UEFI image. (follow on screen instructions)
-- now close everything and open `WOA Helper` app, then grant it root access.
+- now close everything and open `Magisk` app, then click `Ok` to addition setup and complete it.
+- after Restart done open `WOA Helper` app, then grant it root access.
+- click `BACKUP BOOT IMAGE` > `Windows` > OK
 - Open the WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
 
 <details>
