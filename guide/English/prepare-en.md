@@ -112,8 +112,8 @@ won-deployer
 - Open new `Won deployer setup` app and install both apps from there and UEFI image. (follow on screen instructions)
 - now close everything and open `Magisk` app, then click `Ok` to addition setup and complete it.
 - after Restart done open `WOA Helper` app, then grant it root access.
-- click `BACKUP BOOT IMAGE` > `Windows` > OK
-- Open the WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
+- click `BACKUP BOOT IMAGE` > `Windows` > OK Done!
+- Now Use WOA Helper app and press the **QUICKBOOT TO WINDOWS** button.
 
 <details>
 <summary><b><strong>If you faced any issue with the above method, then you can do dualboot setup from here:</strong></b></summary>
