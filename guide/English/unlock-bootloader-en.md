@@ -27,13 +27,13 @@
 
 ### 1. 🛠️ Enable Developer Options
 
-- **For MIUI:**
-  - Go to **Settings → About phone → MIUI version**.
-  - Tap the MIUI version multiple times until developer options are enabled (you will see a popup message).
-
 - **For HyperOS:**
   - Go to **Settings → My device → Detailed info and specs → OS version**.
   - Tap the OS version multiple times until developer options are enabled (you will see a popup message).
+
+- **For MIUI:**
+  - Go to **Settings → About phone → MIUI version**.
+  - Tap the MIUI version multiple times until developer options are enabled (you will see a popup message).
 
 ### 2. 🔓 Enable OEM Unlocking and USB Debugging
  
