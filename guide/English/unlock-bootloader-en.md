@@ -57,6 +57,19 @@
   <summary><strong>New Process (For HyperOS/MIUI 14):</strong></summary>
   
 >
+  <!-- HyperSploit Bypass Submenu -->
+  <details>
+    <summary><strong>Method 2: Using HyperSploit Bypass</strong></summary>
+  
+  **3. Apply to Unlock (HyperSploit):**
+  - Run **HyperSploit-Windows.exe** as Administrator.
+  - When prompted on your device, tap **OK** to allow USB debugging.
+  - Follow the on-screen instructions in the HyperSploit window. When asked to attempt to bind account:
+    - Go to **Settings > Additional settings > Developer options > Mi Unlock status**.
+    - Click on **Add your Mi Account**. Once added, HyperSploit will confirm with "Successfully binded."
+
+  </details>
+
   <!-- Time Trick Submenu -->
   <details>
     <summary><strong>Method 1: Using the Time Trick</strong></summary>
@@ -76,20 +89,7 @@
    - Click on **Add your Mi Account**. After successful addition, you will see "Added Successfully."
 
   </details>
-
-  <!-- HyperSploit Bypass Submenu -->
-  <details>
-    <summary><strong>Method 2: Using HyperSploit Bypass</strong></summary>
   
-  **3. Apply to Unlock (HyperSploit):**
-  - Run **HyperSploit-Windows.exe** as Administrator.
-  - When prompted on your device, tap **OK** to allow USB debugging.
-  - Follow the on-screen instructions in the HyperSploit window. When asked to bind your account:
-    - Go to **Settings > Additional settings > Developer options > Mi Unlock status**.
-    - Click on **Add your Mi Account**. Once added, HyperSploit will confirm with "Successfully binded."
-
-  </details>
-
 </details>
 
 ### 4. 🚀 Unlocking the Bootloader
