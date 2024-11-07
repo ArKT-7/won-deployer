@@ -13,12 +13,15 @@
 - [`🛠️ HyperSploit (bypass method)`](https://github.com/TheAirBlow/HyperSploit/releases/download/1.0.0/HyperSploit-Windows.exe).
 
 
-> **[!NOTE]**  
-> The waiting period in the Mi Unlock Tool may vary. Please be patient and wait until the process completes.
+>[!NOTE]
+>
+> Waiting period in Mi unlock Tool May be different so wait till.
 
-> **[!WARNING]**  
-> During the waiting period, avoid resetting your device or logging out of your Xiaomi account.  
-> **Data Backup**: Unlocking the bootloader will erase all data on your device. Ensure you have backed up any important data.
+>[!WARNING]
+>
+> During the waiting period, do not reset your device or log out of your Xiaomi account.
+>
+> Backup Data: Unlocking the bootloader will erase all data on your device. Make sure to back up important data before proceeding.
 
 ---
 
