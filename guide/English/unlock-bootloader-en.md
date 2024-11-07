@@ -8,8 +8,6 @@
 - [```Mi Community App(only for HyperOS/MIUI 14)```](https://apkpure.net/xiaomi-community/com.mi.global.bbs/download).
 
 - [`Mi Unlock Tool`](https://miuirom.xiaomi.com/rom/u1106245679/6.5.224.28/miflash_unlock-en-6.5.224.28.zip).
-
-- [`HyperSploit - (bypass method)`](https://github.com/TheAirBlow/HyperSploit/releases/download/1.0.0/HyperSploit-Windows.exe).
 >
 
 >[!NOTE]
@@ -50,8 +48,6 @@
 </details>
 
 <details>
-
-<details>
   <summary><strong>New Process (Only for HyperOS/MIUI-14):</strong></summary>
   
   <p>Select one of the following methods to proceed:</p>
@@ -59,23 +55,16 @@
   <!-- Time Trick Submenu -->
   <details>
     <summary><strong>Method 1: Using the Time Trick</strong></summary>
-   
->
-
-> If your device is the global version, you can apply for the bootloader unlock at a specific time.
-
-   **Time Trick:**
-   - Xiaomi allows 2,000 devices to be apply unlock daily.
-   - The reset time for this daily limit is 7 PM Moscow time.
-
- **```3. Apply to unlock:```**
-   - Match your time with 7 PM Moscow time and be ready if you were not fast this will not work.
-   - Open Xiaomi Community app, set it to Global, and sign in with the same account as on your device.
-   - Go to the "Me" tab, click on "Unlock bootloader," then click on "Apply".
-   - Once granted access, go to Settings > Additional settings > Developer options > Mi Unlock status.
-   - Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."
-
-  </summary>
+    
+    <ul>
+      <li>If your device is the global version, you can apply for the bootloader unlock at a specific time.</li>
+      <li>Xiaomi allows 2,000 devices to apply for unlock daily. The reset time for this daily limit is 7 PM Moscow time.</li>
+      <li>Match your time with 7 PM Moscow time and be ready; if you’re not fast, it won’t work.</li>
+      <li>Open the Xiaomi Community app, set it to Global, and sign in with the same account as on your device.</li>
+      <li>Go to the "Me" tab, click on "Unlock bootloader," then click "Apply".</li>
+      <li>Once granted access, go to **Settings > Additional settings > Developer options > Mi Unlock status**.</li>
+      <li>Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."</li>
+    </ul>
 
   </details>
 
@@ -94,6 +83,29 @@
 
 </details>
 
+### 4. Unlocking the Bootloader:
+
+
+<details>
+<summary><b><strong>New Process (only for HyperOS/miui-14):</strong></b></summary>
+
+>
+
+> If your device is the global version, you can apply for the bootloader unlock at a specific time.
+
+   **Time Trick:**
+   - Xiaomi allows 2,000 devices to be apply unlock daily.
+   - The reset time for this daily limit is 7 PM Moscow time.
+
+ **```3. Apply to unlock:```**
+   - Match your time with 7 PM Moscow time and be ready if you were not fast this will not work.
+   - Open Xiaomi Community app, set it to Global, and sign in with the same account as on your device.
+   - Go to the "Me" tab, click on "Unlock bootloader," then click on "Apply".
+   - Once granted access, go to Settings > Additional settings > Developer options > Mi Unlock status.
+   - Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."
+
+  </summary>
+</details>
 
 ### 4. Unlocking the Bootloader:
    - Open the Mi Flash Unlock Tool and sign in with the same Mi account.
@@ -101,6 +113,8 @@
    - Use the Mi Unlock Tool on your PC to unlock the bootloader.
    - If it shows a waiting period error after 99%, likely 72 hours/3 days, close everything and wait until the period is over, then repeat step 4.
 
-
+  
 #### Credits and Acknowledgements:
-This guide has been tested by: [@ArKT-7](https://github.com/ArKT-7), [@ArKT_7](https://t.me/ArKT_7), [@I914900HX](https://t.me/I914900HX), [@Samponnporlsak](https://t.me/Samponnporlsak)
+This guide has been tested by: [@ArKT_7](https://t.me/ArKT_7), [@I914900HX](https://t.me/I914900HX), [@Samponnporlsak](https://t.me/Samponnporlsak)
+
+Special thanks to [@hxruofficial](https://t.me/hxruofficial) for sharing the time trick to apply in HyperOS/miui-14. He specializes in Qualcomm flashing, EDL, and FDL. Check out his tools and services at [HXRU Tool](https://hxrutool.com/).
