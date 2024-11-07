@@ -62,7 +62,7 @@
     
 >
 
-  > **You can bypass Mi community app apply daily quota.**
+  > **Bypass the daily quota limit for apply in the Mi Community app.**
 
   **3. Apply to Unlock (HyperSploit):**
   - Run **HyperSploit-Windows.exe** as Administrator.
