@@ -46,6 +46,10 @@
 
 ### 3. 🔗 Bind Mi Account / Apply for Unlock
 
+>[!NOTE]
+>
+> 🔽 (Click to Expand).
+
 >
 
 <details>
