@@ -9,7 +9,7 @@
 
 - [`Mi Unlock Tool`](https://miuirom.xiaomi.com/rom/u1106245679/6.5.224.28/miflash_unlock-en-6.5.224.28.zip).
 
-- [`HyperSploit - (bypass method)`](https://github.com/TheAirBlow/HyperSploit/releases).
+- [`HyperSploit - (bypass method)`](https://github.com/TheAirBlow/HyperSploit/releases/download/1.0.0/HyperSploit-Windows.exe).
 >
 
 >[!NOTE]
@@ -52,6 +52,19 @@
 <details>
 <summary><b><strong>New Process (only for HyperOS/miui-14):</strong></b></summary>
 
+
+
+<summary><b><strong>Standard Process (For those who is on Miui-13 or less):</strong></b></summary>
+
+ **```3. Bind Mi Account:```**
+   - Go to Settings > Additional settings > Developer options > Mi Unlock status.
+   - Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."
+
+  </summary>
+</details>
+
+
+
 >
 
 > If your device is the global version, you can apply for the bootloader unlock at a specific time.
@@ -80,4 +93,3 @@
 #### Credits and Acknowledgements:
 This guide has been tested by: [@ArKT-7](https://github.com/ArKT-7), [@ArKT_7](https://t.me/ArKT_7), [@I914900HX](https://t.me/I914900HX), [@Samponnporlsak](https://t.me/Samponnporlsak)
 
-Special thanks to [@hxruofficial](https://t.me/hxruofficial) for sharing the time trick to apply in HyperOS/miui-14. He specializes in Qualcomm flashing, EDL, and FDL. Check out his tools and services at [HXRU Tool](https://hxrutool.com/).
