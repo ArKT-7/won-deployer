@@ -57,8 +57,9 @@
   
 >
   <details>
-    <summary><strong>Method 2: Using HyperSploit Bypass (Recommended)</strong></summary>
-  
+    <summary><strong>Method 1: Using HyperSploit Bypass (Recommended)</strong></summary>
+>
+    
   **3. Apply to Unlock (HyperSploit):**
   - Run **HyperSploit-Windows.exe** as Administrator.
   - When prompted on your device, tap **OK** to allow USB debugging.
