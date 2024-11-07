@@ -68,7 +68,7 @@
   - Run **HyperSploit-Windows.exe** as Administrator.
   - When prompted on your device, tap **OK** to allow USB debugging.
   - Follow the on-screen instructions in the **HyperSploit** window. When asked to **attempt to bind account** :
-    - Go to **Settings > Additional settings > Developer options > Mi Unlock status**.
+    - Go to **Settings → Additional settings → Developer options → Mi Unlock status**.
     - Click on **Add account and device**, Once added, HyperSploit will confirm with **Successfully binded**
 
   </details>
@@ -87,7 +87,7 @@
    - Align your local time with **7 PM Moscow time** and be ready—timing is crucial.
    - Open the **Xiaomi Community app**, set it to Global, and sign in with the same account as on your device.
    - Go to the **"Me"** tab, click on **"Unlock bootloader,"** then click on **"Apply"**.
-   - Once granted access, go to **Settings > Additional settings > Developer options > Mi Unlock status**.
+   - Once granted access, go to **Settings → Additional settings → Developer options → Mi Unlock status**.
    - Click on **Add account and device**, After successful addition, you will see **Added Successfully**.
 
   </details>
