@@ -68,8 +68,6 @@
   </details>
   
   <details>
-    
->
     <summary><strong>Method 2: Using the Time Trick 🔽 (Click to Expand)</strong></summary>
     
 >
