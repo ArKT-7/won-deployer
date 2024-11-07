@@ -8,6 +8,9 @@
 - [```Mi Community App(only for HyperOS/MIUI 14)```](https://apkpure.net/xiaomi-community/com.mi.global.bbs/download).
 
 - [`Mi Unlock Tool`](https://miuirom.xiaomi.com/rom/u1106245679/6.5.224.28/miflash_unlock-en-6.5.224.28.zip).
+
+- [`HyperSploit - (bypass method)`](https://github.com/TheAirBlow/HyperSploit/releases/download/1.0.0/HyperSploit-Windows.exe).
+
 >
 
 >[!NOTE]
@@ -73,20 +76,19 @@
 
   </details>
 
-  <!-- HyperSploit Bypass Submenu -->
-  <details>
-    <summary><strong>Method 2: Using HyperSploit Bypass</strong></summary>
-    
-    <ul>
-      <li>Download and install <a href="https://github.com/TheAirBlow/HyperSploit/releases/download/1.0.0/HyperSploit-Windows.exe">HyperSploit</a>.</li>
-      <li>Run HyperSploit as Administrator.</li>
-      <li>Connect your device to the PC in **Developer Mode** with USB Debugging enabled.</li>
-      <li>Follow the instructions provided by HyperSploit to complete the bypass and unlock the bootloader.</li>
-    </ul>
-
-  </details>
-
+<!-- HyperSploit Bypass Submenu -->
+<details>
+  <summary><strong>Method 2: Using HyperSploit Bypass</strong></summary>
+  
+  **```3. Apply to unlock (HyperSploit):```**
+  - Run **HyperSploit-Windows.exe** as Administrator.
+  - On your device, if prompted to allow USB debugging, tap **OK** to allow.
+  - In the HyperSploit window, follow the on-screen instructions. When prompted to bind your account:
+    - Go to **Settings > Additional settings > Developer options > Mi Unlock status**.
+    - Click on **Add your Mi Account**. Once added successfully, the HyperSploit window will confirm with "Successfully binded."
+  
 </details>
+
 
 ### 4. Unlocking the Bootloader:
    - Open the Mi Flash Unlock Tool and sign in with the same Mi account.
@@ -98,4 +100,3 @@
 #### Credits and Acknowledgements:
 This guide has been tested by: [@ArKT_7](https://t.me/ArKT_7), [@I914900HX](https://t.me/I914900HX), [@Samponnporlsak](https://t.me/Samponnporlsak)
 
-Special thanks to [@hxruofficial](https://t.me/hxruofficial) for sharing the time trick to apply in HyperOS/miui-14. He specializes in Qualcomm flashing, EDL, and FDL. Check out his tools and services at [HXRU Tool](https://hxrutool.com/).
