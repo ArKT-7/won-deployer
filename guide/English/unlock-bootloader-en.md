@@ -49,9 +49,9 @@
   </summary>
 </details>
 
-<details>
+<<strong>New Process (only for HyperOS/miui-14):</strong>>
 <!-- New Process Section -->
-<details>
+<<strong>New Process (only for HyperOS/miui-14):</strong>>
   <summary><strong>New Process (only for HyperOS/miui-14):</strong></summary>
   
   <p>Instructions for the New Process will go here...</p>
@@ -89,6 +89,7 @@
 </details>
 
 
+THIS I WANT TO SHOW ALWAYS
 
 ### 4. Unlocking the Bootloader:
    - Open the Mi Flash Unlock Tool and sign in with the same Mi account.
