@@ -109,7 +109,7 @@
    - Open the **Mi Flash Unlock Tool** and sign in with the same Mi account.
    - Put your device in **Fastboot Mode** and connect it to your PC.
    - Use the Mi Unlock Tool on your PC to unlock the bootloader.
-   - If a waiting period error appears after 99% (likely 72 hours/3 days), close everything and wait until the period is over, then repeat this step.
+   - If a waiting period error appears (likely 168 hours/7 days), close everything and wait until the given period is over, then repeat only this step.
 
 ---
 
