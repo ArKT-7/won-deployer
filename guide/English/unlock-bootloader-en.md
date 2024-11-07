@@ -56,8 +56,10 @@
   <summary><strong>New Process (For HyperOS/MIUI 14):</strong></summary>
   
 >
+
   <details>
     <summary><strong>Method 1: Using HyperSploit Bypass (Recommended)</strong></summary>
+    
 >
     
   **3. Apply to Unlock (HyperSploit):**
@@ -71,6 +73,7 @@
   
   <details>
     <summary><strong>Method 2: Using the Time Trick</strong></summary>
+    
 >
     
   > **If your device is the global version, you can apply for the bootloader unlock at a specific time.**
