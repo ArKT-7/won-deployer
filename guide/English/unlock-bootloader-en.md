@@ -92,7 +92,72 @@
   <summary><strong>Standard Process (For MIUI 13 and below): </strong></summary>
   
 >
+
+
+
+  <script>
+  // Get all details elements
+  const details = document.querySelectorAll("details");
+
+  // Add an event listener to each details element
+  details.forEach(detail => {
+    detail.addEventListener("click", () => {
+      // When a detail is clicked, close all other details except the one clicked
+      details.forEach(otherDetail => {
+        if (otherDetail !== detail) {
+          otherDetail.removeAttribute("open");
+        }
+      });
+    });
+  });
+</script>
+
+### 3. 🔗 Bind Mi Account / Apply for Unlock
+
+>[!NOTE]  
+> ▶️ Click to Expand the menu.
+
+<details>
+  <summary><strong>New Process (For HyperOS/MIUI 14):</strong></summary>
   
+  <details>
+    <summary><strong>Method 1: Using HyperSploit Bypass (Recommended)</strong></summary>
+    
+    > **This will bypass the daily quota limit while applying in the Mi Community app.**
+
+    **3. Apply to Unlock (HyperSploit):**
+    - Run **HyperSploit-Windows.exe** as Administrator.
+    - When prompted on your device, tap **OK** to allow USB debugging.
+    - Follow the on-screen instructions in the **HyperSploit** window. When asked to **attempt to bind account**:
+      - Go to **Settings → Additional settings → Developer options → Mi Unlock status**.
+      - Click on **Add account and device**. Once added, HyperSploit will confirm with **Successfully binded**.
+  </details>
+  
+  <details>
+    <summary><strong>Method 2: Using the Time Trick</strong></summary>
+    
+    > **If your device is the global version, you can apply for the bootloader unlock at a specific time.**
+
+    - Xiaomi allows **2,000 devices to unlock daily**.
+    - The reset time for this daily limit is **7 PM Moscow time**.
+
+    **3. Apply to Unlock:**
+    - Align your local time with **7 PM Moscow time** and be ready—timing is crucial.
+    - Open the **Xiaomi Community app**, set it to Global, and sign in with the same account as on your device.
+    - Go to the **"Me"** tab, click on **"Unlock bootloader,"** then click on **"Apply"**.
+    - Once granted access, go to **Settings → Additional settings → Developer options → Mi Unlock status**.
+    - Click on **Add account and device**. After successful addition, you will see **Added Successfully**.
+  </details>
+</details>
+
+<details>
+  <summary><strong>Standard Process (For MIUI 13 and below):</strong></summary>
+  <!-- Additional content for Standard Process goes here -->
+</details>
+
+
+
+
  **```3. Bind Mi Account:```**
    - Go to Settings > Additional settings > Developer options > Mi Unlock status.
    - Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."
