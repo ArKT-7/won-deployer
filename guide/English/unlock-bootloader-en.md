@@ -62,7 +62,6 @@
   - Run **HyperSploit-Windows.exe** as Administrator.
   - When prompted on your device, tap **OK** to allow USB debugging.
   - Follow the on-screen instructions in the HyperSploit window. When asked to attempt to bind account:
->
     - Go to **Settings > Additional settings > Developer options > Mi Unlock status**.
     - Click on **Add your Mi Account**. Once added, HyperSploit will confirm with "Successfully binded."
 
