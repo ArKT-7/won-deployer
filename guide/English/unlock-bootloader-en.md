@@ -85,7 +85,7 @@
     <li>Once granted access, go to <strong>Settings > Additional settings > Developer options > Mi Unlock status</strong>.</li>
     <li>Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."</li>
   </ul>
-
+</summary>
 </details>
 
 
