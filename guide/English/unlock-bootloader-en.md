@@ -48,7 +48,7 @@
 >
 
   <details>
-    <summary><strong>Method 1: Using HyperSploit Bypass (Recommended)</strong></summary>
+    <summary><strong>Method 1: Using HyperSploit Bypass (Recommended) 🔽 (Click to Expand)</strong></summary>
     
 >
     
