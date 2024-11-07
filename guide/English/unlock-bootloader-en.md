@@ -56,8 +56,6 @@
 <details>
   <summary><strong>New Process (For HyperOS/MIUI 14):</strong></summary>
   
-  <p>Select one of the following methods to proceed:</p>
-
   <!-- Time Trick Submenu -->
   <details>
     <summary><strong>Method 1: Using the Time Trick</strong></summary>
