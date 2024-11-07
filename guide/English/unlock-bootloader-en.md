@@ -5,9 +5,13 @@
 ## 🔓 Unlocking the Bootloader: A Step-by-Step Guide for HyperOS/MIUI
 
 ### 📋 Prerequisites:
-- [📲 Mi Community App (for HyperOS/MIUI 14 only)](https://apkpure.net/xiaomi-community/com.mi.global.bbs/download).
-- [🔧 Mi Unlock Tool](https://miuirom.xiaomi.com/rom/u1106245679/6.5.224.28/miflash_unlock-en-6.5.224.28.zip).
-- [🛠️ HyperSploit (bypass method)](https://github.com/TheAirBlow/HyperSploit/releases/download/1.0.0/HyperSploit-Windows.exe).
+
+- [`📲 Mi Community App(only for HyperOS/MIUI 14)`](https://apkpure.net/xiaomi-community/com.mi.global.bbs/download).
+
+- [`🔧 Mi Unlock Tool`](https://miuirom.xiaomi.com/rom/u1106245679/6.5.224.28/miflash_unlock-en-6.5.224.28.zip).
+- 
+- [`🛠️ HyperSploit (bypass method)`](https://github.com/TheAirBlow/HyperSploit/releases/download/1.0.0/HyperSploit-Windows.exe).
+
 
 > **[!NOTE]**  
 > The waiting period in the Mi Unlock Tool may vary. Please be patient and wait until the process completes.
@@ -52,12 +56,12 @@
   <details>
     <summary><strong>Method 1: Using the Time Trick</strong></summary>
     
-    > **If your device is the global version, you can apply for the bootloader unlock at a specific time.**
+  > **If your device is the global version, you can apply for the bootloader unlock at a specific time.**
 
-    - Xiaomi allows **2,000 devices to unlock daily**.
-    - The reset time for this daily limit is **7 PM Moscow time**.
+  - Xiaomi allows **2,000 devices to unlock daily**.
+  - The reset time for this daily limit is **7 PM Moscow time**.
 
-    **3. Apply to Unlock:**
+  **3. Apply to Unlock:**
    - Align your local time with **7 PM Moscow time** and be ready—timing is crucial.
    - Open the **Xiaomi Community app**, set it to Global, and sign in with the same account as on your device.
    - Go to the **"Me"** tab, click on **"Unlock bootloader,"** then click on **"Apply"**.
@@ -70,12 +74,12 @@
   <details>
     <summary><strong>Method 2: Using HyperSploit Bypass</strong></summary>
   
-    **3. Apply to Unlock (HyperSploit):**
-    - Run **HyperSploit-Windows.exe** as Administrator.
-    - When prompted on your device, tap **OK** to allow USB debugging.
-    - Follow the on-screen instructions in the HyperSploit window. When asked to bind your account:
-      - Go to **Settings > Additional settings > Developer options > Mi Unlock status**.
-      - Click on **Add your Mi Account**. Once added, HyperSploit will confirm with "Successfully binded."
+  **3. Apply to Unlock (HyperSploit):**
+  - Run **HyperSploit-Windows.exe** as Administrator.
+  - When prompted on your device, tap **OK** to allow USB debugging.
+  - Follow the on-screen instructions in the HyperSploit window. When asked to bind your account:
+    - Go to **Settings > Additional settings > Developer options > Mi Unlock status**.
+    - Click on **Add your Mi Account**. Once added, HyperSploit will confirm with "Successfully binded."
 
   </details>
 
