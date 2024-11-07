@@ -13,10 +13,6 @@
 - [`🛠️ HyperSploit (bypass method)`](https://github.com/TheAirBlow/HyperSploit/releases/download/1.0.0/HyperSploit-Windows.exe).
 
 
->[!NOTE]
->
-> Waiting period in Mi unlock Tool May be different so wait till.
-
 >[!WARNING]
 >
 > During the waiting period, do not reset your device or log out of your Xiaomi account.
@@ -110,6 +106,10 @@
    - Put your device in **Fastboot Mode** and connect it to your PC.
    - Use the Mi Unlock Tool on your PC to unlock the bootloader.
    - If a waiting period error appears (likely 168 hrs/7 days), close everything, wait until the period ends, then repeat this step.
+>[!NOTE]
+>
+> Waiting period in Mi unlock Tool May be different so wait till.
+
 
 ---
 
