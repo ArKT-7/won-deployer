@@ -83,7 +83,7 @@
 </details>
 
 <details>
-  <summary><strong>Standard Process (For MIUI 13 and below):</strong></summary>
+  <summary><strong>Standard Process (For MIUI 13 and below): 🔽 (Click to Expand)</strong></summary>
   
 >
   
