@@ -36,7 +36,7 @@
   - Tap the OS version multiple times until developer options are enabled (you will see a popup message).
 
 ### 2. 🔓 Enable OEM Unlocking and USB Debugging
- -
+ 
    - Go to **Settings → Additional settings → Developer options**.
    - Enable **OEM unlocking** and **USB debugging**.
 
