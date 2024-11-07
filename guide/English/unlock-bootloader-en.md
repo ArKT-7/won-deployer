@@ -34,13 +34,19 @@
 - **For MIUI:**
   - Go to **Settings → About phone → MIUI version**.
   - Tap the MIUI version multiple times until developer options are enabled (you will see a popup message).
+    
+>
 
 ### 2. 🔓 Enable OEM Unlocking and USB Debugging
  
    - Go to **Settings → Additional settings → Developer options**.
    - Enable **OEM unlocking** and **USB debugging**.
+     
+>
 
 ### 3. 🔗 Bind Mi Account / Apply for Unlock
+
+>
 
 <details>
   <summary><strong>New Process (For HyperOS/MIUI 14): 🔽 (Click to Expand)</strong></summary>
@@ -62,6 +68,8 @@
   </details>
   
   <details>
+    
+>
     <summary><strong>Method 2: Using the Time Trick 🔽 (Click to Expand)</strong></summary>
     
 >
