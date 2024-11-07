@@ -43,7 +43,7 @@
 ### 3. 🔗 Bind Mi Account / Apply for Unlock
 
 <details>
-  <summary><strong>New Process (For HyperOS/MIUI 14):</strong></summary>
+  <summary><strong>New Process (For HyperOS/MIUI 14): 🔽 (Click to Expand)</strong></summary>
   
 >
 
@@ -62,7 +62,7 @@
   </details>
   
   <details>
-    <summary><strong>Method 2: Using the Time Trick</strong></summary>
+    <summary><strong>Method 2: Using the Time Trick 🔽 (Click to Expand)</strong></summary>
     
 >
     
