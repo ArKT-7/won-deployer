@@ -44,9 +44,9 @@
 <details>
   <summary><strong>Standard Process (For MIUI 13 and below):</strong></summary>
 
-  **3. Bind Mi Account:**
-   - Go to **Settings > Additional settings > Developer options > Mi Unlock status**.
-   - Click on **Add your Mi Account**. Once successfully added, a confirmation message "Added Successfully" will appear.
+ **```3. Bind Mi Account:```**
+   - Go to Settings > Additional settings > Developer options > Mi Unlock status.
+   - Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."
 
 </details>
 
