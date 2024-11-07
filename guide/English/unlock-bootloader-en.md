@@ -48,17 +48,17 @@
 
 >[!NOTE]
 >
-> 🔽 (Click to Expand).
+> ▶️ Click to Expand the menu.
 
 >
 
 <details>
-  <summary><strong>New Process (For HyperOS/MIUI 14): 🔽 (Click to Expand)</strong></summary>
+  <summary><strong>New Process (For HyperOS/MIUI 14): </strong></summary>
   
 >
 
   <details>
-   <summary><strong>Method 1: Using HyperSploit Bypass (Recommended) 🔽 (Click to Expand)</strong></summary>
+   <summary><strong>Method 1: Using HyperSploit Bypass (Recommended) </strong></summary>
     
 >
     
@@ -72,7 +72,7 @@
   </details>
   
   <details>
-    <summary><strong>Method 2: Using the Time Trick 🔽 (Click to Expand)</strong></summary>
+    <summary><strong>Method 2: Using the Time Trick </strong></summary>
     
 >
     
@@ -93,7 +93,7 @@
 </details>
 
 <details>
-  <summary><strong>Standard Process (For MIUI 13 and below): 🔽 (Click to Expand)</strong></summary>
+  <summary><strong>Standard Process (For MIUI 13 and below): </strong></summary>
   
 >
   
