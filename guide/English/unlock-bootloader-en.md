@@ -56,7 +56,7 @@
   <details>
     <summary><strong>Method 1: Using the Time Trick</strong></summary>
     
-    >
+>
 
 > If your device is the global version, you can apply for the bootloader unlock at a specific time.
 
