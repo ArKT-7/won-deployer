@@ -50,38 +50,45 @@
 </details>
 
 <details>
-<summary><b><strong>New Process (only for HyperOS/miui-14):</strong></b></summary>
+<!-- New Process Section -->
+<details>
+  <summary><strong>New Process (only for HyperOS/miui-14):</strong></summary>
+  
+  <p>Instructions for the New Process will go here...</p>
+  
+</details>
 
+<!-- Standard Process Section -->
+<details>
+  <summary><strong>Standard Process (For those who are on Miui-13 or less):</strong></summary>
+  
+  <!-- Submenu: Bind Mi Account -->
+  <p><strong>1. Bind Mi Account:</strong></p>
+  <ul>
+    <li>Go to <strong>Settings > Additional settings > Developer options > Mi Unlock status</strong>.</li>
+    <li>Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."</li>
+  </ul>
+  
+  <!-- Submenu: Time Trick -->
+  <p><strong>2. Time Trick:</strong></p>
+  <ul>
+    <li>If your device is the global version, you can apply for the bootloader unlock at a specific time.</li>
+    <li>Xiaomi allows 2,000 devices to apply unlock daily. The reset time for this daily limit is 7 PM Moscow time.</li>
+  </ul>
+  
+  <!-- Submenu: Apply to unlock -->
+  <p><strong>3. Apply to Unlock:</strong></p>
+  <ul>
+    <li>Match your time with 7 PM Moscow time and be ready—if you aren’t fast, this will not work.</li>
+    <li>Open Xiaomi Community app, set it to Global, and sign in with the same account as on your device.</li>
+    <li>Go to the "Me" tab, click on "Unlock bootloader," then click on "Apply".</li>
+    <li>Once granted access, go to <strong>Settings > Additional settings > Developer options > Mi Unlock status</strong>.</li>
+    <li>Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."</li>
+  </ul>
 
-
-<summary><b><strong>Standard Process (For those who is on Miui-13 or less):</strong></b></summary>
-
- **```3. Bind Mi Account:```**
-   - Go to Settings > Additional settings > Developer options > Mi Unlock status.
-   - Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."
-
-  </summary>
 </details>
 
 
-
->
-
-> If your device is the global version, you can apply for the bootloader unlock at a specific time.
-
-   **Time Trick:**
-   - Xiaomi allows 2,000 devices to be apply unlock daily.
-   - The reset time for this daily limit is 7 PM Moscow time.
-
- **```3. Apply to unlock:```**
-   - Match your time with 7 PM Moscow time and be ready if you were not fast this will not work.
-   - Open Xiaomi Community app, set it to Global, and sign in with the same account as on your device.
-   - Go to the "Me" tab, click on "Unlock bootloader," then click on "Apply".
-   - Once granted access, go to Settings > Additional settings > Developer options > Mi Unlock status.
-   - Click on "Add your Mi Account." After successful addition, you will see "Added Successfully."
-
-  </summary>
-</details>
 
 ### 4. Unlocking the Bootloader:
    - Open the Mi Flash Unlock Tool and sign in with the same Mi account.
