@@ -61,7 +61,9 @@
    <summary><strong>Method 1: Using HyperSploit Bypass (Recommended) </strong></summary>
     
 >
-    
+
+  > **You can bypass Mi community app apply daily quota.**
+
   **3. Apply to Unlock (HyperSploit):**
   - Run **HyperSploit-Windows.exe** as Administrator.
   - When prompted on your device, tap **OK** to allow USB debugging.
