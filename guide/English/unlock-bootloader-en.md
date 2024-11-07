@@ -15,8 +15,6 @@
 
 >[!WARNING]
 >
-> During the waiting period, do not reset your device or log out of your Xiaomi account.
->
 > Backup Data: Unlocking the bootloader will erase all data on your device. Make sure to back up important data before proceeding.
 
 ---
