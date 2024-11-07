@@ -107,6 +107,7 @@
 >[!NOTE]
 >
 > Waiting period in Mi unlock Tool May be different so wait till.
+> During the waiting period, do not reset your device or log out of your Xiaomi account.
 
 
 ---
