@@ -17,7 +17,7 @@
 > [!Warning]
 > **All your data will be erased! Back up now if needed.**
 >
-> **Make sure to reboot to android before start the uninstallation process**
+> **Make sure to reboot to android before start the uninstallation process.**
 
 --- 
 
