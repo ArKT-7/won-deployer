@@ -35,7 +35,7 @@
 3. **Format and Make partition Stock:**
    - Scroll down to the **`Format/wipe make Partition Stock`** section.
    - In the input box, type **`format`**.
-   - Finally, click the **`Format/Wipe`** button to start the process.
+   - Finally, click the **`Format/Wipe`** button and Click **`OK`** to the warning popup.
    - Once formatting completes, a success popup will appear. Click **`OK`** on the popup.
    - After that, scroll up and click the **`Reboot Device`** button to restart.
 
