@@ -16,31 +16,43 @@ If you want to relock your bootloader you'll need your partition table to be sto
   
 - [```Recovery Image```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/1.0/recovery.img)
 
-#### Switch to Android 
-> Switch to Android before starting the uninstallation process
+# 🛠️ Nabu Device Formatter Guide
 
-#### Reboot to fastboot
-- Boot your NABU to **fastboot** by holding down the **`volume down`** button during reboot
+Welcome to the **Nabu Device Formatter Guide**! This guide will walk you through using our website tool to **format data** and set up a **stock partition layout** on your Nabu device.
 
-- Connect it to your PC/Laptop using a cable
+## 📋 Prerequisites
 
-#### Boot the modded recovery
-> Open a CMD window inside the platform-tools folder, then (while your tablet is in fastboot mode) run
-```cmd
-fastboot boot path\to\recovery.img
-```
+Before you start, ensure you have:
+- A **USB cable** to connect your Nabu device to your computer or Android device
+- **any other device can be - android, windows, mac or linux** (USB OTG support required)
+- **google chrome browser**
 
-#### Restore the partition layout
-> [!Warning]
-> It will wipe your Android files. Backup first if needed.
-```cmd
-adb shell restore
-```
+> ⚠️ **Important:** Please back up any important data on your device, as this process will erase all data.
 
-### Reboot to Android 
-```cmd
-adb reboot 
-```
+## 🚀 Steps to Format Data and Set Stock Partition Layout
+
+Follow these steps:
+
+1. **Reboot the Nabu device into fastboot mode:**
+   - Hold down **Power + Volume Down** buttons until the device enters fastboot mode.
+
+2. **Connect to the Fastboot Tool on the Website:**
+   - Open the [Nabu Formatting Tool](https://arkt-7.github.io/nabu/) in a browser.
+   - Click on the **Connect Fastboot** button.
+   - Select your **Nabu device** from the list that appears and grant permissions if prompted (such as **allowing Android** if using an Android device).
+
+3. **Format and Wipe Data:**
+   - Scroll down to the **Format/Wipe Data** section.
+   - Choose **Partition Layout - Stock**.
+   - In the input box, type **format**.
+   - Finally, click the **Wipe** button to start the formatting process.
+
+> ✅ **Note:** Once completed, your Nabu device will have the default stock partition layout.
+
+---
+
+Enjoy using your freshly formatted Nabu device! 🎉 If you encounter any issues, refer to our support page for troubleshooting tips.
+
 
 > [!NOTE]
 > If you are rebooted into MIUI Recovery perform the following actions:
