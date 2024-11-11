@@ -18,9 +18,7 @@
 > All your data will be erased! Back up now if needed.
 >
 
-## 🚀 Steps to Format Data and Set Stock Partition Layout
-
-Follow these steps:
+### 🚀 Steps to Stock Partition Layout
 
 1. **Reboot the Nabu device into fastboot mode:**
    - **Power off** your **Xiaomi Pad 5**
