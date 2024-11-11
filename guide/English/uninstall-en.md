@@ -25,7 +25,7 @@
 
 1. **Reboot the Nabu device into fastboot mode:**
    - **Power off** your **Xiaomi Pad 5**
-   - Hold down **Power + Volume Down** buttons until the device enters **fastboot mode.**
+   - Hold down **`Power + Volume Down`** buttons until the device enters **fastboot mode.**
    
 2. **Connect to the Fastboot Tool on the Website:**
    - Open the [Nabu Fatboot Tool](https://arkt-7.github.io/nabu/) in browser of other device.
