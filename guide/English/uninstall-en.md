@@ -32,7 +32,7 @@
    - Click on the **Connect Device Fastboot** button.
    - Select **Android** from the list that appears and **allow** permissions.
 
-**4. Format and Make partition Stock:**
+**4.** **Format and Make partition Stock:**
    - Scroll down to the **Format/wipe make Partition Stock** section.
    - In the input box, type **format**.
    - Finally, click the **Format/Wipe** button to start the process.
