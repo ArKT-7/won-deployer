@@ -25,19 +25,19 @@
 
 1. **Reboot the Nabu device into fastboot mode:**
    - **Power off** your **Xiaomi Pad 5**
-   - Hold down **`Power + Volume Down`** buttons until the device enters **fastboot mode.**
+   - Hold down **`Power + Volume Down`** buttons until the device enters **`fastboot mode`.**
    
 2. **Connect to the Fastboot Tool on the Website:**
-   - Open the [Nabu Fatboot Tool](https://arkt-7.github.io/nabu/) in browser of other device.
-   - Click on the **Connect Device Fastboot** button.
-   - Select **Android** from the list that appears and **allow** permissions.
+   - Open the **[Nabu Fatboot Tool](https://arkt-7.github.io/nabu/)** in browser of other device.
+   - Click on the **`Connect Device Fastboot`** button.
+   - Select **`Android`** from the list that appears and **`allow`** permissions.
 
 3. **Format and Make partition Stock:**
-   - Scroll down to the **Format/wipe make Partition Stock** section.
-   - In the input box, type **format**.
-   - Finally, click the **Format/Wipe** button to start the process.
-   - Once formatting completes, a success popup will appear. Click **OK** on the popup.
-   - After that, scroll up and click the **Reboot Device** button to restart.
+   - Scroll down to the **`Format/wipe make Partition Stock`** section.
+   - In the input box, type **`format`**.
+   - Finally, click the **`Format/Wipe`** button to start the process.
+   - Once formatting completes, a success popup will appear. Click **`OK`** on the popup.
+   - After that, scroll up and click the **`Reboot Device`** button to restart.
 
 
 > [!NOTE]
