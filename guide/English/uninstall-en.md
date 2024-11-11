@@ -41,7 +41,7 @@
 
 
 > [!NOTE]
-> If you are rebooted into Recovery perform the following actions:
+> If your device **rebooted into Recovery** perform the following actions:
 > 1. Select **Wipe Data/Factory reset**
 > 2. **Wipe All Data**
 > 3. After Data is wiped successfully, Click Back To Main Menu
