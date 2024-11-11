@@ -23,16 +23,16 @@
 
 ### 🚀 Steps to Stock Partition Layout / Uninstall Windows 
 
-1. **Reboot the Nabu device into fastboot mode:**
+**1. Reboot the Nabu device into fastboot mode:**
    - **Power off** your **Xiaomi Pad 5**
    - Hold down **Power + Volume Down** buttons until the device enters **fastboot mode.**
    
-3. **Connect to the Fastboot Tool on the Website:**
+**3. Connect to the Fastboot Tool on the Website:**
    - Open the [Nabu Fatboot Tool](https://arkt-7.github.io/nabu/) in browser of other device.
    - Click on the **Connect Device Fastboot** button.
    - Select **Android** from the list that appears and **allow** permissions.
 
-4. **Format and Make partition Stock:**
+**4. Format and Make partition Stock:**
    - Scroll down to the **Format/wipe make Partition Stock** section.
    - In the input box, type **format**.
    - Finally, click the **Format/Wipe** button to start the process.
