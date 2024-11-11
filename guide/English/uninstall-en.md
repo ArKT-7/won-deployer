@@ -11,7 +11,7 @@
 
 ### 📋 Prerequisites
 
-- A **A cable USB or C to C** to connect your **Xiaomi Pad 5** to your **other device**
+- **A Cable (USB-A to USB-C or USB-C to USB-C)** to connect your **Xiaomi Pad 5** to your **other device**
 - **any other device (android, windows, mac or linux)**
 
 > [!Warning]
