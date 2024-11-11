@@ -2,13 +2,15 @@
 
 # Running Windows on the Xiaomi Pad 5
 
-## Uninstallation
+## 🧹 Uninstallation
 
-### Why is this needed?
+### ❓ Why is Uninstallation Needed?
 
-#### - If you want to uninstall windows this is used instead of deleting partitions manually to avoid human error + writing a whole dedicated guide to just uninstalling.
+#### 🔹 Avoid Manual Partition Errors
+#### If you plan to uninstall Windows, this guide will help you do so safely—without manually deleting partitions, which can lead to **human error**.
 
-#### - If you want to relock your bootloader you'll need your partition table to be stock.
+#### 🔹 Relock the Bootloader
+#### When you’re ready to **relock your bootloader**, having a stock partition table is essential. This guide ensures your partitions are properly set, making relocking a smooth process.
 
 ### Prerequisites
 
