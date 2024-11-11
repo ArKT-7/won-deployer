@@ -9,7 +9,7 @@
 #### 🔹 If you want to uninstall windows this is used instead of deleting partitions manually to avoid human error.
 #### 🔹 If you want to relock your bootloader you'll need your partition table to be stock.
 
-## 📋 Prerequisites
+### 📋 Prerequisites
 
 - A **USB cable** to connect your **Xiaomi Pad 5** to your **other device**
 - **any other device can be - android, windows, mac or linux**
