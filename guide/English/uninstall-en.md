@@ -14,6 +14,10 @@
 - A **USB cable** to connect your **Xiaomi Pad 5** to your **other device**
 - **any other device can be - android, windows, mac or linux**
 
+> [!NOTE]
+> Make sure to reboot to android before start the uninstallation process
+> 
+
 > [!Warning]
 > All your data will be erased! Back up now if needed.
 >
