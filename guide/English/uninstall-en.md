@@ -19,6 +19,8 @@
 >
 > Make sure to reboot to android before start the uninstallation process
 
+--- 
+
 ### 🚀 Steps to Stock Partition Layout / Uninstall Windows 
 
 1. **Reboot the Nabu device into fastboot mode:**
