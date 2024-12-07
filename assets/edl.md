@@ -2,119 +2,139 @@
 
 # 🚀 **Running Windows on the Xiaomi Pad 5**
 
+---
+
 ## 📌 **Restoring the Device in EDL Mode**
 
 > **Note:** This guide provides two methods for restoring your device in **EDL mode**:  
-> - **Method 1: EDL Bypass Flashing** (a free method using patched tools).  
-> - **Method 2: Paid Flashing using the HXRU Tool** (required in case bypass not work after flashing).
+> - **Method 1:** **EDL Bypass Flashing** (Free method using patched tools).  
+> - **Method 2:** **Paid Flashing via HXRU Tool**.
 
+---
 
 ### **🔧 Common Prerequisites**
-Before proceeding with either method, ensure the following are ready:  
+
+Before proceeding with either method, ensure the following requirements are met:
+
 1. 💻 **PC with Windows installed.**  
 2. 📥 **EDL 9008 drivers installed.**  
-   - Download and extract [QUD.zip](https://github.com/n00b69/woa-betalm/releases/download/Qfil/QUD.zip).  
-   - Install drivers via **Device Manager** if your device shows **QUSB_BULK_CID** with a ⚠️ warning.  
+   - Download and extract the [QUD.zip](https://github.com/n00b69/woa-betalm/releases/download/Qfil/QUD.zip).  
+   - Install the drivers via **Device Manager** if your device shows **QUSB_BULK_CID** with a ⚠️ warning.
 3. ⚙️ **Fastboot ROM for Nabu (Xiaomi Pad 5).**  
-   - Download the latest ROM [here](http://xmfirmwareupdater.com/miui/nabu/).  
-4. 🔌 **USB-C cable or EDL cable** (e.g., **Hydra V2 EDL Cable**).  
+   - Download the latest ROM from [here](http://xmfirmwareupdater.com/miui/nabu/).
+4. 🔌 **USB-C cable** or **EDL cable** (e.g., **Hydra V2 EDL Cable**).
 
 ---
 
 ### **🔄 Entering EDL Mode**
-Use one of these methods to boot into EDL mode:  
 
-- **Unlocked Bootloader:**  
-  Run the following command in fastboot mode:  
-  ```bash
-  fastboot oem edl
+To proceed with the flashing, you need to boot your device into **EDL mode**. Use one of the following methods:
 
-- **Locked Bootloader or Unbootable Device:**  
-- Use an **EDL cable**. Insert the cable into your device and press the button as instructed.  
-- Alternatively, **short test points** (requires opening the back panel).
+- **If the Bootloader is Unlocked:**  
+  Run the following command in **fastboot mode**:  
+  **`fastboot oem edl`**
 
-## **Method 1: EDL Bypass Flashing** (Free Method)
-> This method uses patched tools to bypass EDL authentication.
-
-### **🔧 Prerequisites**
-1. **Patched MiFlash Tool**.  
-2. **Patched firehose (.elf) file** for your device.  
-3. **Fastboot ROM** (extracted).
+- **If the Bootloader is Locked or the Device is Unbootable:**  
+  - **Option 1:** Use an **EDL cable** (e.g., **Hydra V2 EDL Cable**). Insert the cable into your device and press the button as instructed.  
+  - **Option 2:** **Short the test points** (requires opening the back panel of the device).  
 
 ---
 
-### **📝 Steps**
-1. **Extract Files:**  
-   - Unzip the Fastboot ROM and the **MiflashPatched.zip**.
+## **📝 Method 1: EDL Bypass Flashing (Free Method)**
 
-2. **Replace Firehose:**  
-   - Copy the patched firehose `.elf` file into the ROM's `images` folder, replacing the existing file.
+### **🔧 Prerequisites for Method 1**
+1. **Patched MiFlash Tool.**  
+2. **Patched firehose (.elf) file** for your device.  
+3. **Extracted Fastboot ROM** (for Nabu).  
+4. **EDL 9008 drivers installed** (as mentioned in Common Prerequisites).
 
-3. **Connect Device:**  
-   - Reboot your device into EDL mode and connect it to your PC.
+---
 
-4. **Open Patched MiFlash Tool:**  
+### **🛠️ Steps to Follow:**
+
+1. **Extract the Files:**  
+   - Unzip both the **Fastboot ROM** and the **MiflashPatched.zip** file.
+
+2. **Replace the Firehose File:**  
+   - Copy the **patched firehose (.elf)** file into the **images** folder of the extracted **Fastboot ROM** and replace the existing one.
+
+3. **Reconnect the Device:**  
+   - Reboot your device into **EDL mode** and connect it to the PC.
+
+4. **Open the Patched MiFlash Tool:**  
    - Launch **XiaoMiFlash.exe** from the **MiflashPatched** folder.
 
-5. **Select ROM:**  
-   - Click **Select** in MiFlash and choose the folder containing the extracted ROM.
+5. **Select the Fastboot ROM Folder:**  
+   - Click on **Select** in the MiFlash tool and choose the folder where the **Fastboot ROM** is extracted.
 
-6. **Tick Clean All:**  
-   - Ensure only the **Clean All** option is selected.
+6. **Enable Clean All Option:**  
+   - Ensure that only the **Clean All** option is checked at the bottom of the tool.
 
-7. **Start Flashing:**  
+7. **Start the Flashing Process:**  
    - Click **Refresh** to detect your device.  
-   - Click **Flash** to start the process.
+   - Click **Flash** to begin the flashing process.
 
-8. **Handle Errors:**  
-   - If an error occurs, reboot into EDL mode, click **Refresh**, and retry.
+8. **Handle Possible Errors:**  
+   - If an error occurs, reboot the device into **EDL mode**, click **Refresh** again, and then click **Flash** to retry.
 
-9. **Reboot Device:**  
-   - After flashing, reboot the device using the **Power** button.
+9. **Reboot the Device:**  
+   - After the flashing completes, reboot the device by holding the **Power** button.
 
 10. **Flash Again in Fastboot Mode:**  
-    - If the device enters fastboot mode, flash again using MiFlash or the `flash_all.bat` script.
+    - If your device enters **fastboot mode**, follow these steps:  
+      - Select **Clean All** in the MiFlash tool and click **Refresh**.  
+      - Click **Flash** to start the process again.
 
-11. **Complete the Process:**  
-    - Your Nabu should automatically boot into Android.
-
-
-## **Method 2: Paid Flashing via HXRU Tool**
-
-### **🔧 Prerequisites**
-1. **Crypto wallet** with **$3 USDT** for purchasing credits.  
-2. **Telegram account** for communication.  
-3. **MiFlash HXRU Auth Tool** [Download link](https://hxrutool.com).  
-4. **Stock fastboot ROM** [Download link](http://xmfirmwareupdater.com/miui/nabu/).  
+11. **Completion:**  
+    - After flashing, your device will automatically boot into **Android**.
 
 ---
 
-### **📝 Steps**
-1. **Set up HXRU Tool:**
+## **📝 Method 2: Paid Flashing with HXRU Tool**
+
+### **🔧 Prerequisites for Method 2**
+1. **Crypto wallet** with **$3 USDT** (to purchase credits for the HXRU tool).  
+2. **Telegram account** for communication.  
+3. **MiFlash HXRU Auth Tool** (download from [here](https://hxrutool.com)).  
+4. **Stock fastboot ROM** (download from [here](http://xmfirmwareupdater.com/miui/nabu/)).
+
+---
+
+### **🛠️ Steps to Follow:**
+
+1. **Set up the HXRU Tool:**
    - Create an account at [HXRU](https://dashboard.hxrutool.com/Register).
    - Download **MiFlash HXRU Auth Tool** from the website.
-   - Extract the file, and open the **MiFlash_HXRU.rar**.
-   - Open **PASS123.rar** with password `123`.  
-   - Extract **MiFlash_HXRU.zip** to a folder.
+   - Extract the **MiFlash_HXRU.rar** file.
+   - Open **PASS123.rar** using the password `123` and extract **MiFlash_HXRU.zip** to a folder.
 
-2. **Buy Credits:**
-   - Contact **@hxruofficial** on Telegram to buy credits.
-   - You will need **5 credits** to flash your device, which costs **$3**.
+2. **Buy Credits:**  
+   - Contact **@hxruofficial** on Telegram to purchase **5 credits** (for about **$3**).
 
-3. **Boot into EDL Mode:**
-   - Follow the **Unlock Bootloader** or **Locked Bootloader** procedure (see Method 1).
+3. **Boot the Device into EDL Mode:**  
+   - Use one of the methods outlined in the **EDL Mode** section.
 
 4. **Install EDL Drivers:**  
-   - If the device shows **QUSB_BULK_CID** in Device Manager, install the **EDL drivers** from the extracted folder.  
+   - If the device shows **QUSB_BULK_CID** in Device Manager, install the **EDL drivers** from the **QUD.zip** folder.
 
-5. **Flash Device:**
-   - Open **XiaoMiFlash.exe** and select the **stock fastboot ROM** folder.
-   - Click **Select** and choose the ROM folder.
-   - Press **Flash** to start the process.
+5. **Flash the Device:**  
+   - Open **XiaoMiFlash.exe** and select the **Fastboot ROM** folder.
+   - Click **Select** and choose the folder.
+   - Press **Flash** to begin the flashing process.
 
-6. **Reboot to Fastboot:**  
-   - After flashing, reboot to fastboot mode and use **MiFlash** or `flash_all.bat` to flash again.
-   - Ensure only **Clean All** is selected.
+6. **Reboot the Device to Fastboot Mode:**  
+   - After flashing, reboot to **fastboot mode** and flash again using **MiFlash** or the `flash_all.bat` script.
 
-7. **Reboot Device:**  
-   - After flashing, reboot the device by holding the **Power** button for 14 seconds.
+7. **Final Reboot:**  
+   - After completing the process, reboot your device using the **Power** button, and it should boot into **Android**.
+
+---
+
+**🎉 Congratulations!**  
+Your Xiaomi Pad 5 should now be successfully restored, either through **EDL Bypass Flashing** or **Paid Flashing with HXRU Tool**.
+
+---
+
+### **Credits:**
+- **Tested by:** @ArKT_7, @panpantepan (Telegram)  
+- **Special Thanks to:** @map220v, @MT6769T (Telegram)
