@@ -43,6 +43,10 @@ fastboot boot path\to\recovery.img
 ```
 
 ### Restore the partition layout
+
+> [!Warning]
+> **All your data will be erased! Back up now if needed.**
+
 > [!Warning]
 > This will wipe your Android files. Backup first if needed.
 
