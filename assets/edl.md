@@ -8,7 +8,7 @@
 
 > **Note:** This guide provides two methods for restoring your device in **EDL mode**:  
 > - **Method 1:** **EDL Bypass Flashing** (Free method using patched tools).  
-> - **Method 2:** **Paid Flashing via HXRU Tool**.
+> - **Method 2:** **Paid Flashing via HXRU Tool** (require in case bypass not work after flashing)
 
 ---
 
