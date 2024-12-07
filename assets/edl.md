@@ -2,14 +2,12 @@
 
 # 🚀 **Running Windows on the Xiaomi Pad 5**
 
----
-
 ## 📌 **Restoring the Device in EDL Mode**
-> **Note:** This guide includes two methods to flash your device in EDL mode:
-> - **Method 1: EDL Bypass Flashing** (free method with patched tools).  
-> - **Method 2: Paid Flashing with HXRU Tool**.  
 
----
+> **Note:** This guide provides two methods for restoring your device in **EDL mode**:  
+> - **Method 1: EDL Bypass Flashing** (a free method using patched tools).  
+> - **Method 2: Paid Flashing using the HXRU Tool**.
+
 
 ### **🔧 Common Prerequisites**
 Before proceeding with either method, ensure the following are ready:  
