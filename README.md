@@ -15,9 +15,9 @@
 
 ## Get Started
 
-- [Installation/run new](guide/English/prepare-en.md)
-  
-- [Official Guide](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5)
+- [**```📥Installation/run new```**](guide/English/prepare-en.md)
+
+- [**`📖Official Guide`**](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5)
 
 
 
