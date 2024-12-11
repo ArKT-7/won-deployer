@@ -1,0 +1,5 @@
+# my.arkt file content
+print("Hello, World! This is a test of the .arkt file execution.")
+x = 10
+y = 20
+print(f"The sum of x and y is: {x + y}")
