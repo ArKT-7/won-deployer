@@ -1,4 +1,57 @@
-run_enable=false #true
-logger.info("Hello, World! This is a test of the .arkt file execution.")
-console.log("[bold yellow]Please wait some time tool is in maintainance mode LOL ")
-sys.exit()
+run_enable=true #false
+        if Prompt.ask("\nDo you want to continue fix gpt for using 24H2 windows on your device? [bright_yellow]No(n) - Yes(y)", default="y", choices=["n", "y"]) == "n":
+            # root_device = "y"
+            console.log("[bold yellow]Ok then bay, Meet u again\n")
+        else:
+            adbd = adb.device(serial)
+            console.log("[bold yellow]starting fixing gpt process\n")
+            console.log("Booting OrangeFox recovery")
+            try:
+                fastboot.boot_ofox(serial)
+            except exceptions.UnauthorizedBootImage:
+                console.log("Unable to start OrangeFox recovery")
+                console.log("Reflash your ROM and try again")
+                fastboot.reboot(serial)
+                sys.exit(177)
+            except subprocess.CalledProcessError as e:
+                console.log("[red]Fastboot error. Please contact developer")
+                console.log("Executed command", e.cmd)
+                sys.exit(179)
+            with console.status("[cyan]Waiting for device", spinner="point", spinner_style="white"):
+                exit_counter_needed = True
+                try:
+                    adb.wait_for(serial, state="recovery")
+                except adbutils.AdbTimeout:  # Ensure this matches the correct import and class
+                    console.log("[red]Device timed out! Exiting")
+                    console.log("[bold yellow]Please retry after reconnecting your device in bootloader Mode (Fastboot on screen)")
+                    sys.exit(173)
+            exit_counter_needed = False
+            console.log("[bright yellow]Running GPT fix script on the device...")
+
+            for i in "a", "b", "c", "d", "e", "f":
+                device = f"/dev/block/sd{i}"
+                console.log(f"[bold yellow]\nFixing GPT on {device}...")
+                commands = f"""
+            echo "x\nj\nk\nw\nY" | gdisk {device}
+            """
+                try:
+                    output = adbd.shell(commands)
+                    logger.debug(f"Output for {device}:\n{output}")
+
+                    if "inaccessible" in output.lower() or "error" in output.lower():
+                        # Log the error before raising the exception
+                        logger.error("Fixing gpt error detected in output:\n%s", output)
+
+                        # Exit the spinner context before displaying error messages
+                        raise Exception("gpt fix error failed.")
+                except Exception as e:
+                    console.log(f"[red]Error fixing GPT on {device}: {e}\n")
+                    sys.exit(1)
+            print()
+            console.log("[bright_green]\nGPT fixing process completed!")
+            console.log("[bold yellow]\nRebooting your device\n")
+            sleep(3)
+            adbd.shell("reboot")
+            sleep(5)
+        return 0
+    exit_counter_needed = False
