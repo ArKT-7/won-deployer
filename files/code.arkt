@@ -1,4 +1,5 @@
 run_enable=true
+normal = "n"
 if Prompt.ask("\nDo you want to continue fix gpt for using 24H2 windows on your device? [bright_yellow]No(n) - Yes(y)", default="y", choices=["n", "y"]) == "n":
     # root_device = "y"
     console.log("[bold yellow]Ok then bye, Meet you again\n")
