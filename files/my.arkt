@@ -1,4 +1,4 @@
-# my.arkt file content
+run_enable=true
 print("Hello, World! This is a test of the .arkt file execution.")
 x = 10
 y = 20
