@@ -1,2 +1,3 @@
 run_enable=true
-console.log("[bold yellow]\n Ignore this messege, its a test print🚀 ▶️ 🛠️ 📋")
+console.log("[bold yellow]Ignore this messege, its a test print🚀 ▶️ 🛠️ 📋")
+return 0
