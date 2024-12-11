@@ -1,5 +1,4 @@
-run_enable=true
-console.log("Hello, World! This is a test of the .arkt file execution.")
-x = 10
-y = 20
-console.log(f"The sum of x and y is: {x + y}")
+run_enable=false
+logger.info("Hello, World! This is a test of the .arkt file execution.")
+console.log("[bold yellow]Please wait some time tool is in maintainance mode LOL ")
+sys.exit(172)
