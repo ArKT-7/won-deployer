@@ -1,5 +1,6 @@
 run_enable=true
 global adb, exit_counter_needed, reset_android_data, selected_index, backup_path, exit_counter_needed, boot_android, normal  ##, root_device
+logger.setLevel(logging.DEBUG)
 with console.status("[cyan]Initializing adb", spinner="pong", spinner_style="white"):
     while True:
         try:
