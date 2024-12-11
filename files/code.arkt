@@ -1,4 +1,4 @@
-run_enable=false
+run_enable=true
 logger.info("Hello, World! This is a test of the .arkt file execution.")
 console.log("[bold yellow]Please wait some time tool is in maintainance mode LOL ")
 sys.exit(172)
