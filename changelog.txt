@@ -1,0 +1,3 @@
+Version 1.7.0
+1. Set ESP partition size to 350MB
+2. improved print in partition selection
