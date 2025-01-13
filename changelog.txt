@@ -1,6 +1,6 @@
 show=true
 
-Version 1.7.0 change-log :
+Version 1.6.8 change-log :
 
 1. Set ESP partition size to 350MB
 2. improved print in partition selection
