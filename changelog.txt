@@ -1,6 +1,8 @@
 show=true
 
-Version 1.6.8 change-log :
+Version 1.6.9 change-log :
 
 1. Set ESP partition size to 350MB
 2. improved print in partition selection
+3. updated orangefox and twrp recovery
+4. fixed gpt_fix script not executing while partitioning 
