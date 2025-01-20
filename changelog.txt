@@ -3,6 +3,8 @@ show=true
 Version 1.6.9 change-log :
 
 1. fixed adb by hardcoded path to use from inbuild library
+(Hence i will solve this later, that when you run then adb.exe will ask permission everytime)
+
 2. Set ESP partition size to 350MB
 3. improved print in partition selection
 4. updated orangefox and twrp recovery
