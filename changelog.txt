@@ -1,11 +1,10 @@
 show=true
 
-Version 1.6.9 change-log :
+Version 1.7.0 change-log :
 
-1. fixed adb by hardcoded path to use from inbuild library
-(Hence i will solve this later, that when you run then adb.exe will ask permission everytime)
-
-2. Set ESP partition size to 350MB
-3. improved print in partition selection
-4. updated orangefox and twrp recovery
-5. fixed gpt_fix script not executing while partitioning 
+1. NEW Partition Layout ESP, WIN, USERDATA for better and future use
+2. fixed adb by hardcoded path and also fixed popup coming asking for allow on running each time
+3. Set ESP partition size to 350MB
+4. improved print in partition selection
+5. updated orangefox and twrp recovery
+6. fixed gpt_fix script not executing while partitioning 
