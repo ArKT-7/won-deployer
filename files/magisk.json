@@ -1,8 +1,8 @@
 {
     "magisk": {
-        "version": "27.0",
-        "versionCode": "27000",
+        "version": "28.1",
+        "versionCode": "28100",
         "link": "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/won-deployer-setup.apk",
-        "note": "https://topjohnwu.github.io/Magisk/releases/27000.md"
+        "note": "https://topjohnwu.github.io/Magisk/releases/28100.md"
     }
 }
