@@ -1,10 +1,20 @@
 show=true
 
+Version 1.7.1 change-log :
+
+1. Fixed UnicodeDecodeError in ADB server kill function by implementing safe multi-encoding(for other languages) decoding for stderr output.
+
 Version 1.7.0 change-log :
 
-1. NEW Partition Layout ESP, WIN, USERDATA for better and future use
-2. fixed adb by hardcoded path and also fixed popup coming asking for allow on running each time
-3. Set ESP partition size to 350MB
-4. improved print in partition selection
-5. updated orangefox and twrp recovery
-6. fixed gpt_fix script not executing while partitioning 
+2. NEW Partition Layout ESP, WIN, USERDATA for better and future use
+3. fixed adb by hardcoded path and also fixed popup coming asking for allow on running each time
+
+Version 1.6.9 change-log :
+
+4. Set ESP partition size to 350MB
+5. improved print in partition selection
+6. updated orangefox and twrp recovery
+
+Version 1.6.8 change-log :
+
+7. fixed gpt_fix script not executing while partitioning 
