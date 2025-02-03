@@ -1,3 +1,6 @@
-run_enable=false #true
-console.log("[bold yellow]Ignore this messege, its a test print🚀 ▶️ 🛠️ 📋")
+run_enable=true
+##run_enable=false #true
+##console.log("[bold yellow]Ignore this messege, its a test print🚀 ▶️ 🛠️ 📋")
 ##sys.exit()
+console.log("[bold yellow]📋 If you doing re-install then make sure to update uefi.img from File manager UEFI folder, \n delete old uefi.img and download new one then copy it to UEFI folder \n here link - https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/UEFI/nabu-uefi-v4.img")
+
