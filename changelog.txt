@@ -1,5 +1,14 @@
 show=true
 
+**Version 1.7.3 Changelog** Tbh many things re-written  
+
+- Auto-selects Windows edition if Windows 11 Pro, IoT LTSC, or Home is detected.  
+- Added option to update UEFI image when reinstalling without an Android data reset.  
+- Improved error logging for Fastboot issues.  
+- Moved `msc`, `format`, and `formatuserdata` commands to recovery mode.  
+- Changed Windows boot process to only boot UEFI instead of flashing and rebooting.
+- completely shifted to only one modded twrp recovery and removed orangefox recovery 
+
 Version 1.7.1 change-log :
 
 1. Fixed UnicodeDecodeError in ADB server kill function by implementing safe multi-encoding(for other languages) decoding for stderr output.
