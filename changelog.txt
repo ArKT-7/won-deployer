@@ -1,5 +1,10 @@
 show=true
 
+
+**Version 1.7.4 Changelog** 
+
+HOTFIX - Decode error fix on different language PC like German
+
 **Version 1.7.3 Changelog** Tbh many things re-written  
 
 - Auto-selects Windows edition if Windows 11 Pro, IoT LTSC, or Home is detected.  
@@ -8,6 +13,8 @@ show=true
 - Moved `msc`, `format`, and `formatuserdata` commands to recovery mode.  
 - Changed Windows boot process to only boot UEFI instead of flashing and rebooting.
 - completely shifted to only one modded twrp recovery and removed orangefox recovery 
+
+****OLD****
 
 Version 1.7.1 change-log :
 
