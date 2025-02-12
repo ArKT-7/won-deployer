@@ -14,7 +14,7 @@ HOTFIX - Decode error fix on different language PC like German
 - Changed Windows boot process to only boot UEFI instead of flashing and rebooting.
 - completely shifted to only one modded twrp recovery and removed orangefox recovery 
 
-****OLD****
+[bright_green]****OLD****
 
 Version 1.7.1 change-log :
 
