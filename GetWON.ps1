@@ -223,22 +223,41 @@ Write-Host "Download complete." -ForegroundColor Green
 
 
 Write-Host ""
+Write-Host "===========================================" -ForegroundColor DarkCyan
+Write-Host "Tool installation completed successfully!" -ForegroundColor Yellow
+Write-Host "===========================================" -ForegroundColor DarkCyan
 Write-Host ""
-Write-Host "Tool installation is successful." -ForegroundColor Yellow
+Write-Host " How to run the tool later:" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "Please close this PowerShell/Terminal" -ForegroundColor Magenta
+Write-Host " Step 1. Re-open a new PowerShell/Terminal as Administrator." -ForegroundColor Yellow
 Write-Host ""
-Write-Host "After re-opening PowerShell/Terminal as Admin" -ForegroundColor Yellow
+Write-Host -NoNewline " Step 2. Then type " -ForegroundColor Magenta
+Write-Host -NoNewline "'won-deployer'" -ForegroundColor Yellow
+Write-Host " to run the tool." -ForegroundColor Magenta
 Write-Host ""
-Write-Host -NoNewline "Type " -ForegroundColor Magenta
-Write-Host -NoNewline "won-deployer" -ForegroundColor Yellow
-Write-Host " to run the tool" -ForegroundColor Magenta
-Write-Host ""
-Write-Host "You can ignore any error after this line" -ForegroundColor Yellow
+Write-Host "===================================================================" -ForegroundColor DarkCyan
+Write-Host "Note: You can ignore any error that may appear below this message." -ForegroundColor Yellow
+Write-Host "===================================================================" -ForegroundColor DarkCyan
 Write-Host ""
 # Exclude won-deployer.exe from Microsoft Defender
-#$wonDeployerPath = Join-Path $wonDeployerDir "won-deployer.exe"
-#Write-Host ""
-# Write-Host "Adding won-deployer.exe to Defender exclusion list just in case if defender detect it wrong by mistake..." -ForegroundColor Cyan
 Add-MpPreference -ExclusionPath $wonDeployerDir
+# Prompt to run now
 Write-Host ""
+Write-Host "Do you want to start won-deployer now? (y/n):" -ForegroundColor Cyan 
+$response = Read-Host "> "
+
+if ($response.ToLower() -match '^(y|yes|ye|ys|ues|yeah|yep)$') {
+    Write-Host ""
+    Write-Host "Launching won-deployer in this terminal..." -ForegroundColor Green
+    Start-Sleep -Milliseconds 500
+	Write-Host ""
+	Write-Host ""
+	Write-Host ""
+    & "$wonDeployerDir\won-deployer.exe"
+} else {
+    Write-Host ""
+    Write-Host -NoNewline "You can launch it anytime by typing " -ForegroundColor Cyan
+    Write-Host -NoNewline "'won-deployer'" -ForegroundColor Yellow
+    Write-Host " in a new terminal/PowerShell window." -ForegroundColor Cyan
+    Write-Host ""
+}
