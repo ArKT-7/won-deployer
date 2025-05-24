@@ -1,7 +1,15 @@
 show=true
 
 
-[bold yellow]**Version 1.7.4 Changelog** 
+[bold yellow]**Version 1.7.5 Changelog** 
+
+- Fix garbled output when listing Windows image indexes for non-english image.  
+- Added auto detection of whether the current boot image is Android or UEFI.
+- Made minor wording and formatting improvements in outputs for clarity. 
+- Improved debug output formatting to display cleaner.
+- Updated to V4-Modded twrp for won-deployer.
+
+**Version 1.7.4 Changelog** 
 
 HOTFIX - Decode error fix on different language PC like German
 
