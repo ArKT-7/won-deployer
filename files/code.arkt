@@ -3,9 +3,8 @@ run_enable=true
 ##console.log("[bold yellow]Ignore this messege, its a test print🚀 ▶️ 🛠️ 📋")
 ##sys.exit()
 if VERSION <= "1.7.1":
-    console.log("[bold yellow]📋 If you doing re-install then make sure to update uefi.img from File manager UEFI folder, \n delete old uefi.img and download new one then copy it to UEFI folder \n here link - https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/UEFI/nabu-uefi-v4.img")
-print()
+    console.log("[bold yellow]📋 If you doing re-install then make sure to update uefi.img from File manager UEFI folder, \n delete old uefi.img and download new one then copy it to UEFI folder \n here link - https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/UEFI/nabu-uefi-v4.img\n")
 if VERSION <= "1.7.4":
 	console.log("[bold yellow]NOTE : If you doing re-install then make sure to first start/boot to android")
-	console.log("[bold yellow]       then now reboot to fastboot mode and start installations")
+	console.log("[bold yellow]       then now reboot to fastboot mode and start installations\n")
 print()
