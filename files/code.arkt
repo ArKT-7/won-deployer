@@ -7,4 +7,3 @@ if VERSION <= "1.7.1":
 if VERSION <= "1.7.4":
 	console.log("[bold yellow]NOTE : If you doing re-install then make sure to first start/boot to android")
 	console.log("[bold yellow]       then now reboot to fastboot mode and start installations\n")
-print()
