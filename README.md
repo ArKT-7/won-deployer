@@ -1,7 +1,9 @@
 <p align="center"><a href="README.md"><img src="https://github.com/ArKT-7/won-deployer/blob/main/assets/Won-nabu-bg.png" width="280"></a></p>
 
-# Running Windows on the Xiaomi Pad 5
-## Try out my new tool for automatically installing/Re-installing Windows, Rooting/Re-rooting For Xiaomi Pad 5 (Nabu) —  I’d love your feedback on any issues or ideas for new features. Share your thoughts with me via the Telegram link below."
+# Won-deployer — Automated Tool to Install Windows on Xiaomi Pad 5
+## Automates the entire Windows installation process on your Xiaomi Pad 5 — from asking partition sizes, to rooting with Magisk, dualboot with android and everything in between. All you need is an unlocked bootloader, the rest is fully handled by Won-deployer!
+
+### For any questions or issues, reach out via the Telegram link below.
 [![Telegram](https://img.shields.io/badge/Chat-Telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://telegram.me/ArKT_7)
 [![Telegram](https://img.shields.io/badge/Chat-Telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/ArKT_7)
 
@@ -15,9 +17,9 @@
 
 ## Get Started
 
-- [**```📥Installation/run new```**](guide/English/prepare-en.md)
+- [**```📥 Tool Installation/run guide```**](guide/English/prepare-en.md)
 
-- [**`📖Official Guide`**](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5)
+- [**`📖 Official Guide`**](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5)
 
 
 
