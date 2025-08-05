@@ -1,7 +1,13 @@
 show=true
 
 
-[bold yellow]**Version 1.7.5 Changelog** 
+[bold yellow]**Version 1.7.6 Changelog** 
+
+- Dynamically calculate block size instead of using hardcoded values for partitioning
+- Improve ADB error handling by exiting immediately on connection refusal
+- Update UEFI files build from latest sources with NO-CABC 
+
+**Version 1.7.5 Changelog** 
 
 - Fix garbled output when listing Windows image indexes for non-english image.  
 - Added auto detection of whether the current boot image is Android or UEFI.
