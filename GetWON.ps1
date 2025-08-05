@@ -50,6 +50,7 @@ $requiredFilesDownload = @{
     "gpt_both0.bin" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/gpt_both0.bin"
     "userdata.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/userdata.img"
 	"uefi.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefi.img"
+	"uefiNyankoSensei.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefiNyankoSensei.img"
 }
 
 # Modern progress bar function
