@@ -1,7 +1,16 @@
 show=true
 
 
-[bold yellow]**Version 1.7.6 Changelog** 
+[bold yellow]**Version 1.7.8 (Hotfix) Changelog**
+
+- Replaced internal zip engine with native 7-Zip (7za) to support .7z archives and improve reliability.
+- Added automated online driver integrity verification using checksums.
+- Implemented support for Custom UEFI images when using modified or beta driver packages.
+- Improved extraction logic to automatically detect driver files in both root and sub-folders.
+
+[bright_green]****--OLD--****
+
+**Version 1.7.6 Changelog** 
 
 - Dynamically calculate block size instead of using hardcoded values for partitioning
 - Improve ADB error handling by exiting immediately on connection refusal
@@ -28,8 +37,6 @@ HOTFIX - Decode error fix on different language PC like German
 - Changed Windows boot process to only boot UEFI instead of flashing and rebooting.
 - completely shifted to only one modded twrp recovery and removed orangefox recovery 
 
-[bright_green]****--OLD--****
-
 Version 1.7.1 change-log :
 
 1. Fixed UnicodeDecodeError in ADB server kill function by implementing safe multi-encoding(for other languages) decoding for stderr output.
@@ -48,3 +55,5 @@ Version 1.6.9 change-log :
 Version 1.6.8 change-log :
 
 7. fixed gpt_fix script not executing while partitioning 
+
+[bold yellow]**Note: Scroll up to see latest version changelog!**
