@@ -14,7 +14,7 @@
 ---
 **Prefered Use**
 - [```LATEST WINDOWS FILE DIRECT LINK```](https://drive.google.com/file/d/1zQgsYW5SBZh4ScErLhCTAujjo2loBieV/view?usp=sharing) (Version:  ```11``` Build:  ```22631.3958``` Architecture:  ```ARM64``` Edition:  ```HOME and PRO``` Language:  ```en-us```)
-- [```Drivers```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/tag/Drivers)
+- [```Drivers```](https://github.com/remtrik-stuff/MiPad5-Windows-Releases/releases)
 ---
 
 1. **Put Your Xiaomi Pad 5 in Fastboot Mode**
@@ -39,9 +39,9 @@
   `Please enter the index number of the edition you want to use :`
 <!-- ${\color{Magenta}[y/n] \space \color{cyan}(n): }$ -->
 
-4. **Enter [```nabu-driver.zip```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/tag/Drivers) file path**
+4. **Enter [```nabu-driver.7z```](https://github.com/remtrik-stuff/MiPad5-Windows-Releases/releases) file path**
 
-   - copy as path your nabu-driver.zip file and Paste path here.
+   - copy as path your nabu-driver.7z file and Paste path here.
   `Enter the path of the driver ZIP file (Copy as path) ::`
 
 5. **Follow on-screen Instruction**

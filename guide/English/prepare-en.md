@@ -11,7 +11,7 @@
   
 - [```ARM Windows ESD```](https://arkt-7.github.io/woawin/) (Select - Build:  ```select build``` Language:  ```select your language```)
     
-- [```Drivers```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/tag/Drivers)
+- [```Drivers```](https://github.com/remtrik-stuff/MiPad5-Windows-Releases/releases)
 
 - ```Unlocked bootloader``` (If your bootloader is locked and you don't know how to unlock it use [this](unlock-bootloader-en.md) guide)
 
@@ -79,8 +79,8 @@ won-deployer
 <!-- ${\color{Magenta}[y/n] \space \color{cyan}(n): }$ -->
 
 ### Selecting the drivers
-- **Enter [```nabu-drivers.zip```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/tag/Drivers) file path**
-- Copy the path of your nabu-drivers.zip file and paste it here.
+- **Enter [```MiPad5-Drivers.7z```](https://github.com/remtrik-stuff/MiPad5-Windows-Releases/releases) file path**
+- Copy the path of your MiPad5-Drivers.7z file and paste it here.
 **`Enter the path of the driver ZIP file (Copy as path) ::`**
 
 ### Next, Follow the on-screen Instruction
