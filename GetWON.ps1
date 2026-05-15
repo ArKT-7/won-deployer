@@ -251,15 +251,27 @@ Write-Host "`nDo you want to start won-deployer now? (y/n):" -ForegroundColor Cy
 $response = Read-Host "> "
 
 if ([string]::IsNullOrWhiteSpace($response) -or $response.ToLower() -match '^(y|yes|ye|ys|ues|yeah|yep)$') {
-    Write-Host "`nLaunching won-deployer in this terminal..." -ForegroundColor Green
+    Write-Host "`nLaunching won-deployer...`n`n" -ForegroundColor Green
     Start-Sleep -Milliseconds 500
-	Write-Host ""
-	Write-Host ""
-	Write-Host ""
-    & "$wonDeployerDir\won-deployer.exe"
+    $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+    $isWT = [bool]$env:WT_SESSION
+    $wtInstalled = [bool](Get-Command "wt.exe" -ErrorAction SilentlyContinue)
+    try {
+        if ($wtInstalled -and (-not ($isAdmin -and $isWT))) {
+            Start-Process "wt.exe" -ArgumentList "-M powershell.exe -NoExit -Command `"& '$wonDeployerDir\won-deployer.exe'`"" -Verb RunAs -ErrorAction Stop
+        } else {
+            & "$wonDeployerDir\won-deployer.exe"
+        }
+    } catch {
+        Write-Host "Launch canceled by you..." -ForegroundColor Red
+        Write-Host "won-deployer requires Administrator privileges to run!`n`n"
+        Write-Host -NoNewline "You can launch it anytime by typing " -ForegroundColor Cyan
+        Write-Host -NoNewline "'won-deployer'" -ForegroundColor Yellow
+        Write-Host " in a new terminal/PowerShell (Admin) window.`n" -ForegroundColor Cyan
+    }
 } else {
     Write-Host ""
     Write-Host -NoNewline "You can launch it anytime by typing " -ForegroundColor Cyan
     Write-Host -NoNewline "'won-deployer'" -ForegroundColor Yellow
-    Write-Host " in a new terminal/PowerShell window.`n" -ForegroundColor Cyan
+    Write-Host " in a new terminal/PowerShell (Admin) window.`n" -ForegroundColor Cyan
 }
