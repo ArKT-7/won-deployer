@@ -1,3 +1,21 @@
+$ProgressPreference = 'SilentlyContinue'
+Clear-Host
+Write-Host "`n                 ██╗    ██╗ ██████╗ ███╗   ██╗" -ForegroundColor Cyan
+Write-Host "                 ██║    ██║██╔═══██╗████╗  ██║" -ForegroundColor Cyan
+Write-Host "                 ██║ █╗ ██║██║   ██║██╔██╗ ██║" -ForegroundColor Cyan
+Write-Host "                 ██║███╗██║██║   ██║██║╚██╗██║" -ForegroundColor DarkCyan
+Write-Host "                 ╚███╔███╔╝╚██████╔╝██║ ╚████║" -ForegroundColor DarkCyan
+Write-Host "                  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝" -ForegroundColor DarkCyan
+Write-Host " ██████╗ ███████╗██████╗ ██╗      ██████╗ ██╗   ██╗███████╗██████╗ " -ForegroundColor Cyan
+Write-Host " ██╔══██╗██╔════╝██╔══██╗██║     ██╔═══██╗╚██╗ ██╔╝██╔════╝██╔══██╗" -ForegroundColor Cyan
+Write-Host " ██║  ██║█████╗  ██████╔╝██║     ██║   ██║ ╚████╔╝ █████╗  ██████╔╝" -ForegroundColor Cyan
+Write-Host " ██║  ██║██╔══╝  ██╔═══╝ ██║     ██║   ██║  ╚██╔╝  ██╔══╝  ██╔══██╗" -ForegroundColor DarkCyan
+Write-Host " ██████╔╝███████╗██║     ███████╗╚██████╔╝   ██║   ███████╗██║  ██║" -ForegroundColor DarkCyan
+Write-Host " ╚═════╝ ╚══════╝╚═╝     ╚══════╝ ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝" -ForegroundColor DarkCyan
+Write-Host ""
+Write-Host "                          - S E T U P -                            " -ForegroundColor Gray
+Write-Host ""
+
 # Set up directories
 $adbDir = Join-Path $env:SystemDrive "adb"
 $wonDeployerDir = Join-Path $env:USERPROFILE ".arkt"
@@ -112,7 +130,7 @@ function Download-Files($files, $destinationDir) {
             $storeEAP = $ErrorActionPreference
             $ErrorActionPreference = 'Stop'
 
-            $response = Invoke-WebRequest -Uri $url -Method Head
+            $response = Invoke-WebRequest -Uri $url -Method Head -UseBasicParsing
             [long]$fileSizeBytes = [int]$response.Headers['Content-Length']
             $fileSizeMB = $fileSizeBytes / 1MB
 
@@ -159,6 +177,7 @@ function Download-Files($files, $destinationDir) {
             $webResponse.Close()
             $ErrorActionPreference = $storeEAP
             [GC]::Collect()
+            Unblock-File -Path $destinationPath -ErrorAction SilentlyContinue
         }
         catch {
             $ExeptionMsg = $_.Exception.Message
@@ -168,34 +187,26 @@ function Download-Files($files, $destinationDir) {
 }
 
 
-Write-Host ""
-Write-Host "Downloading platform tools..." -ForegroundColor Cyan
+Write-Host "`nDownloading platform tools..." -ForegroundColor Cyan
 Download-Files -files $platformTools -destinationDir $adbDir
-Write-Host ""
-Write-Host ""
-Write-Host "Extracting platform tools..." -ForegroundColor Green
+
+Write-Host "`n`nExtracting platform tools..." -ForegroundColor Green
 Expand-Archive -Path $platformToolsZip -DestinationPath $adbDir -Force
 Remove-Item -Path $platformToolsZip -Force
 $platformToolsDir = Join-Path $adbDir "platform-tools\"
 $platformToolsDir = Join-Path $adbDir "\"
-Write-Host ""
 
-Write-Host ""
-Write-Host "Downloading dism-en..." -ForegroundColor Cyan
+Write-Host "`n`nDownloading dism-en..." -ForegroundColor Cyan
 Download-Files -files $dismbin -destinationDir $wonDeployerDir
-Write-Host ""
-Write-Host ""
-Write-Host "Extracting dism-en..." -ForegroundColor Green
+
+Write-Host "`n`nExtracting dism-en..." -ForegroundColor Green
 Expand-Archive -Path $dismbinZip -DestinationPath $dismbinDir -Force
 Remove-Item -Path $dismbinZip -Force
 $dismbinDir1 = Join-Path $wonDeployerDir "dismbin\"
-Write-Host ""
 
 
 # Download installer
-Write-Host ""
-Write-Host ""
-Write-Host "Downloading Tool" -ForegroundColor Cyan
+Write-Host "`n`n`nDownloading Tool" -ForegroundColor Cyan
 Download-Files -files $filesToDownload -destinationDir $wonDeployerDir
 
 # Update PATH environment variable
@@ -208,48 +219,39 @@ $pathsToAdd = @($wonDeployerDir, $platformToolsDir, $dismbinDir1)
 foreach ($path in $pathsToAdd) {
     if ($currentPath -notcontains $path) {
         [Environment]::SetEnvironmentVariable("PATH", "$path;$([Environment]::GetEnvironmentVariable('PATH', 'User'))", "User")
-        Write-Host "$path added to PATH. Restart this shell to apply changes." -ForegroundColor Magenta
+        $env:PATH = "$path;$env:PATH"
+        Write-Host "$path added to PATH..." -ForegroundColor Magenta
     }
 }
 
 
 # Download additional files
-Write-Host ""
-Write-Host "Downloading Additional Required Files" -ForegroundColor Cyan
+Write-Host "`nDownloading Additional Required Files" -ForegroundColor Cyan
 Download-Files -files $requiredFilesDownload -destinationDir $wonFilesDir
 
-Write-Host ""
-Write-Host ""
-Write-Host "Download complete." -ForegroundColor Green
+Write-Host "`n`nDownload complete." -ForegroundColor Green
 
-
-Write-Host ""
-Write-Host "===========================================" -ForegroundColor DarkCyan
+Write-Host "`n===========================================" -ForegroundColor DarkCyan
 Write-Host "Tool installation completed successfully!" -ForegroundColor Yellow
 Write-Host "===========================================" -ForegroundColor DarkCyan
-Write-Host ""
-Write-Host " How to run the tool later:" -ForegroundColor Cyan
-Write-Host ""
-Write-Host " Step 1. Re-open a new PowerShell/Terminal as Administrator." -ForegroundColor Yellow
-Write-Host ""
+
+Write-Host "`n How to run the tool later:`n" -ForegroundColor Cyan
+Write-Host " Step 1. Re-open a new PowerShell/Terminal as Administrator.`n" -ForegroundColor Yellow
 Write-Host -NoNewline " Step 2. Then type " -ForegroundColor Magenta
 Write-Host -NoNewline "'won-deployer'" -ForegroundColor Yellow
-Write-Host " to run the tool." -ForegroundColor Magenta
-Write-Host ""
+Write-Host " to run the tool.`n" -ForegroundColor Magenta
 Write-Host "===================================================================" -ForegroundColor DarkCyan
 Write-Host "Note: You can ignore any error that may appear below this message." -ForegroundColor Yellow
-Write-Host "===================================================================" -ForegroundColor DarkCyan
-Write-Host ""
+Write-Host "===================================================================`n" -ForegroundColor DarkCyan
+
 # Exclude won-deployer.exe from Microsoft Defender
-Add-MpPreference -ExclusionPath $wonDeployerDir
+Add-MpPreference -ExclusionPath $wonDeployerDir -ErrorAction SilentlyContinue
 # Prompt to run now
-Write-Host ""
-Write-Host "Do you want to start won-deployer now? (y/n):" -ForegroundColor Cyan 
+Write-Host "`nDo you want to start won-deployer now? (y/n):" -ForegroundColor Cyan 
 $response = Read-Host "> "
 
-if ($response.ToLower() -match '^(y|yes|ye|ys|ues|yeah|yep)$') {
-    Write-Host ""
-    Write-Host "Launching won-deployer in this terminal..." -ForegroundColor Green
+if ([string]::IsNullOrWhiteSpace($response) -or $response.ToLower() -match '^(y|yes|ye|ys|ues|yeah|yep)$') {
+    Write-Host "`nLaunching won-deployer in this terminal..." -ForegroundColor Green
     Start-Sleep -Milliseconds 500
 	Write-Host ""
 	Write-Host ""
@@ -259,6 +261,5 @@ if ($response.ToLower() -match '^(y|yes|ye|ys|ues|yeah|yep)$') {
     Write-Host ""
     Write-Host -NoNewline "You can launch it anytime by typing " -ForegroundColor Cyan
     Write-Host -NoNewline "'won-deployer'" -ForegroundColor Yellow
-    Write-Host " in a new terminal/PowerShell window." -ForegroundColor Cyan
-    Write-Host ""
+    Write-Host " in a new terminal/PowerShell window.`n" -ForegroundColor Cyan
 }
