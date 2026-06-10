@@ -1,3 +1,4 @@
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $ProgressPreference = 'SilentlyContinue'
 Clear-Host
 Write-Host "`n                 ██╗    ██╗ ██████╗ ███╗   ██╗" -ForegroundColor Cyan
@@ -37,38 +38,25 @@ foreach ($dir in @($adbDir, $wonDeployerDir, $wonFilesDir)) {
     }
 }
 
-# Download platform tools
-$platformToolsZip = Join-Path $adbDir "platform-tools.zip"
-$dismbinZip = Join-Path $wonDeployerDir "dismbin.zip"
+# Download llinks
+$platformTools = @{ "platform-tools.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/platform-tools.zip" }
+$dismbin = @{ "dismbin.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/dism-bin.zip" }
 
-$platformTools = @{
-     "platform-tools.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/platform-tools.zip"
-}
-
-$dismbin = @{
-     "dismbin.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/dism-bin.zip"
-}
-
-# Define the file to download
 $filesToDownload = @{
     "won-deployer.exe" = "https://pub-b90d2836b1d44c13ba332b578d80b42b.r2.dev/won_deployer.exe"
     "wimlib-imagex.exe" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/wimlib-imagex.exe"
     "libwim-15.dll" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/libwim-15.dll"
 }
 
-# Define the additional file to download
 $requiredFilesDownload = @{
     "Toolbox.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Toolbox.zip"
     "sta.zip" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/sta.zip"
-    #"Magisk_canary.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_canary.apk"
     "Magisk_stable.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_stable.apk"
-    #"Magisk_kitsune.apk" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/Magisk_kitsune.apk"
-    #"orangefox.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/orangefox.img"
     "twrp.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/twrp.img"
     "gpt_both0.bin" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/gpt_both0.bin"
     "userdata.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/userdata.img"
-	"uefi.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefi.img"
-	"uefiNyankoSensei.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefiNyankoSensei.img"
+    "uefi.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefi.img"
+    "uefiNyankoSensei.img" = "https://raw.githubusercontent.com/arkt-7/won-deployer/main/files/uefiNyankoSensei.img"
 }
 
 # Modern progress bar function
@@ -118,70 +106,78 @@ function Show-Progress {
 
 # Download files with progress and size display
 function Download-Files($files, $destinationDir) {
-    $totalFiles = $files.Count
-    $currentFile = 0
+    $maxRetries = 3
 
     foreach ($file in $files.Keys) {
-        $currentFile++
         $destinationPath = Join-Path $destinationDir $file
         $url = $files[$file]
+        $retryCount = 0
+        $success = $false
 
-        try {
-            $storeEAP = $ErrorActionPreference
-            $ErrorActionPreference = 'Stop'
+        Write-Host "`n" 
 
-            $response = Invoke-WebRequest -Uri $url -Method Head -UseBasicParsing
-            [long]$fileSizeBytes = [int]$response.Headers['Content-Length']
-            $fileSizeMB = $fileSizeBytes / 1MB
+        while (-not $success -and $retryCount -lt $maxRetries) {
+            try {
+                $storeEAP = $ErrorActionPreference
+                $ErrorActionPreference = 'Stop'
 
-            if ($fileSizeBytes -eq $null) {
-                $fileSize = "Unknown"
-            } else {
-                $fileSize = [math]::Round($fileSizeBytes / 1MB, 2)
+                $response = Invoke-WebRequest -Uri $url -Method Head -UseBasicParsing
+                [long]$fileSizeBytes = [int]$response.Headers['Content-Length']
+                $fileSizeMB = $fileSizeBytes / 1MB
+
+                $request = [System.Net.HttpWebRequest]::Create($url)
+                $webResponse = $request.GetResponse()
+                $responseStream = $webResponse.GetResponseStream()
+
+                $fileStream = New-Object System.IO.FileStream($destinationPath, [System.IO.FileMode]::Create)
+                $buffer = New-Object byte[] 4096
+                [long]$totalBytesRead = 0
+
+                $finalBarCount = 0
+
+                do {
+                    $bytesRead = $responseStream.Read($buffer, 0, $buffer.Length)
+                    $fileStream.Write($buffer, 0, $bytesRead)
+                    $totalBytesRead += $bytesRead
+                    $totalMB = $totalBytesRead / 1MB
+                    
+                    if ($fileSizeBytes -gt 0) {
+                        Show-Progress -TotalValue $fileSizeMB -CurrentValue $totalMB -ProgressText "Downloading $file" -ValueSuffix "MB"
+                    }
+                    
+                    if ($totalBytesRead -eq $fileSizeBytes -and $bytesRead -eq 0 -and $finalBarCount -eq 0) {
+                        Show-Progress -TotalValue $fileSizeMB -CurrentValue $totalMB -ProgressText "Downloading $file" -ValueSuffix "MB" -Complete
+                        $finalBarCount++
+                    }
+                } while ($bytesRead -gt 0)
+
+                $fileStream.Close()
+                $responseStream.Close()
+                $webResponse.Close()
+                $ErrorActionPreference = $storeEAP
+                [GC]::Collect()
+                Unblock-File -Path $destinationPath -ErrorAction SilentlyContinue
+                $success = $true
             }
-			
-           Write-Host "" 
-          #Write-Host "Downloading $file ($fileSize MB)..." -ForegroundColor Yellow
-		   Write-Host "" 
-
-            # Start downloading the file and display progress
-            $request = [System.Net.HttpWebRequest]::Create($url)
-            $webResponse = $request.GetResponse()
-            $responseStream = $webResponse.GetResponseStream()
-
-            $fileStream = New-Object System.IO.FileStream($destinationPath, [System.IO.FileMode]::Create)
-            $buffer = New-Object byte[] 4096
-            [long]$totalBytesRead = 0
-            [long]$bytesRead = 0
-
-            $finalBarCount = 0
-
-            do {
-                $bytesRead = $responseStream.Read($buffer, 0, $buffer.Length)
-                $fileStream.Write($buffer, 0, $bytesRead)
-                $totalBytesRead += $bytesRead
-                $totalMB = $totalBytesRead / 1MB
+            catch {
+                $ExeptionMsg = $_.Exception.Message
+                $retryCount++
                 
-                if ($fileSizeBytes -gt 0) {
-                    Show-Progress -TotalValue $fileSizeMB -CurrentValue $totalMB -ProgressText "Downloading $file" -ValueSuffix "MB"
-                }
-                
-                if ($totalBytesRead -eq $fileSizeBytes -and $bytesRead -eq 0 -and $finalBarCount -eq 0) {
-                    Show-Progress -TotalValue $fileSizeMB -CurrentValue $totalMB -ProgressText "Downloading $file" -ValueSuffix "MB" -Complete
-                    $finalBarCount++
-                }
-            } while ($bytesRead -gt 0)
+                if ($null -ne $fileStream) { $fileStream.Close() }
+                if ($null -ne $responseStream) { $responseStream.Close() }
+                if ($null -ne $webResponse) { $webResponse.Close() }
 
-            $fileStream.Close()
-            $responseStream.Close()
-            $webResponse.Close()
-            $ErrorActionPreference = $storeEAP
-            [GC]::Collect()
-            Unblock-File -Path $destinationPath -ErrorAction SilentlyContinue
-        }
-        catch {
-            $ExeptionMsg = $_.Exception.Message
-            Write-Host "Download breaks with error : $ExeptionMsg"
+                Write-Host "`n[Error] Download broken for $file : $ExeptionMsg" -ForegroundColor Red
+                
+                if ($retryCount -lt $maxRetries) {
+                    Write-Host "Retrying ($retryCount/$maxRetries) in 2 seconds..." -ForegroundColor Yellow
+                    Start-Sleep -Seconds 2
+                } else {
+                    Write-Host "`n[ERROR] Failed to download $file after $maxRetries attempts!" -ForegroundColor Red
+                    Write-Host "Please check your internet connection or VPN/firewall and then run this again...`n" -ForegroundColor Yellow
+                    exit
+                }
+            }
         }
     }
 }
@@ -191,22 +187,21 @@ Write-Host "`nDownloading platform tools..." -ForegroundColor Cyan
 Download-Files -files $platformTools -destinationDir $adbDir
 
 Write-Host "`n`nExtracting platform tools..." -ForegroundColor Green
-Expand-Archive -Path $platformToolsZip -DestinationPath $adbDir -Force
-Remove-Item -Path $platformToolsZip -Force
-$platformToolsDir = Join-Path $adbDir "platform-tools\"
+Expand-Archive -Path (Join-Path $adbDir "platform-tools.zip") -DestinationPath $adbDir -Force
+Remove-Item -Path (Join-Path $adbDir "platform-tools.zip") -Force
 $platformToolsDir = Join-Path $adbDir "\"
 
 Write-Host "`n`nDownloading dism-en..." -ForegroundColor Cyan
 Download-Files -files $dismbin -destinationDir $wonDeployerDir
 
 Write-Host "`n`nExtracting dism-en..." -ForegroundColor Green
-Expand-Archive -Path $dismbinZip -DestinationPath $dismbinDir -Force
-Remove-Item -Path $dismbinZip -Force
+Expand-Archive -Path (Join-Path $wonDeployerDir "dismbin.zip") -DestinationPath $dismbinDir -Force
+Remove-Item -Path (Join-Path $wonDeployerDir "dismbin.zip") -Force
 $dismbinDir1 = Join-Path $wonDeployerDir "dismbin\"
 
 
 # Download installer
-Write-Host "`n`n`nDownloading Tool" -ForegroundColor Cyan
+Write-Host "`n`n`nDownloading Tool Files..." -ForegroundColor Cyan
 Download-Files -files $filesToDownload -destinationDir $wonDeployerDir
 
 # Update PATH environment variable
@@ -229,7 +224,15 @@ foreach ($path in $pathsToAdd) {
 Write-Host "`nDownloading Additional Required Files" -ForegroundColor Cyan
 Download-Files -files $requiredFilesDownload -destinationDir $wonFilesDir
 
-Write-Host "`n`nDownload complete." -ForegroundColor Green
+Write-Host "`n`nDownload attempts complete." -ForegroundColor Green
+
+if (-not (Test-Path "$wonDeployerDir\won-deployer.exe")) {
+    Write-Host "`n===========================================" -ForegroundColor Red
+    Write-Host "[ERROR] won-deployer.exe was not found!" -ForegroundColor Red
+    Write-Host "The installation is failed, please check your network and try again!" -ForegroundColor Yellow
+    Write-Host "===========================================`n" -ForegroundColor Red
+    exit
+}
 
 Write-Host "`n===========================================" -ForegroundColor DarkCyan
 Write-Host "Tool installation completed successfully!" -ForegroundColor Yellow
